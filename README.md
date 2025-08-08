@@ -61,4 +61,7 @@ MIT License
 
 ---
 
-© 2023 AI Researcher, GIST AI Convergence
+## 테스트 Command
+```
+kill -9 $(lsof -t -i:8000) && python main.py
+```
