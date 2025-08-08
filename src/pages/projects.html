@@ -7,7 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="projects-data.js"></script>
+    <script src="../js/projects-data.js"></script>
+    <script src="../js/navigation.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -104,6 +105,19 @@
             animation: blob 8s infinite;
             animation-delay: 1s;
         }
+        
+        /* Common Navigation Styles */
+        .nav-link {
+            @apply hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary;
+        }
+        
+        .nav-link.active {
+            @apply text-primary font-semibold border-b-2 border-primary;
+        }
+        
+        .nav-logo {
+            @apply text-2xl font-bold gradient-text hover:opacity-80 transition-opacity;
+        }
     </style>
 </head>
 <body class="min-h-screen relative">
@@ -112,22 +126,9 @@
     <div class="blob blob-2"></div>
     
     <!-- Navigation -->
-    <nav class="fixed w-full py-6 px-4 md:px-12 z-50">
-        <div class="flex justify-between items-center">
-            <div class="text-2xl font-bold gradient-text">Seongju Lee</div>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-                <a href="index.html#about" class="hover:text-primary transition-colors">About</a>
-                <a href="index.html#education" class="hover:text-primary transition-colors">Education</a>
-                <a href="index.html#research" class="hover:text-primary transition-colors">Research</a>
-                <a href="index.html#publications" class="hover:text-primary transition-colors">Publications</a>
-                <a href="index.html#contact" class="hover:text-primary transition-colors">Contact</a>
-            </div>
-            <button class="md:hidden text-xl">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+    <div id="navigation-placeholder">
+        <!-- Navigation will be loaded here -->
+    </div>
     
     <!-- Projects Section -->
     <section class="py-20 px-4 md:px-12 pt-32">
