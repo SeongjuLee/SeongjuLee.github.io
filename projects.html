@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Seongju Lee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        accent: '#10b981'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .blob-1 {
+            background: linear-gradient(180deg, #6366f1, #8b5cf6);
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            left: 10%;
+            animation: blob 7s infinite;
+        }
+        
+        .blob-2 {
+            background: linear-gradient(180deg, #10b981, #06b6d4);
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            right: 10%;
+            animation: blob 8s infinite;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative">
+    <!-- Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full py-6 px-4 md:px-12 z-50">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">Seongju Lee</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="index.html#about" class="hover:text-primary transition-colors">About</a>
+                <a href="index.html#education" class="hover:text-primary transition-colors">Education</a>
+                <a href="index.html#research" class="hover:text-primary transition-colors">Research</a>
+                <a href="index.html#publications" class="hover:text-primary transition-colors">Publications</a>
+                <a href="index.html#contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Projects Section -->
+    <section class="py-20 px-4 md:px-12 pt-32">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Projects</h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-4">Research and development projects I've been involved in</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Project 1: Humanoid Robots -->
+                <div class="project-card glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                            <i class="fas fa-robot text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold mb-2 md:mb-0">Development of Humanoid Robots that Feel Like Humans, Communicate, and Grow through Learning</h3>
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full whitespace-nowrap">May 2025 -- Present</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Ministry of Trade, Industry and Energy (MOTIE), South Korea</p>
+                            <p class="text-sm text-gray-500 mb-2">AI Developer</p>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                                <p class="text-red-800 font-semibold">TL;DR:</p>
+                                <p class="text-red-700">Development of Physical Reasoning Pretrained Model</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Micro Intelligent Drone -->
+                <div class="project-card glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center">
+                            <i data-lucide="drone" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold mb-2 md:mb-0">Development of Micro Intelligent Drone for Autonomous Mission in Communication/GPS-denied Environments</h3>
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full whitespace-nowrap">Sep. 2023 -- Present</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Institute of Civil-Military Technology Cooperation (ICMTC), South Korea</p>
+                            <p class="text-sm text-gray-500 mb-2">Project Member, Software Developer</p>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                                <p class="text-red-800 font-semibold">TL;DR:</p>
+                                <p class="text-red-700">Development of an RGB-IR-Based Object Detection Model and Construction of a Multi-Modal Database Including RGB, IR, and LiDAR Captured from Drone Views</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Autonomous Ship -->
+                <div class="project-card glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                            <i class="fas fa-ship text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold mb-2 md:mb-0">Development of a Situational Awareness System for Preventing Collisions and Accidents of Autonomous Ship</h3>
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full whitespace-nowrap">Apr. 2023 -- Dec. 2024</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Ministry of Trade, Industry and Energy (MOTIE), South Korea</p>
+                            <p class="text-sm text-gray-500 mb-2">Project Member, Software Dev. Leader</p>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                                <p class="text-red-800 font-semibold">TL;DR:</p>
+                                <p class="text-red-700">Development of a Maritime Object Detection and Tracking Algorithm Using Multi-Camera Views, Creation of a Training Dataset for Deep Learning Models, and Integration into Autonomous Ship Systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Ceiling Layout Estimation -->
+                <div class="project-card glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                            <i class="fas fa-building text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold mb-2 md:mb-0">Ceiling Layout Estimation for Indoor Environment</h3>
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full whitespace-nowrap">Mar. 2022 -- Dec. 2022</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">LG, South Korea</p>
+                            <p class="text-sm text-gray-500 mb-2">Project Member, AI & Software Dev. Leader</p>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                                <p class="text-red-800 font-semibold">TL;DR:</p>
+                                <p class="text-red-700">Development of a Ceiling Segmentation Model and Construction of a Ceiling Segmentation Dataset for Robust Floor Plan Generation Under Occlusion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5: Swarm USV -->
+                <div class="project-card glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                            <i class="fas fa-water text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold mb-2 md:mb-0">Development of Swarm USV Autonomous Navigation Algorithm</h3>
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full whitespace-nowrap">Apr. 2020 -- Nov. 2024</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Agency for Defense Development (ADD), South Korea</p>
+                            <p class="text-sm text-gray-500 mb-2">Project Leader, AI & Software Dev. Leader</p>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                                <p class="text-red-800 font-semibold">TL;DR:</p>
+                                <p class="text-red-700">Development of Technologies to Enhance Swarm Situation Awareness, and Integration into Multiple USVs: Intention Prediction and Maritime Object Detection</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-video text-blue-600"></i>
+                                <a href="https://www.youtube.com/watch?v=AyBg_Y-ayZ4" class="text-blue-600 hover:text-blue-800 transition-colors">[News]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6: IKEA Furniture Assembly -->
+                <div class="project-card glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                            <i class="fas fa-tools text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold mb-2 md:mb-0">Robotic IKEA Furniture Assembly from Assembly Manuals</h3>
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full whitespace-nowrap">Apr. 2019 -- Mar. 2020</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Ministry of Science and ICT (MSIT), South Korea</p>
+                            <p class="text-sm text-gray-500 mb-2">Project Member, AI & Software Developer</p>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                                <p class="text-red-800 font-semibold">TL;DR:</p>
+                                <p class="text-red-700">A Competition of AI-robot Systems for Assembly of IKEA Furniture from Assembly Manuals: Assembly-Part Instance Segmentation and Workflow Visualization</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-video text-blue-600"></i>
+                                <a href="https://www.youtube.com/watch?v=faphlYbk_Jg" class="text-blue-600 hover:text-blue-800 transition-colors">[Video]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 7: Sound Event Detection -->
+                <div class="project-card glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-yellow-500 to-amber-600 flex items-center justify-center">
+                            <i class="fas fa-volume-up text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold mb-2 md:mb-0">Deep Learning-Based Sound Event Detection in Game Environments for Haptic Feedback Generation</h3>
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full whitespace-nowrap">Mar. 2019 -- Aug. 2019</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Dongwoon Anatech, South Korea</p>
+                            <p class="text-sm text-gray-500 mb-2">Project Member, AI & Software Developer</p>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                                <p class="text-red-800 font-semibold">TL;DR:</p>
+                                <p class="text-red-700">Construction of a Sound Event Detection Dataset and Development of a Sound Event Detection Model in Game Environments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 8: Sleep Analysis -->
+                <div class="project-card glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-bed text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold mb-2 md:mb-0">Artificial Intelligence-Based Algorithm Development for Sleep Analysis and Diagnosis of Sleep Apnea Syndromes</h3>
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full whitespace-nowrap">Mar. 2018 -- Dec. 2019</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Gwangju Institute of Science and Technology (GIST), South Korea</p>
+                            <p class="text-sm text-gray-500 mb-2">Project Member, AI Developer</p>
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+                                <p class="text-red-800 font-semibold">TL;DR:</p>
+                                <p class="text-red-700">Construction of a Polysomnography Database, Development of a Sleep Stage Classification Model, and Development of a Sleep Apnea Detection Model</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-10 px-4 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="text-2xl font-bold mb-4 gradient-text">Seongju Lee</div>
+            <p class="text-gray-500 mb-6">Ph.D. Candidate in AI Convergence | Gwangju Institute of Science and Technology</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://scholar.google.com/citations?user=Q0LR04AAAAAJ&hl=ko&oi=ao" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-google-scholar"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-researchgate"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/SeongjuLee" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:lsj2121@gm.gist.ac.kr" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-gray-600 text-sm">© 2023 Seongju Lee. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            lucide.createIcons();
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

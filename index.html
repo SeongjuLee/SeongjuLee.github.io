@@ -6,6 +6,7 @@
     <title>Seongju Lee | AI Research Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -209,6 +210,7 @@
                 <a href="#about" class="hover:text-primary transition-colors">About</a>
                 <a href="#education" class="hover:text-primary transition-colors">Education</a>
                 <a href="#research" class="hover:text-primary transition-colors">Research</a>
+                <a href="projects.html" class="hover:text-primary transition-colors">Projects</a>
                 <a href="#publications" class="hover:text-primary transition-colors">Publications</a>
                 <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
             </div>
@@ -471,23 +473,24 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Research Projects</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-4">Latest research and development projects</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <div class="research-card glass-card rounded-2xl overflow-hidden">
                     <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 relative">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-5xl">🧠</div>
+                            <i data-lucide="robot" class="w-16 h-16 text-white"></i>
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">2023</span>
-                        <h3 class="text-xl font-bold mb-2">Deep Learning Optimization</h3>
-                        <p class="text-gray-600 mb-4">Novel techniques for improving training efficiency and model performance in deep neural networks.</p>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">May 2025 -- Present</span>
+                        <h3 class="text-xl font-bold mb-2">Humanoid Robots Development</h3>
+                        <p class="text-gray-600 mb-4">Development of Physical Reasoning Pretrained Model for humanoid robots that feel like humans, communicate, and grow through learning.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">PyTorch</span>
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Optimization</span>
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">CNN</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Physical Reasoning</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Pretrained Model</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">MOTIE</span>
                         </div>
                     </div>
                 </div>
@@ -495,38 +498,44 @@
                 <div class="research-card glass-card rounded-2xl overflow-hidden">
                     <div class="h-48 bg-gradient-to-r from-teal-500 to-cyan-600 relative">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-5xl">👁️</div>
+                            <i data-lucide="drone" class="w-16 h-16 text-white"></i>
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">2022</span>
-                        <h3 class="text-xl font-bold mb-2">Computer Vision Applications</h3>
-                        <p class="text-gray-600 mb-4">Developing robust image recognition systems for industrial automation and quality control.</p>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">Sep. 2023 -- Present</span>
+                        <h3 class="text-xl font-bold mb-2">Micro Intelligent Drone</h3>
+                        <p class="text-gray-600 mb-4">Development of RGB-IR-Based Object Detection Model and Multi-Modal Database for autonomous missions in communication/GPS-denied environments.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">OpenCV</span>
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">YOLO</span>
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Image Processing</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Object Detection</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Multi-Modal</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">ICMTC</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="research-card glass-card rounded-2xl overflow-hidden">
-                    <div class="h-48 bg-gradient-to-r from-amber-500 to-orange-600 relative">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 relative">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-5xl">🤖</div>
+                            <i data-lucide="ship" class="w-16 h-16 text-white"></i>
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">2021</span>
-                        <h3 class="text-xl font-bold mb-2">Reinforcement Learning</h3>
-                        <p class="text-gray-400 mb-4">Exploring RL algorithms for autonomous decision-making in complex environments.</p>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">Apr. 2023 -- Dec. 2024</span>
+                        <h3 class="text-xl font-bold mb-2">Autonomous Ship System</h3>
+                        <p class="text-gray-600 mb-4">Development of Maritime Object Detection and Tracking Algorithm using Multi-Camera Views for preventing collisions and accidents.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">TensorFlow</span>
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Q-Learning</span>
-                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Robotics</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Maritime Detection</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">Multi-Camera</span>
+                            <span class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded">MOTIE</span>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="projects.html" class="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-lg hover:opacity-90 transition-opacity">
+                    View All Projects
+                </a>
             </div>
         </div>
     </section>
@@ -732,6 +741,9 @@
     <script>
         // Custom cursor effect
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            lucide.createIcons();
+            
             const cursor = document.querySelector('.custom-cursor');
             const follower = document.querySelector('.cursor-follower');
             const links = document.querySelectorAll('a, button');
