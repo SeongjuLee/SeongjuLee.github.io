@@ -16,7 +16,7 @@ const projectsData = [
     {
         id: 2,
         title: "Development of Micro Intelligent Drone for Autonomous Mission in Communication/GPS-denied Environments",
-        shortTitle: "Micro Intelligent Drone",
+        shortTitle: "Micro Intelligent Drone Project",
         period: "Sep. 2023 - Present",
         organization: "Institute of Civil-Military Technology Cooperation (ICMTC), South Korea",
         role: "Project Member, Software Developer",
