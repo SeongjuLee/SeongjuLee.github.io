@@ -1,3 +1,8 @@
+// Function to highlight Seongju Lee in authors list
+function highlightAuthor(authors) {
+    return authors.replace(/Seongju Lee/g, '<strong>Seongju Lee</strong>');
+}
+
 // Publications data that can be shared between index.html and publications.html
 const publicationsData = [
     {
