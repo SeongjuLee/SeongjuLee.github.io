@@ -3,676 +3,670 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Researcher Portfolio | GIST AI Convergence</title>
+    <title>Seongju Lee | AI Research Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #1a252f;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        accent: '#10b981'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        }
+                    }
+                }
+            }
         }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         body {
-            font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
         }
         
-        .gradient-text {
-            background: linear-gradient(90deg, #3498db, #9b59b6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .custom-cursor {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #8b5cf6;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
         }
         
-        .card-hover {
+        .cursor-follower {
+            width: 6px;
+            height: 6px;
+            background-color: #8b5cf6;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9998;
+            transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .cursor-grow {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(139, 92, 246, 0.2);
+        }
+        
+        .cursor-small {
+            width: 4px;
+            height: 4px;
+        }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 8px 32px rgba(2, 8, 20, 0.3);
             transition: all 0.3s ease;
         }
         
-        .card-hover:hover {
+        .glass-card:hover {
+            background: rgba(30, 41, 59, 0.8);
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 40px rgba(2, 8, 20, 0.4);
         }
         
-        .research-tag {
-            transition: all 0.2s ease;
-        }
-        
-        .research-tag:hover {
-            transform: scale(1.05);
-        }
-        
-        .timeline-item::before {
-            content: '';
+        .blob {
             position: absolute;
-            left: -38px;
-            top: 0;
-            width: 20px;
-            height: 20px;
             border-radius: 50%;
-            background: var(--secondary);
-            border: 3px solid white;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: -28px;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: var(--secondary);
-        }
-        
-        .animated-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            filter: blur(40px);
+            opacity: 0.4;
             z-index: -1;
         }
         
-        .animated-bg-circle {
+        .blob-1 {
+            background: linear-gradient(180deg, #6366f1, #8b5cf6);
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            left: 10%;
+            animation: blob 7s infinite;
+        }
+        
+        .blob-2 {
+            background: linear-gradient(180deg, #10b981, #06b6d4);
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            right: 10%;
+            animation: blob 8s infinite;
+            animation-delay: 1s;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .research-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .research-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .parallax > div {
+            transform: translateZ(0);
+            transition: transform 0.1s ease;
+        }
+        
+        .parallax:hover > div {
+            transform: translateZ(20px);
+        }
+        
+        .neon-border {
+            position: relative;
+        }
+        
+        .neon-border::before {
+            content: '';
             position: absolute;
-            border-radius: 50%;
-            background: rgba(52, 152, 219, 0.1);
-            animation: float 15s infinite ease-in-out;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6, #10b981, #06b6d4);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            z-index: -1;
         }
         
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6366f1, transparent);
+            margin: 4rem 0;
         }
         
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid var(--secondary);
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
         }
         
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+        .floating-element:nth-child(2) {
+            animation-delay: 1s;
         }
         
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--secondary) }
-        }
-        
-        .fade-in {
-            animation: fadeIn 1.5s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        .floating-element:nth-child(3) {
+            animation-delay: 2s;
         }
     </style>
 </head>
-<body class="antialiased text-gray-800">
-    <!-- Animated Background Elements -->
-    <div class="animated-bg">
-        <div class="animated-bg-circle w-64 h-64 top-1/4 left-10"></div>
-        <div class="animated-bg-circle w-96 h-96 bottom-1/4 right-10"></div>
-        <div class="animated-bg-circle w-80 h-80 top-1/3 right-1/4"></div>
-    </div>
-
+<body class="min-h-screen relative">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold gradient-text">AI Researcher</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
-                    <a href="#research" class="text-gray-700 hover:text-blue-600 transition">Research</a>
-                    <a href="#publications" class="text-gray-700 hover:text-blue-600 transition">Publications</a>
-                    <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="mobile-menu-button">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+    <nav class="fixed w-full py-6 px-4 md:px-12 z-50">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">Seongju Lee</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+                <a href="#research" class="hover:text-primary transition-colors">Research</a>
+                <a href="#publications" class="hover:text-primary transition-colors">Publications</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
             </div>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu hidden md:hidden fixed inset-0 bg-white z-40 pt-16">
-        <div class="flex flex-col items-center space-y-8 py-8">
-            <a href="#about" class="text-gray-700 hover:text-blue-600 transition text-lg">About</a>
-            <a href="#research" class="text-gray-700 hover:text-blue-600 transition text-lg">Research</a>
-            <a href="#publications" class="text-gray-700 hover:text-blue-600 transition text-lg">Publications</a>
-            <a href="#education" class="text-gray-700 hover:text-blue-600 transition text-lg">Education</a>
-            <a href="#contact" class="text-gray-700 hover:text-blue-600 transition text-lg">Contact</a>
-        </div>
-    </div>
-
+    
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 md:pt-32 md:pb-24 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="gradient-text">Ph.D Candidate</span></h1>
-                    <div class="typewriter text-2xl md:text-3xl font-semibold mb-6">
-                        Artificial Intelligence Researcher at GIST
-                    </div>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Advancing AI through innovative research at Gwangju Institute of Science and Technology, 
-                        under the supervision of Professor Kyoobin Lee.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#research" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md">
-                            Explore My Research
-                        </a>
-                        <a href="#contact" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">
-                            Contact Me
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl floating">
-                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                             alt="AI Researcher" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-blue-600 bg-opacity-20"></div>
-                    </div>
-                </div>
-            </div>
+    <section class="min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob"></div>
+            <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-60 h-60 bg-teal-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                             alt="Profile" class="w-full h-full object-cover">
+        
+        <div class="relative z-10 text-center max-w-4xl">
+            <div class="mb-6">
+                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary p-1 mb-6">
+                    <div class="bg-dark rounded-full w-full h-full flex items-center justify-center">
+                        <div class="text-5xl">👨‍🔬</div>
                     </div>
                 </div>
-                <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-semibold mb-4">Ph.D Candidate in AI Convergence</h3>
-                    <p class="text-gray-600 mb-6">
-                        I am currently pursuing my Ph.D in Artificial Intelligence at Gwangju Institute of Science and Technology (GIST), 
-                        one of South Korea's premier research institutions. My work focuses on developing novel AI algorithms and models 
-                        that push the boundaries of machine learning and cognitive computing.
-                    </p>
-                    <p class="text-gray-600 mb-6">
-                        Under the guidance of Professor Kyoobin Lee, I am exploring cutting-edge techniques in deep learning, 
-                        computer vision, and neural network architectures. My research aims to bridge the gap between theoretical 
-                        AI advancements and practical applications that can benefit society.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Deep Learning</span>
-                        <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Computer Vision</span>
-                        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">Neural Networks</span>
-                        <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium">AI Ethics</span>
-                        <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Machine Learning</span>
-                    </div>
-                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    Seongju <span class="gradient-text">Lee</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-2">
+                    Ph.D. Candidate in AI Convergence
+                </p>
+                <p class="text-lg text-gray-400">
+                    Gwangju Institute of Science and Technology
+                </p>
             </div>
-        </div>
-    </section>
-
-    <!-- Research Interests Section -->
-    <section id="research" class="py-16 px-4 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Research Interests</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Research Card 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
-                        <i class="fas fa-brain text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Deep Learning Architectures</h3>
-                        <p class="text-gray-600 mb-4">
-                            Investigating novel neural network architectures that improve model efficiency, interpretability, 
-                            and performance across various domains.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Transformers</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">CNN</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">RNN</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Research Card 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
-                        <i class="fas fa-eye text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Computer Vision</h3>
-                        <p class="text-gray-600 mb-4">
-                            Developing advanced computer vision algorithms for object detection, image segmentation, 
-                            and scene understanding with applications in medical imaging and autonomous systems.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Object Detection</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Segmentation</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">GANs</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Research Card 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
-                        <i class="fas fa-robot text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">AI for Social Good</h3>
-                        <p class="text-gray-600 mb-4">
-                            Exploring how artificial intelligence can be leveraged to address pressing social challenges 
-                            including healthcare accessibility, environmental sustainability, and education.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Healthcare</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Sustainability</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Ethics</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Selected Publications</h2>
             
-            <div class="space-y-6">
-                <!-- Publication 1 -->
-                <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Advanced Neural Architectures for Few-Shot Learning</h3>
-                            <p class="text-gray-600 mb-2">Journal of Artificial Intelligence Research, 2023</p>
-                            <div class="flex flex-wrap gap-2 mb-4 md:mb-0">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium research-tag">Deep Learning</span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium research-tag">Few-Shot</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium research-tag">Meta-Learning</span>
-                            </div>
-                        </div>
-                        <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-medium whitespace-nowrap">
-                            View Paper <i class="fas fa-external-link-alt ml-1"></i>
-                        </a>
-                    </div>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <div class="glass-card rounded-xl p-6 w-64 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Research Focus</h3>
+                    <p class="text-gray-300">Machine Learning, Computer Vision, Deep Learning</p>
                 </div>
                 
-                <!-- Publication 2 -->
-                <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Explainable AI for Medical Image Diagnosis</h3>
-                            <p class="text-gray-600 mb-2">Nature Machine Intelligence, 2022</p>
-                            <div class="flex flex-wrap gap-2 mb-4 md:mb-0">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium research-tag">XAI</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium research-tag">Healthcare</span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium research-tag">Computer Vision</span>
-                            </div>
-                        </div>
-                        <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-medium whitespace-nowrap">
-                            View Paper <i class="fas fa-external-link-alt ml-1"></i>
-                        </a>
-                    </div>
+                <div class="glass-card rounded-xl p-6 w-64 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Supervisor</h3>
+                    <p class="text-gray-300">Prof. Kyoobin Lee</p>
                 </div>
                 
-                <!-- Publication 3 -->
-                <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Efficient Transformers for Real-Time Applications</h3>
-                            <p class="text-gray-600 mb-2">NeurIPS, 2021</p>
-                            <div class="flex flex-wrap gap-2 mb-4 md:mb-0">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium research-tag">Transformers</span>
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium research-tag">Efficiency</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium research-tag">Optimization</span>
-                            </div>
-                        </div>
-                        <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-medium whitespace-nowrap">
-                            View Paper <i class="fas fa-external-link-alt ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Publication 4 -->
-                <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Self-Supervised Learning for Limited Data Scenarios</h3>
-                            <p class="text-gray-600 mb-2">ICML, 2020</p>
-                            <div class="flex flex-wrap gap-2 mb-4 md:mb-0">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium research-tag">Self-Supervised</span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium research-tag">Data Efficiency</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium research-tag">Representation Learning</span>
-                            </div>
-                        </div>
-                        <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-medium whitespace-nowrap">
-                            View Paper <i class="fas fa-external-link-alt ml-1"></i>
-                        </a>
-                    </div>
+                <div class="glass-card rounded-xl p-6 w-64 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Lab</h3>
+                    <p class="text-gray-300">Artificial Intelligence Laboratory</p>
                 </div>
             </div>
             
-            <div class="text-center mt-10">
-                <a href="#" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition font-medium">
-                    View All Publications <i class="fas fa-arrow-right ml-2"></i>
+            <div class="mt-16">
+                <a href="#research" class="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-lg hover:opacity-90 transition-opacity">
+                    Explore My Research
                 </a>
             </div>
         </div>
     </section>
-
-    <!-- Education & Experience Section -->
-    <section id="education" class="py-16 px-4 bg-gray-50">
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 md:px-12">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Education & Experience</h2>
-            
-            <div class="relative pl-8">
-                <!-- Timeline -->
-                <div class="timeline space-y-8">
-                    <!-- GIST Ph.D -->
-                    <div class="timeline-item relative pl-8">
-                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                                    <i class="fas fa-graduation-cap text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold">Ph.D in AI Convergence</h3>
-                                    <p class="text-gray-600">Gwangju Institute of Science and Technology (GIST)</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-2"><i class="far fa-calendar-alt mr-2"></i>2020 - Present</p>
-                            <p class="text-gray-600 mb-2"><i class="fas fa-user-tie mr-2"></i>Supervisor: Prof. Kyoobin Lee</p>
-                            <p class="text-gray-600">
-                                Conducting research in artificial intelligence with focus on deep learning architectures and their applications. 
-                                Developing novel algorithms for computer vision and few-shot learning scenarios.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- GIST Research Assistant -->
-                    <div class="timeline-item relative pl-8">
-                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                                    <i class="fas fa-flask text-purple-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold">Research Assistant</h3>
-                                    <p class="text-gray-600">Artificial Intelligence Laboratory, GIST</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-2"><i class="far fa-calendar-alt mr-2"></i>2020 - Present</p>
-                            <p class="text-gray-600">
-                                Contributed to multiple research projects in computer vision and deep learning. 
-                                Published papers in top-tier conferences and journals. Mentored junior researchers 
-                                and assisted in laboratory management.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Master's Degree -->
-                    <div class="timeline-item relative pl-8">
-                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
-                                    <i class="fas fa-university text-green-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold">M.S. in Computer Science</h3>
-                                    <p class="text-gray-600">Gwangju Institute of Science and Technology (GIST)</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-2"><i class="far fa-calendar-alt mr-2"></i>2018 - 2020</p>
-                            <p class="text-gray-600">
-                                Specialized in machine learning and artificial intelligence. Thesis on "Efficient Neural 
-                                Architectures for Real-Time Applications" received departmental recognition.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Bachelor's Degree -->
-                    <div class="timeline-item relative pl-8">
-                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
-                                    <i class="fas fa-book text-yellow-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold">B.S. in Computer Engineering</h3>
-                                    <p class="text-gray-600">Seoul National University</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-2"><i class="far fa-calendar-alt mr-2"></i>2014 - 2018</p>
-                            <p class="text-gray-600">
-                                Graduated with honors. Focused on algorithms, data structures, and introductory 
-                                artificial intelligence courses. Senior project on image recognition systems.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
             
-            <div class="flex flex-col md:flex-row gap-12">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2">
-                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-map-marker-alt text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Address</h4>
-                                <p class="text-gray-600">Artificial Intelligence Laboratory</p>
-                                <p class="text-gray-600">Department of AI Convergence</p>
-                                <p class="text-gray-600">Gwangju Institute of Science and Technology</p>
-                                <p class="text-gray-600">123 Cheomdangwagi-ro, Buk-gu, Gwangju, South Korea</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Email</h4>
-                                <p class="text-gray-600">ai.researcher@gist.ac.kr</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
-                                <i class="fas fa-phone text-green-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Phone</h4>
-                                <p class="text-gray-600">+82 62 123 4567</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-10">
-                        <h3 class="text-xl font-semibold mb-6">Connect With Me</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
-                                <i class="fab fa-linkedin-in text-xl"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-gray-200 transition">
-                                <i class="fab fa-google-scholar text-xl"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-black transition">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center text-white hover:bg-blue-500 transition">
-                                <i class="fab fa-twitter text-xl"></i>
-                            </a>
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-20 blur-lg"></div>
+                        <div class="relative glass-card rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold mb-4">My Journey</h3>
+                            <p class="text-gray-300 mb-4">
+                                I am a dedicated Ph.D. candidate at the Gwangju Institute of Science and Technology, specializing in AI Convergence. My research focuses on advancing the frontiers of artificial intelligence, particularly in machine learning and computer vision applications.
+                            </p>
+                            <p class="text-gray-300 mb-4">
+                                Under the guidance of Prof. Kyoobin Lee at the Artificial Intelligence Laboratory, I'm exploring novel approaches to deep learning architectures and their applications in real-world problems.
+                            </p>
+                            <p class="text-gray-300">
+                                My work aims to bridge the gap between theoretical AI research and practical implementations that can benefit society.
+                            </p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="md:w-1/2">
-                    <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
-                    <form class="space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-4 text-accent">
+                                <i class="fas fa-brain"></i>
                             </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <h4 class="text-xl font-semibold mb-2">Machine Learning</h4>
+                            <p class="text-gray-400">Deep learning architectures and optimization</p>
+                        </div>
+                        
+                        <div class="glass-card rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-4 text-accent">
+                                <i class="fas fa-eye"></i>
                             </div>
+                            <h4 class="text-xl font-semibold mb-2">Computer Vision</h4>
+                            <p class="text-gray-400">Image recognition and analysis</p>
                         </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        
+                        <div class="glass-card rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-4 text-accent">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">AI Applications</h4>
+                            <p class="text-gray-400">Real-world problem solving</p>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        
+                        <div class="glass-card rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-4 text-accent">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">Collaboration</h4>
+                            <p class="text-gray-400">Interdisciplinary research</p>
                         </div>
-                        <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
-                            Send Message <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4">
+    
+    <!-- Research Section -->
+    <section id="research" class="py-20 px-4 md:px-12 bg-dark bg-opacity-50">
         <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <a href="#" class="text-xl font-bold gradient-text">AI Researcher</a>
-                    <p class="text-gray-400 mt-2">Advancing Artificial Intelligence at GIST</p>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Research Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="research-card glass-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-5xl">🧠</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">2023</span>
+                        <h3 class="text-xl font-bold mb-2">Deep Learning Optimization</h3>
+                        <p class="text-gray-400 mb-4">Novel techniques for improving training efficiency and model performance in deep neural networks.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">PyTorch</span>
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">Optimization</span>
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">CNN</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-google-scholar"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-github"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                
+                <div class="research-card glass-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-teal-500 to-cyan-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-5xl">👁️</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">2022</span>
+                        <h3 class="text-xl font-bold mb-2">Computer Vision Applications</h3>
+                        <p class="text-gray-400 mb-4">Developing robust image recognition systems for industrial automation and quality control.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">OpenCV</span>
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">YOLO</span>
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">Image Processing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-card glass-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-amber-500 to-orange-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-5xl">🤖</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary bg-opacity-20 text-primary rounded-full mb-3">2021</span>
+                        <h3 class="text-xl font-bold mb-2">Reinforcement Learning</h3>
+                        <p class="text-gray-400 mb-4">Exploring RL algorithms for autonomous decision-making in complex environments.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">TensorFlow</span>
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">Q-Learning</span>
+                            <span class="px-2 py-1 bg-gray-800 text-xs rounded">Robotics</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Ph.D Candidate, GIST AI Convergence. All rights reserved.</p>
+        </div>
+    </section>
+    
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 px-4 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Publications</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
             </div>
+            
+            <div class="space-y-8">
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                            <i class="fas fa-file-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Efficient Deep Learning Architectures for Real-Time Image Recognition</h3>
+                            <p class="text-gray-400 mb-3">Published in IEEE Transactions on Neural Networks and Learning Systems, 2023</p>
+                            <p class="text-gray-300 mb-4">This paper presents a novel approach to optimizing deep convolutional neural networks for real-time applications while maintaining high accuracy...</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Deep Learning</span>
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Computer Vision</span>
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                            <i class="fas fa-file-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Transfer Learning in Medical Image Analysis: A Comprehensive Study</h3>
+                            <p class="text-gray-400 mb-3">Published in Medical Image Analysis Journal, 2022</p>
+                            <p class="text-gray-300 mb-4">This research investigates the effectiveness of transfer learning techniques in medical imaging applications, focusing on domain adaptation challenges...</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Medical AI</span>
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Transfer Learning</span>
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Domain Adaptation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                            <i class="fas fa-file-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Robust Object Detection in Adverse Weather Conditions</h3>
+                            <p class="text-gray-400 mb-3">Published in CVPR Conference, 2021</p>
+                            <p class="text-gray-300 mb-4">We propose a novel framework for improving object detection performance in challenging weather conditions such as fog, rain, and snow...</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Object Detection</span>
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Adverse Weather</span>
+                                <span class="px-3 py-1 bg-gray-800 text-sm rounded-full">Robustness</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 md:px-12 bg-dark bg-opacity-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Get In Touch</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
+            
+            <div class="glass-card rounded-2xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
+                        <p class="text-gray-300 mb-8">
+                            I'm always open to discussing new opportunities, collaborations, or research ideas. Feel free to reach out!
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary bg-opacity-20 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-400">seongju.lee@gist.ac.kr</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary bg-opacity-20 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Location</h4>
+                                    <p class="text-gray-400">Gwangju Institute of Science and Technology, South Korea</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary bg-opacity-20 flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Affiliation</h4>
+                                    <p class="text-gray-400">Artificial Intelligence Laboratory, Department of AI Convergence</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 flex space-x-4">
+                            <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                                <i class="fab fa-google-scholar"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                                <i class="fab fa-researchgate"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-gray-300 mb-2">Name</label>
+                                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-300 mb-2">Email</label>
+                                <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-300 mb-2">Subject</label>
+                                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-300 mb-2">Message</label>
+                                <textarea rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-10 px-4 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="text-2xl font-bold mb-4 gradient-text">Seongju Lee</div>
+            <p class="text-gray-500 mb-6">Ph.D. Candidate in AI Convergence | Gwangju Institute of Science and Technology</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-google-scholar"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-researchgate"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-gray-600 text-sm">© 2023 Seongju Lee. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition hidden">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+    
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Back to top button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('hidden');
-            } else {
-                backToTopButton.classList.add('hidden');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.fade-in');
+        // Custom cursor effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            const follower = document.querySelector('.cursor-follower');
+            const links = document.querySelectorAll('a, button');
             
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
+            let mouseX = 0;
+            let mouseY = 0;
+            let posX = 0;
+            let posY = 0;
+            
+            // Mouse move event
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
                 
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                }
+                cursor.style.left = `${mouseX}px`;
+                cursor.style.top = `${mouseY}px`;
+                
+                // Add parallax effect to elements
+                document.querySelectorAll('.parallax').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    const deltaX = (mouseX - centerX) / 30;
+                    const deltaY = (mouseY - centerY) / 30;
+                    
+                    el.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                });
             });
-        };
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+            
+            // Smooth cursor follower
+            const animateFollower = () => {
+                posX += (mouseX - posX) / 6;
+                posY += (mouseY - posY) / 6;
+                
+                follower.style.left = `${posX}px`;
+                follower.style.top = `${posY}px`;
+                
+                requestAnimationFrame(animateFollower);
+            };
+            
+            animateFollower();
+            
+            // Cursor effects on hover
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    cursor.classList.add('cursor-grow');
+                    follower.classList.add('cursor-small');
+                });
+                
+                link.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('cursor-grow');
+                    follower.classList.remove('cursor-small');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add floating effect to elements
+            const floatingElements = document.querySelectorAll('.floating-element');
+            floatingElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
     </script>
 </body>
 </html>
