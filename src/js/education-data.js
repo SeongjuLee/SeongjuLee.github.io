@@ -3,7 +3,7 @@ const educationData = [
     {
         id: 1,
         period: "Mar. 2020 - Present",
-        degree: "Ph.D. Course in School of Integrated Technology",
+        degree: "Ph.D. Course in Department of AI Convergence",
         institution: "Gwangju Institute of Science and Technology (GIST)",
         program: "Intelligent Robotics Program",
         advisor: "Prof. Kyoobin Lee",
