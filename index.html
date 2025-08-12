@@ -327,7 +327,6 @@
     
     <!-- Section Navigation -->
     <div class="section-nav-bar">
-        <div class="section-nav-dot" data-section="Home" data-target="hero"></div>
         <div class="section-nav-dot" data-section="About" data-target="about"></div>
         <div class="section-nav-dot" data-section="Education" data-target="education"></div>
         <div class="section-nav-dot" data-section="Research" data-target="research"></div>
@@ -340,158 +339,129 @@
         <!-- Navigation will be loaded here -->
     </div>
     
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden">
+    <!-- About Me Section -->
+    <section id="about" class="min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob"></div>
             <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
             <div class="absolute bottom-1/4 left-1/3 w-60 h-60 bg-teal-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
         </div>
         
-        <div class="relative z-10 text-center max-w-4xl">
-            <div class="mb-6">
-                <div class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-2 mb-6 shadow-2xl">
-                    <div class="bg-white rounded-full w-full h-full flex items-center justify-center overflow-hidden shadow-lg">
-                        <img src="assets/images/profile/seongju_lee.jpg" alt="Seongju Lee" class="w-full h-full object-cover rounded-full">
+        <div class="relative z-10 text-center max-w-6xl mx-auto w-full">
+            <!-- Profile and Basic Info -->
+            <div class="mb-12">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+                    <!-- Profile Picture and Basic Info -->
+                    <div class="flex-shrink-0 text-center flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-2 shadow-2xl mb-4">
+                            <div class="bg-white rounded-full w-full h-full flex items-center justify-center overflow-hidden shadow-lg">
+                                <img src="assets/images/profile/seongju_lee.jpg" alt="Seongju Lee" class="w-full h-full object-cover rounded-full">
+                            </div>
+                        </div>
+                        
+                        <h1 class="text-3xl md:text-5xl font-bold mb-2">
+                            Seongju <span class="gradient-text">Lee</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-700 mb-2">
+                            Ph.D. Candidate in AI Convergence
+                        </p>
+                        <p class="text-base md:text-lg text-gray-600">
+                            Gwangju Institute of Science and Technology
+                        </p>
+                    </div>
+                    
+                    <!-- My Journey -->
+                    <div class="flex-1 max-w-md">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-20 blur-lg"></div>
+                            <div class="relative glass-card rounded-2xl p-6">
+                                <h3 class="text-xl font-bold mb-3">My Journey</h3>
+                                <p class="text-gray-700">
+                                    I am a computer vision researcher specializing in deep learning. My research interests include neural network architecture, foundation models, and robust environmental understanding. Currently, I am supervised by Prof. Kyoobin Lee at GIST AILAB.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                    Seongju <span class="gradient-text">Lee</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-700 mb-2">
-                    Ph.D. Candidate in AI Convergence
-                </p>
-                <p class="text-lg text-gray-600">
-                    Gwangju Institute of Science and Technology
-                </p>
             </div>
             
-            <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <div class="glass-card rounded-xl p-6 w-64 neon-border">
-                    <h3 class="text-xl font-semibold mb-2">Research Focus</h3>
-                    <p class="text-gray-700">
-                        Computer Vision<br>
-                        Foundation Models<br>
-                        Network Architecture
-                    </p>
-                </div>
-                
-                <div class="glass-card rounded-xl p-6 w-64 neon-border">
-                    <h3 class="text-xl font-semibold mb-2">Supervisor</h3>
-                    <p class="text-gray-700">Prof. Kyoobin Lee</p>
-                </div>
-                
-                <div class="glass-card rounded-xl p-6 w-64 neon-border">
-                    <h3 class="text-xl font-semibold mb-2">Lab</h3>
-                    <p class="text-gray-700">Artificial Intelligence Laboratory</p>
+            <!-- Skills Slider -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-center">Research Interests & Skills</h3>
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Slider Container -->
+                    <div class="overflow-hidden">
+                        <div id="skillsSlider" class="flex transition-transform duration-300 ease-in-out cursor-grab active:cursor-grabbing">
+                            <!-- First 3 cards -->
+                            <div class="flex gap-6 min-w-full">
+                                <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
+                                    <div class="text-4xl mb-4 text-accent">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <h4 class="text-xl font-semibold mb-2">Neural Networks</h4>
+                                    <p class="text-gray-600">Deep learning architectures</p>
+                                </div>
+                                
+                                <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
+                                    <div class="text-4xl mb-4 text-accent">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <h4 class="text-xl font-semibold mb-2">Computer Vision</h4>
+                                    <p class="text-gray-600">Image recognition and analysis</p>
+                                </div>
+                                
+                                <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
+                                    <div class="text-4xl mb-4 text-accent">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <h4 class="text-xl font-semibold mb-2">Foundation Models</h4>
+                                    <p class="text-gray-600">Real-world problem solving</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Second 3 cards -->
+                            <div class="flex gap-6 min-w-full">
+                                <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
+                                    <div class="text-4xl mb-4 text-accent">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h4 class="text-xl font-semibold mb-2">Programming</h4>
+                                    <p class="text-gray-600">Python, MATLAB, C++, C</p>
+                                </div>
+                                
+                                <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
+                                    <div class="text-4xl mb-4 text-accent">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <h4 class="text-xl font-semibold mb-2">Software Tools</h4>
+                                    <p class="text-gray-600">Photoshop, Illustrator, Fusion360</p>
+                                </div>
+                                
+                                <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
+                                    <div class="text-4xl mb-4 text-accent">
+                                        <i class="fas fa-language"></i>
+                                    </div>
+                                    <h4 class="text-xl font-semibold mb-2">Languages</h4>
+                                    <p class="text-gray-600">Korean (Native), English</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Bar Indicator -->
+                    <div class="flex justify-center mt-4">
+                        <div class="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300 ease-out" id="progressBar"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
+            <!-- Explore Button -->
             <div class="mt-16">
                 <a href="#research" class="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-lg hover:opacity-90 transition-opacity">
                     Explore My Research
                 </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 md:px-12">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">About Me</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
-            </div>
-            
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-1/2">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-20 blur-lg"></div>
-                        <div class="relative glass-card rounded-2xl p-8">
-                            <h3 class="text-2xl font-bold mb-4">My Journey</h3>
-                            <p class="text-gray-700">
-                                I am a computer vision researcher specializing in deep learning. My research interests include neural network architecture, foundation models, and robust environmental understanding. Currently, I am supervised by Prof. Kyoobin Lee at GIST AILAB.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2">
-                    <div class="relative">
-                        <!-- Navigation Buttons -->
-                        <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-primary bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-40 transition-all">
-                            <i class="fas fa-chevron-left text-primary"></i>
-                        </button>
-                        <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-primary bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-40 transition-all">
-                            <i class="fas fa-chevron-right text-primary"></i>
-                        </button>
-                        
-                        <!-- Slider Container -->
-                        <div class="overflow-hidden">
-                            <div id="skillsSlider" class="flex transition-transform duration-300 ease-in-out">
-                                <!-- First 3 cards -->
-                                <div class="flex gap-6 min-w-full">
-                                    <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
-                            <div class="text-4xl mb-4 text-accent">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                                        <h4 class="text-xl font-semibold mb-2">Neural Networks</h4>
-                                        <p class="text-gray-600">Deep learning architectures</p>
-                        </div>
-                        
-                                    <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
-                            <div class="text-4xl mb-4 text-accent">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h4 class="text-xl font-semibold mb-2">Computer Vision</h4>
-                                        <p class="text-gray-600">Image recognition and analysis</p>
-                        </div>
-                        
-                                    <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
-                            <div class="text-4xl mb-4 text-accent">
-                                <i class="fas fa-robot"></i>
-                                        </div>
-                                        <h4 class="text-xl font-semibold mb-2">Foundation Models</h4>
-                                        <p class="text-gray-600">Real-world problem solving</p>
-                                    </div>
-                                </div>
-                                
-                                <!-- Second 3 cards -->
-                                <div class="flex gap-6 min-w-full">
-                                    <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
-                                        <div class="text-4xl mb-4 text-accent">
-                                            <i class="fas fa-code"></i>
-                                        </div>
-                                        <h4 class="text-xl font-semibold mb-2">Programming</h4>
-                                        <p class="text-gray-600">Python, MATLAB, C++, C</p>
-                                    </div>
-                                    
-                                    <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
-                                        <div class="text-4xl mb-4 text-accent">
-                                            <i class="fas fa-tools"></i>
-                                        </div>
-                                        <h4 class="text-xl font-semibold mb-2">Software Tools</h4>
-                                        <p class="text-gray-600">Photoshop, Illustrator, Fusion360</p>
-                                    </div>
-                                    
-                                    <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-1/3">
-                                        <div class="text-4xl mb-4 text-accent">
-                                            <i class="fas fa-language"></i>
-                                        </div>
-                                        <h4 class="text-xl font-semibold mb-2">Languages</h4>
-                                        <p class="text-gray-600">Korean (Native), English</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Dots Indicator -->
-                        <div class="flex justify-center mt-4 space-x-2">
-                            <button class="w-2 h-2 rounded-full bg-primary transition-all dot-indicator active" data-slide="0"></button>
-                            <button class="w-2 h-2 rounded-full bg-gray-600 transition-all dot-indicator" data-slide="1"></button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -937,57 +907,6 @@
                 el.style.animationDelay = `${index * 0.5}s`;
             });
             
-            // Skills Slider functionality
-            const slider = document.getElementById('skillsSlider');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const dots = document.querySelectorAll('.dot-indicator');
-            let currentSlide = 0;
-            const totalSlides = 2;
-            
-            function updateSlider() {
-                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    if (index === currentSlide) {
-                        dot.classList.add('bg-primary');
-                        dot.classList.remove('bg-gray-600');
-                    } else {
-                        dot.classList.remove('bg-primary');
-                        dot.classList.add('bg-gray-600');
-                    }
-                });
-                
-                // Update button states
-                prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
-                nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
-            }
-            
-            prevBtn.addEventListener('click', () => {
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    updateSlider();
-                }
-            });
-            
-            nextBtn.addEventListener('click', () => {
-                if (currentSlide < totalSlides - 1) {
-                    currentSlide++;
-                    updateSlider();
-                }
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentSlide = index;
-                    updateSlider();
-                });
-            });
-            
-            // Initialize slider
-            updateSlider();
-            
             // Section Navigation functionality
             const sectionNavDots = document.querySelectorAll('.section-nav-dot');
             const sections = document.querySelectorAll('section[id]');
@@ -1043,6 +962,110 @@
             
             // Initialize section nav
             updateSectionNav();
+            
+            // Skills Slider with Drag and Drop functionality
+            const skillsSlider = document.getElementById('skillsSlider');
+            const progressBar = document.getElementById('progressBar');
+            let currentSlide = 0;
+            const totalSlides = 2;
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            
+            // Mouse events
+            skillsSlider.addEventListener('mousedown', dragStart);
+            skillsSlider.addEventListener('mousemove', drag);
+            skillsSlider.addEventListener('mouseup', dragEnd);
+            skillsSlider.addEventListener('mouseleave', dragEnd);
+            
+            // Touch events
+            skillsSlider.addEventListener('touchstart', dragStart);
+            skillsSlider.addEventListener('touchmove', drag);
+            skillsSlider.addEventListener('touchend', dragEnd);
+            
+            // Prevent context menu
+            skillsSlider.addEventListener('contextmenu', e => e.preventDefault());
+            
+            function dragStart(event) {
+                isDragging = true;
+                startPos = getPositionX(event);
+                skillsSlider.style.cursor = 'grabbing';
+                skillsSlider.style.transition = 'none';
+            }
+            
+            function drag(event) {
+                if (!isDragging) return;
+                
+                const currentPosition = getPositionX(event);
+                const diff = currentPosition - startPos;
+                const sliderWidth = skillsSlider.offsetWidth;
+                
+                currentTranslate = prevTranslate + diff;
+                
+                // Limit dragging
+                const maxTranslate = 0;
+                const minTranslate = -(totalSlides - 1) * sliderWidth;
+                
+                if (currentTranslate > maxTranslate) {
+                    currentTranslate = maxTranslate;
+                } else if (currentTranslate < minTranslate) {
+                    currentTranslate = minTranslate;
+                }
+                
+                skillsSlider.style.transform = `translateX(${currentTranslate}px)`;
+                
+                // Update progress bar
+                const progress = Math.abs(currentTranslate) / (totalSlides * sliderWidth);
+                progressBar.style.width = `${progress * 100}%`;
+            }
+            
+            function dragEnd() {
+                isDragging = false;
+                skillsSlider.style.cursor = 'grab';
+                skillsSlider.style.transition = 'transform 0.3s ease-out';
+                
+                // Don't snap to specific slides - let it stay where it is
+                // Just ensure it doesn't go beyond boundaries
+                const sliderWidth = skillsSlider.offsetWidth;
+                const maxTranslate = 0;
+                const minTranslate = -(totalSlides - 1) * sliderWidth;
+                
+                if (currentTranslate > maxTranslate) {
+                    currentTranslate = maxTranslate;
+                } else if (currentTranslate < minTranslate) {
+                    currentTranslate = minTranslate;
+                }
+                
+                prevTranslate = currentTranslate;
+                
+                // Calculate current slide based on position (for progress bar)
+                currentSlide = Math.round(Math.abs(currentTranslate) / sliderWidth);
+                currentSlide = Math.max(0, Math.min(currentSlide, totalSlides - 1));
+                
+                updateSlider();
+            }
+            
+            function getPositionX(event) {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            }
+            
+            function updateSlider() {
+                const sliderWidth = skillsSlider.offsetWidth;
+                
+                // Update progress bar based on current position
+                const progress = Math.abs(currentTranslate) / ((totalSlides - 1) * sliderWidth);
+                progressBar.style.width = `${Math.min(progress * 100, 100)}%`;
+            }
+            
+            // Dot navigation
+            // The dots are removed, so this section is no longer relevant.
+            
+            // Initialize slider
+            currentTranslate = 0;
+            prevTranslate = 0;
+            currentSlide = 0;
+            updateSlider();
         });
     </script>
 </body>
