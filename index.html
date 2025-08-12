@@ -467,25 +467,15 @@
     </section>
     
     <!-- Education Section -->
-    <section id="education" class="py-20 px-4 md:px-12 bg-gray-50">
+    <section id="education" class="py-12 px-4 md:px-12 bg-gray-50">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
+            <div class="text-center mb-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Education</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
             </div>
             
-            <div class="relative">
-                <!-- Timeline line -->
-                <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
-                
-                <!-- Timeline labels -->
-                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 md:ml-0 -top-6 text-sm text-primary font-semibold">Present</div>
-                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 md:ml-0 -bottom-6 text-sm text-primary font-semibold">Past</div>
-                
-                <!-- Timeline items -->
-                <div class="space-y-12" id="educationTimeline">
-                    <!-- Education items will be dynamically loaded here -->
-                </div>
+            <div class="space-y-4" id="educationTimeline">
+                <!-- Education items will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -810,25 +800,16 @@
                 const educationData = getAllEducation();
 
                 timelineContainer.innerHTML = educationData.map((item, index) => {
-                    const isEven = index % 2 === 0;
-                    const alignmentClass = isEven ? 'md:pr-8' : 'md:pl-8 md:ml-auto';
-                    const periodAlignment = isEven ? 'ml-2' : 'mr-2 text-right';
-                    
                     return `
-                        <div class="relative flex items-center">
-                            <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg"></div>
-                            <div class="ml-16 md:ml-0 md:w-1/2 ${alignmentClass}">
-                                <div class="mb-2 ${periodAlignment}">
-                                    <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full">${item.period}</span>
-                                </div>
-                                <div class="glass-card rounded-xl p-6">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <h3 class="text-xl font-bold">${item.degree}</h3>
-                                    </div>
-                                    <p class="text-gray-400 mb-2">${item.institution}</p>
-                                    ${item.program ? `<p class="text-gray-300 mb-2">${item.program}</p>` : ''}
-                                    ${item.advisor ? `<p class="text-accent">Advisor: ${item.advisor}</p>` : ''}
-                                </div>
+                        <div class="glass-card rounded-lg p-4 relative">
+                            <div class="absolute top-3 right-3">
+                                <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm font-semibold rounded-full">${item.period}</span>
+                            </div>
+                            <div class="pr-24">
+                                <h3 class="text-lg font-bold mb-1">${item.degree}</h3>
+                                <p class="text-gray-400 text-sm mb-1">${item.institution}</p>
+                                ${item.program ? `<p class="text-gray-300 text-sm mb-1">${item.program}</p>` : ''}
+                                ${item.advisor ? `<p class="text-accent text-sm">Advisor: ${item.advisor}</p>` : ''}
                             </div>
                         </div>
                     `;
