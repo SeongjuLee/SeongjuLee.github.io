@@ -92,14 +92,14 @@
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(148, 163, 184, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
         }
         
         .glass-card:hover {
             background: rgba(255, 255, 255, 0.95);
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
         
         .blob {
@@ -387,63 +387,71 @@
             
             <!-- Skills Slider -->
             <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 text-center">Research Interests & Skills</h3>
-                <div class="relative max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">
+                    <span class="text-blue-600">Research Interests</span>
+                    <span class="text-gray-600">&</span>
+                    <span class="text-green-600">Skills</span>
+                </h3>
+                <div class="relative max-w-5xl mx-auto" style="max-width: calc(1024px - 32px);">
+                    <!-- Navigation Buttons -->
+                    <button id="prevBtn" class="absolute -left-16 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
+                        <i class="fas fa-chevron-left text-gray-600"></i>
+                    </button>
+                    <button id="nextBtn" class="absolute -right-16 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
+                        <i class="fas fa-chevron-right text-gray-600"></i>
+                    </button>
+                    
                     <!-- Slider Container -->
                     <div class="overflow-hidden">
-                        <div id="skillsSlider" class="flex transition-transform duration-300 ease-in-out cursor-grab active:cursor-grabbing">
-                            <!-- First 3 cards -->
-                            <div class="flex gap-6 w-full flex-shrink-0">
-                                <div class="glass-card rounded-xl p-6 text-center flex-1">
-                                    <div class="text-4xl mb-4 text-accent">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold mb-2">Neural Networks</h4>
-                                    <p class="text-gray-600">Deep learning architectures</p>
+                        <div id="skillsSlider" class="flex gap-6 transition-transform duration-300 ease-in-out">
+                            <!-- Research Interests (Blue) -->
+                            <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-72">
+                                <div class="text-4xl mb-4 text-blue-500">
+                                    <i class="fas fa-brain"></i>
                                 </div>
-                                
-                                <div class="glass-card rounded-xl p-6 text-center flex-1">
-                                    <div class="text-4xl mb-4 text-accent">
-                                        <i class="fas fa-eye"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold mb-2">Computer Vision</h4>
-                                    <p class="text-gray-600">Robust perception</p>
-                                </div>
-                                
-                                <div class="glass-card rounded-xl p-6 text-center flex-1">
-                                    <div class="text-4xl mb-4 text-accent">
-                                        <i class="fas fa-robot"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold mb-2">Foundation Models</h4>
-                                    <p class="text-gray-600">Real-world problem solving</p>
-                                </div>
+                                <h4 class="text-xl font-semibold mb-2 text-blue-600">Neural Networks</h4>
+                                <p class="text-gray-600">Model architectures</p>
                             </div>
                             
-                            <!-- Second 3 cards -->
-                            <div class="flex gap-6 w-full flex-shrink-0">
-                                <div class="glass-card rounded-xl p-6 text-center flex-1">
-                                    <div class="text-4xl mb-4 text-accent">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold mb-2">Programming</h4>
-                                    <p class="text-gray-600">Python, PyTorch, ROS, MATLAB, C++, C</p>
+                            <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-72">
+                                <div class="text-4xl mb-4 text-blue-500">
+                                    <i class="fas fa-eye"></i>
                                 </div>
-                                
-                                <div class="glass-card rounded-xl p-6 text-center flex-1">
-                                    <div class="text-4xl mb-4 text-accent">
-                                        <i class="fas fa-tools"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold mb-2">Software Tools</h4>
-                                    <p class="text-gray-600">Photoshop, Illustrator, Fusion360</p>
+                                <h4 class="text-xl font-semibold mb-2 text-blue-600">Computer Vision</h4>
+                                <p class="text-gray-600">Robust perception</p>
+                            </div>
+                            
+                            <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-72">
+                                <div class="text-4xl mb-4 text-blue-500">
+                                    <i class="fas fa-robot"></i>
                                 </div>
-                                
-                                <div class="glass-card rounded-xl p-6 text-center flex-1">
-                                    <div class="text-4xl mb-4 text-accent">
-                                        <i class="fas fa-language"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold mb-2">Languages</h4>
-                                    <p class="text-gray-600">Korean (Native), English</p>
+                                <h4 class="text-xl font-semibold mb-2 text-blue-600">Foundation Models</h4>
+                                <p class="text-gray-600">VFM, VLM, VLA</p>
+                            </div>
+                            
+                            <!-- Skills (Green) -->
+                            <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-72">
+                                <div class="text-4xl mb-4 text-green-500">
+                                    <i class="fas fa-code"></i>
                                 </div>
+                                <h4 class="text-xl font-semibold mb-2 text-green-600">Programming</h4>
+                                <p class="text-gray-600">Python, MATLAB, C++, C</p>
+                            </div>
+                            
+                            <div class="glass-card rounded-xl p-6 text-center flex-shrink-0 w-72">
+                                <div class="text-4xl mb-4 text-green-500">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2 text-green-600">Software Tools</h4>
+                                <p class="text-gray-600">Photoshop, Illustrator, Fusion360</p>
+                            </div>
+                            
+                            <div class="glass-card rounded-xl p-6 pr-6 text-center flex-shrink-0 w-72">
+                                <div class="text-4xl mb-4 text-green-500">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2 text-green-600">Languages</h4>
+                                <p class="text-gray-600">Korean (Native), English</p>
                             </div>
                         </div>
                     </div>
@@ -451,7 +459,7 @@
                     <!-- Progress Bar Indicator -->
                     <div class="flex justify-center mt-4">
                         <div class="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300 ease-out" id="progressBar"></div>
+                            <div class="h-full bg-gradient-to-r from-blue-500 to-green-500 rounded-full transition-all duration-300 ease-out" id="progressBar"></div>
                         </div>
                     </div>
                 </div>
@@ -944,108 +952,51 @@
             // Initialize section nav
             updateSectionNav();
             
-            // Skills Slider with Drag and Drop functionality
+            // Skills Slider with Button Navigation
             const skillsSlider = document.getElementById('skillsSlider');
             const progressBar = document.getElementById('progressBar');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
             let currentSlide = 0;
-            const totalSlides = 2;
-            let isDragging = false;
-            let startPos = 0;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
+            const totalSlides = 6;
+            const visibleSlides = 3;
+            const maxSlide = totalSlides - visibleSlides;
             
-            // Mouse events
-            skillsSlider.addEventListener('mousedown', dragStart);
-            skillsSlider.addEventListener('mousemove', drag);
-            skillsSlider.addEventListener('mouseup', dragEnd);
-            skillsSlider.addEventListener('mouseleave', dragEnd);
-            
-            // Touch events
-            skillsSlider.addEventListener('touchstart', dragStart);
-            skillsSlider.addEventListener('touchmove', drag);
-            skillsSlider.addEventListener('touchend', dragEnd);
-            
-            // Prevent context menu
-            skillsSlider.addEventListener('contextmenu', e => e.preventDefault());
-            
-            function dragStart(event) {
-                isDragging = true;
-                startPos = getPositionX(event);
-                skillsSlider.style.cursor = 'grabbing';
-                skillsSlider.style.transition = 'none';
-            }
-            
-            function drag(event) {
-                if (!isDragging) return;
-                
-                const currentPosition = getPositionX(event);
-                const diff = currentPosition - startPos;
-                const sliderWidth = skillsSlider.offsetWidth;
-                
-                currentTranslate = prevTranslate + diff;
-                
-                // Limit dragging
-                const maxTranslate = 0;
-                const minTranslate = -(totalSlides - 1) * sliderWidth;
-                
-                if (currentTranslate > maxTranslate) {
-                    currentTranslate = maxTranslate;
-                } else if (currentTranslate < minTranslate) {
-                    currentTranslate = minTranslate;
+            // Button event listeners
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlider();
                 }
-                
-                skillsSlider.style.transform = `translateX(${currentTranslate}px)`;
-                
-                // Update progress bar
-                const progress = Math.abs(currentTranslate) / (totalSlides * sliderWidth);
-                progressBar.style.width = `${progress * 100}%`;
-            }
+            });
             
-            function dragEnd() {
-                isDragging = false;
-                skillsSlider.style.cursor = 'grab';
-                skillsSlider.style.transition = 'transform 0.3s ease-out';
-                
-                // Don't snap to specific slides - let it stay where it is
-                // Just ensure it doesn't go beyond boundaries
-                const sliderWidth = skillsSlider.offsetWidth;
-                const maxTranslate = 0;
-                const minTranslate = -(totalSlides - 1) * sliderWidth;
-                
-                if (currentTranslate > maxTranslate) {
-                    currentTranslate = maxTranslate;
-                } else if (currentTranslate < minTranslate) {
-                    currentTranslate = minTranslate;
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < maxSlide) {
+                    currentSlide++;
+                    updateSlider();
                 }
-                
-                prevTranslate = currentTranslate;
-                
-                // Calculate current slide based on position (for progress bar)
-                currentSlide = Math.round(Math.abs(currentTranslate) / sliderWidth);
-                currentSlide = Math.max(0, Math.min(currentSlide, totalSlides - 1));
-                
-                updateSlider();
-            }
-            
-            function getPositionX(event) {
-                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-            }
+            });
             
             function updateSlider() {
-                const sliderWidth = skillsSlider.offsetWidth;
+                const cardWidth = 288; // w-72 = 288px
+                const translateX = -currentSlide * cardWidth;
                 
-                // Update progress bar based on current position
-                const progress = Math.abs(currentTranslate) / ((totalSlides - 1) * sliderWidth);
-                progressBar.style.width = `${Math.min(progress * 100, 100)}%`;
+                skillsSlider.style.transform = `translateX(${translateX}px)`;
+                
+                // Update progress bar
+                const progress = currentSlide / maxSlide;
+                progressBar.style.width = `${progress * 100}%`;
+                
+                // Update button states
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === maxSlide;
+                
+                // Update button opacity based on state
+                prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentSlide === maxSlide ? '0.5' : '1';
             }
             
-            // Dot navigation
-            // The dots are removed, so this section is no longer relevant.
-            
             // Initialize slider
-            currentTranslate = 0;
-            prevTranslate = 0;
-            currentSlide = 0;
             updateSlider();
         });
     </script>
