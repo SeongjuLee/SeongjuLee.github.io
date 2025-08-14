@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 
+TEMPLATE FOR NEW PAGES:
+======================
+This file serves as a template for creating new pages.
+Follow this structure when adding new pages to the site.
+
+Required elements:
+1. Head section with proper meta tags and scripts
+2. Navigation placeholder: <div id="navigation-placeholder">
+3. Main content section with proper styling
+4. Footer section
+5. JavaScript initialization with DOMContentLoaded
+
+Key files to update when adding new pages:
+- src/js/navigation.js (add page detection and active state)
+- src/components/navigation.html (add navigation link)
+- src/components/navigation-main.html (add main page navigation link)
+
+See the comments in those files for detailed instructions.
+======================
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,28 +101,28 @@
             }
             
             container.innerHTML = patents.map(patent => `
-                <div class="patent-card glass-card rounded-2xl p-8 hover:shadow-2xl">
-                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                <div class="patent-card glass-card rounded-xl p-5 hover:shadow-2xl">
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3">
                         <div class="flex-1">
-                            <div class="flex flex-wrap items-center gap-3 mb-4">
-                                <span class="text-2xl font-bold text-primary">${patent.year}</span>
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="text-base font-bold text-primary">${patent.year}</span>
                                 ${getStatusBadges(patent.status)}
                             </div>
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 leading-tight">
+                            <h3 class="text-base md:text-lg font-bold text-gray-800 mb-2 leading-tight">
                                 ${patent.title}
                             </h3>
-                            <p class="text-gray-600 mb-4">${patent.description}</p>
-                            <div class="mb-4">
-                                <span class="font-semibold text-gray-700">Patent Number:</span>
-                                <span class="text-gray-600 ml-2 font-mono">${patent.patentNumber}</span>
+                            <p class="text-xs text-gray-600 mb-2">${patent.description}</p>
+                            <div class="mb-2">
+                                <span class="font-semibold text-gray-700 text-sm">Patent Number:</span>
+                                <span class="text-gray-600 ml-2 font-mono text-sm">${patent.patentNumber}</span>
                             </div>
                             <div>
-                                <span class="font-semibold text-gray-700">Inventors:</span>
-                                <span class="text-gray-600 ml-2">${patent.inventors.join(', ')}</span>
+                                <span class="font-semibold text-gray-700 text-sm">Inventors:</span>
+                                <span class="text-gray-600 ml-2 text-sm">${patent.inventors.join(', ')}</span>
                             </div>
                         </div>
                         <div class="flex flex-col items-center lg:items-end gap-4">
-                            <div class="text-4xl text-primary opacity-20">
+                            <div class="text-2xl text-primary opacity-20">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
                         </div>
@@ -139,62 +160,22 @@
     <!-- Patents Section -->
     <section class="py-20 px-4 md:px-12 pt-32">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Patents</h1>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
-                <p class="text-lg text-gray-600 mt-4">Registered and applied patents in AI and robotics</p>
+            <div class="text-center mb-12">
+                <h1 class="text-2xl md:text-3xl font-bold mb-3 gradient-text">Patents</h1>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                <p class="text-sm text-gray-600 mt-3">Patent applications and registrations</p>
             </div>
             
-            <!-- Filter Section -->
-            <div class="mb-12">
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex flex-wrap gap-4 justify-center">
-                        <button class="filter-btn active px-6 py-3 rounded-full font-semibold text-gray-700 hover:bg-gray-100" onclick="filterPatents('all')">
-                            All Patents
-                        </button>
-                        <button class="filter-btn px-6 py-3 rounded-full font-semibold text-gray-700 hover:bg-gray-100" onclick="filterPatents('Registered')">
-                            Registered
-                        </button>
-                        <button class="filter-btn px-6 py-3 rounded-full font-semibold text-gray-700 hover:bg-gray-100" onclick="filterPatents('Applied')">
-                            Applied
-                        </button>
-                        <button class="filter-btn px-6 py-3 rounded-full font-semibold text-gray-700 hover:bg-gray-100" onclick="filterPatents('PCT')">
-                            PCT
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="space-y-8" id="allPatents">
+            <div class="space-y-6" id="allPatents">
                 <!-- Patents will be dynamically loaded here -->
             </div>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer class="py-10 px-4 border-t border-gray-200">
-        <div class="max-w-6xl mx-auto text-center">
-            <div class="text-2xl font-bold mb-4 gradient-text">Seongju Lee</div>
-            <p class="text-gray-500 mb-6">Ph.D. Candidate in AI Convergence | Gwangju Institute of Science and Technology</p>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://scholar.google.com/citations?user=Q0LR04AAAAAJ&hl=ko&oi=ao" class="text-gray-400 hover:text-primary transition-colors">
-                    <i class="fab fa-google-scholar"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                    <i class="fab fa-researchgate"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/SeongjuLee" class="text-gray-400 hover:text-primary transition-colors">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:lsj2121@gm.gist.ac.kr" class="text-gray-400 hover:text-primary transition-colors">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder">
+        <!-- Footer will be loaded here -->
+    </div>
     
     <script>
         tailwind.config = {

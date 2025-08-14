@@ -1,4 +1,29 @@
 <!-- Common Navigation Component -->
+<!-- 
+IMPORTANT NOTES FOR ADDING NEW PAGES:
+=====================================
+1. Add new navigation link in the appropriate position:
+   - Format: <a href="newpage.html" class="nav-link">New Page</a>
+   - Place it between existing links in logical order
+   - Make sure the href matches the actual file name
+
+2. Update navigation.js accordingly:
+   - Add page detection in getCurrentPage() method
+   - Add active state handling in setActiveState() method
+   - See navigation.js for detailed instructions
+
+3. File structure requirements:
+   - New page HTML should be in src/pages/newpage.html
+   - Use <div id="navigation-placeholder"> for navigation container
+   - Include navigation.js script in the new page
+
+4. Common issues to avoid:
+   - Don't forget to add the link here - navigation won't work
+   - Don't forget to update navigation.js - page won't be detected
+   - Use correct relative paths for href attributes
+   - Ensure consistent naming between file names and href values
+=====================================
+-->
 <nav class="fixed w-full py-6 px-4 md:px-12 z-50">
     <div class="flex justify-between items-center">
         <a href="../../index.html" class="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity">Seongju Lee</a>
@@ -7,6 +32,8 @@
             <a href="projects.html" class="nav-link">Projects</a>
             <a href="publications.html" class="nav-link">Publications</a>
             <a href="patents.html" class="nav-link">Patents</a>
+            <a href="awards.html" class="nav-link">Awards</a>
+            <a href="experiences.html" class="nav-link">Experiences</a>
             <a href="../../index.html#contact" class="nav-link">Contact</a>
         </div>
         <button class="md:hidden text-xl">

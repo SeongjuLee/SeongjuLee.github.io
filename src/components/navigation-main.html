@@ -1,4 +1,33 @@
 <!-- Main Page Navigation Component -->
+<!-- 
+IMPORTANT NOTES FOR ADDING NEW PAGES:
+=====================================
+1. Add new navigation link in the appropriate position:
+   - Format: <a href="src/pages/newpage.html" class="nav-link">New Page</a>
+   - Note: Use "src/pages/" prefix for main page navigation
+   - Place it between existing links in logical order
+
+2. Update navigation.js accordingly:
+   - Add page detection in getCurrentPage() method
+   - Add active state handling in setActiveState() method
+   - See navigation.js for detailed instructions
+
+3. Update src/components/navigation.html:
+   - Add the same link without "src/pages/" prefix
+   - Format: <a href="newpage.html" class="nav-link">New Page</a>
+
+4. File structure requirements:
+   - New page HTML should be in src/pages/newpage.html
+   - Use <div id="navigation-placeholder"> for navigation container
+   - Include navigation.js script in the new page
+
+5. Common issues to avoid:
+   - Don't forget to add the link here - main page navigation won't work
+   - Don't forget to update navigation.js - page won't be detected
+   - Don't forget to update navigation.html - sub-page navigation won't work
+   - Use correct relative paths (src/pages/ for main, relative for sub-pages)
+=====================================
+-->
 <nav class="fixed w-full py-6 px-4 md:px-12 z-50">
     <div class="flex justify-between items-center">
         <a href="#about" class="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity">Seongju Lee</a>
@@ -7,6 +36,8 @@
             <a href="src/pages/projects.html" class="nav-link">Projects</a>
             <a href="src/pages/publications.html" class="nav-link">Publications</a>
             <a href="src/pages/patents.html" class="nav-link">Patents</a>
+            <a href="src/pages/awards.html" class="nav-link">Awards</a>
+            <a href="src/pages/experiences.html" class="nav-link">Experiences</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
         <button class="md:hidden text-xl">
