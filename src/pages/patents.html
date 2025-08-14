@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patents | Seongju Lee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="../js/patents-data.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            lucide.createIcons();
+            
+            // Load all patents
+            loadAllPatents();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Function to load all patents
+        function loadAllPatents() {
+            const container = document.getElementById('allPatents');
+            if (!container) return;
+            
+            const allPatents = getAllPatents();
+            renderPatents(allPatents);
+        }
+        
+        // Function to filter patents
+        function filterPatents(filter) {
+            const container = document.getElementById('allPatents');
+            if (!container) return;
+            
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            let filteredPatents;
+            if (filter === 'all') {
+                filteredPatents = getAllPatents();
+            } else {
+                filteredPatents = getAllPatents().filter(patent => patent.status.includes(filter));
+            }
+            
+            renderPatents(filteredPatents);
+        }
+        
+        // Function to render patents
+        function renderPatents(patents) {
+            const container = document.getElementById('allPatents');
+            if (!container) return;
+            
+            if (patents.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="text-6xl mb-4">🔍</div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">No patents found</h3>
+                        <p class="text-gray-500">Try adjusting your filter criteria</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = patents.map(patent => `
+                <div class="patent-card glass-card rounded-2xl p-8 hover:shadow-2xl">
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="text-2xl font-bold text-primary">${patent.year}</span>
+                                ${getStatusBadges(patent.status)}
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 leading-tight">
+                                ${patent.title}
+                            </h3>
+                            <p class="text-gray-600 mb-4">${patent.description}</p>
+                            <div class="mb-4">
+                                <span class="font-semibold text-gray-700">Patent Number:</span>
+                                <span class="text-gray-600 ml-2 font-mono">${patent.patentNumber}</span>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-700">Inventors:</span>
+                                <span class="text-gray-600 ml-2">${patent.inventors.join(', ')}</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center lg:items-end gap-4">
+                            <div class="text-4xl text-primary opacity-20">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Function to get status badges
+        function getStatusBadges(status) {
+            const badges = [];
+            if (status.includes('Registered')) {
+                badges.push('<span class="status-badge status-registered">Registered</span>');
+            }
+            if (status.includes('Applied')) {
+                badges.push('<span class="status-badge status-applied">Applied</span>');
+            }
+            if (status.includes('PCT')) {
+                badges.push('<span class="status-badge status-pct">PCT</span>');
+            }
+            return badges.join('');
+        }
+    </script>
+</head>
+<body class="min-h-screen relative">
+    <!-- Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <!-- Navigation -->
+    <div id="navigation-placeholder">
+        <!-- Navigation will be loaded here -->
+    </div>
+    
+    <!-- Patents Section -->
+    <section class="py-20 px-4 md:px-12 pt-32">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Patents</h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-4">Registered and applied patents in AI and robotics</p>
+            </div>
+            
+            <!-- Filter Section -->
+            <div class="mb-12">
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <button class="filter-btn active px-6 py-3 rounded-full font-semibold text-gray-700 hover:bg-gray-100" onclick="filterPatents('all')">
+                            All Patents
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full font-semibold text-gray-700 hover:bg-gray-100" onclick="filterPatents('Registered')">
+                            Registered
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full font-semibold text-gray-700 hover:bg-gray-100" onclick="filterPatents('Applied')">
+                            Applied
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full font-semibold text-gray-700 hover:bg-gray-100" onclick="filterPatents('PCT')">
+                            PCT
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-8" id="allPatents">
+                <!-- Patents will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-10 px-4 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="text-2xl font-bold mb-4 gradient-text">Seongju Lee</div>
+            <p class="text-gray-500 mb-6">Ph.D. Candidate in AI Convergence | Gwangju Institute of Science and Technology</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://scholar.google.com/citations?user=Q0LR04AAAAAJ&hl=ko&oi=ao" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-google-scholar"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-researchgate"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/SeongjuLee" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:lsj2121@gm.gist.ac.kr" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        accent: '#10b981'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .patent-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .patent-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .blob-1 {
+            background: linear-gradient(180deg, #6366f1, #8b5cf6);
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            left: 10%;
+            animation: blob 7s infinite;
+        }
+        
+        .blob-2 {
+            background: linear-gradient(180deg, #10b981, #06b6d4);
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            right: 10%;
+            animation: blob 7s infinite reverse;
+        }
+        
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .status-registered {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+        
+        .status-applied {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+        
+        .status-pct {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+        }
+    </style>
+</body>
+</html> 

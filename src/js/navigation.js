@@ -8,6 +8,7 @@ class NavigationLoader {
         const path = window.location.pathname;
         if (path.includes('projects.html')) return 'projects';
         if (path.includes('publications.html')) return 'publications';
+        if (path.includes('patents.html')) return 'patents';
         return 'home';
     }
 
@@ -46,6 +47,8 @@ class NavigationLoader {
             if (this.currentPage === 'projects' && link.href.includes('projects.html')) {
                 link.classList.add('active');
             } else if (this.currentPage === 'publications' && link.href.includes('publications.html')) {
+                link.classList.add('active');
+            } else if (this.currentPage === 'patents' && link.href.includes('patents.html')) {
                 link.classList.add('active');
             } else if (this.currentPage === 'home' && link.href.includes('#hero')) {
                 link.classList.add('active');
