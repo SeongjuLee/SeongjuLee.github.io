@@ -125,6 +125,26 @@ SeongjuLee.github.io/
 - **Footer**: Common footer across all pages
 - **Data Management**: Centralized data files for easy updates
 
+## 🎯 Technical Details
+
+### CSS Framework
+- **Tailwind CSS**: Utility-first CSS framework
+- **Custom Animations**: Keyframe animations for interactive elements
+- **Glass Morphism**: Modern glass card effects
+- **Gradient Text**: Custom gradient text effects
+
+### JavaScript Features
+- **Dynamic Content Loading**: Fetch and render content from data files
+- **Navigation Management**: Automatic page detection and active state
+- **Component Loading**: Modular component system
+- **Form Handling**: Contact form with validation
+- **Smooth Scrolling**: Enhanced navigation experience
+
+### Performance Optimizations
+- **CDN Resources**: External libraries loaded from CDN
+- **Lazy Loading**: Images and components loaded on demand
+- **Minimal Dependencies**: Lightweight framework usage
+- **Responsive Images**: Optimized for different screen sizes
 
 ## 📄 License
 
@@ -138,6 +158,14 @@ Run the test script:
 ```bash
 ./test.sh
 ```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
 ## 📞 Contact
 

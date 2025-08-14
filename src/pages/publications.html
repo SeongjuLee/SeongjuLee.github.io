@@ -162,6 +162,9 @@
                 <button class="filter-btn px-4 py-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-all text-sm" data-filter="journal">
                     Journals
                 </button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-all text-sm" data-filter="domestic">
+                    Domestic
+                </button>
                 <button class="filter-btn px-4 py-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-all text-sm" data-filter="submission">
                     In Submission
                 </button>
@@ -315,6 +318,10 @@
                     case 'journal':
                         badgeClass = 'inline-block px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full font-semibold flex-shrink-0';
                         badgeText = 'Journal';
+                        break;
+                    case 'domestic':
+                        badgeClass = 'inline-block px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full font-semibold flex-shrink-0';
+                        badgeText = 'Domestic';
                         break;
                     case 'submission':
                         badgeClass = 'inline-block px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full font-semibold flex-shrink-0';

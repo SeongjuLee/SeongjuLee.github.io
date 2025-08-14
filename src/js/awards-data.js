@@ -6,7 +6,7 @@ const awardsData = [
         venue: "The 37th IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025)",
         award: "First Prize",
         icon: "gold",
-        description: "Maritime computer vision challenge for obstacle segmentation using unmanned surface vehicles"
+        description: "Maritime computer vision challenge for obstacle segmentation on unmanned surface vehicles"
     },
     {
         date: "Dec. 2024",
@@ -14,7 +14,7 @@ const awardsData = [
         venue: "The 37th IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025)",
         award: "Second Prize",
         icon: "silver",
-        description: "Maritime computer vision challenge for panoptic segmentation using unmanned surface vehicles"
+        description: "Maritime computer vision challenge for panoptic segmentation on unmanned surface vehicles"
     },
     {
         date: "Sep. 2022",
@@ -30,7 +30,7 @@ const awardsData = [
         venue: "GIST",
         award: "Scholarship",
         icon: "scholarship",
-        description: "Presidential scholarship awarded through GIST Future Plan (GFP) program"
+        description: "Presidential scholarship"
     },
     {
         date: "Nov. 2017",

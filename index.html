@@ -10,9 +10,9 @@
     <script src="src/js/projects-data.js"></script>
     <script src="src/js/publications-data.js"></script>
     <script src="src/js/patents-data.js"></script>
+    <script src="src/js/awards-data.js"></script>
     <script src="src/js/education-data.js"></script>
     <script src="src/js/navigation.js"></script>
-    <script src="src/js/contact-form.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -333,6 +333,7 @@
         <div class="section-nav-dot" data-section="Education" data-target="education"></div>
         <div class="section-nav-dot" data-section="Research" data-target="research"></div>
         <div class="section-nav-dot" data-section="Publications" data-target="publications"></div>
+        <div class="section-nav-dot" data-section="Awards" data-target="awards"></div>
         <div class="section-nav-dot" data-section="Contact" data-target="contact"></div>
     </div>
     
@@ -488,7 +489,7 @@
     </section>
     
     <!-- Education Section -->
-    <section id="education" class="py-12 px-4 md:px-12 bg-gray-50">
+    <section id="education" class="py-12 px-4 md:px-12 bg-white">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Education</h2>
@@ -523,7 +524,7 @@
     </section>
     
     <!-- Publications Section -->
-    <section id="publications" class="py-20 px-4 md:px-12">
+    <section id="publications" class="py-20 px-4 md:px-12 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Selected Publications</h2>
@@ -542,22 +543,44 @@
         </div>
     </section>
     
+    <!-- Awards Section -->
+    <section id="awards" class="py-20 px-4 md:px-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Selected Awards</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
+            
+            <div class="space-y-8" id="selectedAwards">
+                <!-- Selected awards will be dynamically loaded here -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="src/pages/awards.html" class="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-lg hover:opacity-90 transition-opacity">
+                    View All Awards
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 md:px-12 bg-gray-50">
+    <section id="contact" class="py-20 px-4 md:px-12 bg-white">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Get In Touch</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Contact</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
             </div>
             
             <div class="glass-card rounded-2xl p-8 md:p-12">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="text-center mb-8">
+                    <p class="text-gray-800 text-lg leading-relaxed font-semibold">
+                        I'm always open to discussing new opportunities, collaborations, or research ideas.<br>
+                        Feel free to reach out!
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
-                        <p class="text-black mb-8">
-                            I'm always open to discussing new opportunities, collaborations, or research ideas. Feel free to reach out!
-                        </p>
-                        
                         <div class="space-y-6">
                             <div class="flex items-start">
                                 <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary bg-opacity-20 flex items-center justify-center mr-4">
@@ -565,7 +588,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Email</h4>
-                                    <p class="text-gray-400">lsj2121@gm.gist.ac.kr</p>
+                                    <p class="text-gray-600">lsj2121@gm.gist.ac.kr</p>
                                 </div>
                             </div>
                             
@@ -575,7 +598,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Phone</h4>
-                                    <p class="text-gray-400">+82 10 8915 7597</p>
+                                    <p class="text-gray-600">+82 10 8915 7597</p>
                                 </div>
                             </div>
                             
@@ -585,7 +608,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Location</h4>
-                                    <p class="text-gray-400">South Korea</p>
+                                    <p class="text-gray-600">Room 204, Dasan Building</p>
                                 </div>
                             </div>
                             
@@ -595,56 +618,41 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Affiliation</h4>
-                                    <p class="text-gray-400">Artificial Intelligence Laboratory, GIST</p>
+                                    <p class="text-gray-600">Artificial Intelligence Laboratory, GIST</p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="mt-8 flex space-x-4">
-                            <a href="https://scholar.google.com/citations?user=Q0LR04AAAAAJ&hl=ko&oi=ao" class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                                <i class="fas fa-graduation-cap"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                                <i class="fab fa-researchgate"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/SeongjuLee" class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
                     </div>
                     
-                    <div>
-                        <form class="space-y-6" id="contactForm">
-                            <div>
-                                <label class="block text-gray-300 mb-2">Name</label>
-                                <input type="text" name="name" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-gray-800" placeholder="Your name" required>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-300 mb-2">Email</label>
-                                <input type="email" name="email" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-gray-800" placeholder="Your email" required>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-300 mb-2">Subject</label>
-                                <input type="text" name="subject" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-gray-800" placeholder="Subject" required>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-300 mb-2">Message</label>
-                                <textarea rows="5" name="message" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-gray-800" placeholder="Your message" required></textarea>
-                            </div>
-                            
-                            <button type="submit" id="submitBtn" class="w-full py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                                Send Message
-                            </button>
-                            
-                            <div id="formStatus" class="hidden"></div>
-                        </form>
+                    <div class="lg:flex lg:items-center">
+                        <div class="w-full h-64 rounded-xl overflow-hidden shadow-lg">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.1234567890123!2d126.8430822!3d35.2288322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718e3e90426d67%3A0x665db5080c8c7d8d!2sGIST+%EC%9C%B5%ED%95%A9%EA%B8%B0%EC%88%A0%EC%9B%90!5e0!3m2!1sen!2skr!4v1234567890123"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="GIST Location">
+                            </iframe>
+                        </div>
                     </div>
+                </div>
+                
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="https://scholar.google.com/citations?user=Q0LR04AAAAAJ&hl=ko&oi=ao" class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <i class="fab fa-researchgate"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/SeongjuLee" class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -695,6 +703,9 @@
             
             // Load selected publications
             loadSelectedPublications();
+
+            // Load selected awards
+            loadSelectedAwards();
 
             // Load education timeline
             loadEducationTimeline();
@@ -783,6 +794,41 @@
                                         <i data-lucide="quote" class="w-4 h-4"></i>
                                         Cited by ${pub.citations}
                                     </span>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Initialize Lucide icons after generating HTML
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }
+
+            // Function to load selected awards
+            function loadSelectedAwards() {
+                const container = document.getElementById('selectedAwards');
+                if (!container) return;
+
+                const selectedAwards = getSelectedAwards();
+
+                container.innerHTML = selectedAwards.map(award => `
+                    <div class="glass-card rounded-2xl p-6">
+                        <div class="flex flex-col md:flex-row md:items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                                <i data-lucide="trophy" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                                    <h3 class="text-lg font-bold mb-2 md:mb-0">${award.title}</h3>
+                                    <span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary text-xs font-semibold rounded-full whitespace-nowrap">${award.date}</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">${award.venue}</p>
+                                <p class="text-xs text-gray-500 mb-2">${award.award}</p>
+                                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 mb-3">
+                                    <p class="text-yellow-800 font-semibold text-sm">Description:</p>
+                                    <p class="text-yellow-700 text-sm">${award.description}</p>
                                 </div>
                             </div>
                         </div>
@@ -895,23 +941,41 @@
             const sectionNavDots = document.querySelectorAll('.section-nav-dot');
             const sections = document.querySelectorAll('section[id]');
             
-            console.log('Section nav dots found:', sectionNavDots.length);
-            console.log('Sections found:', sections.length);
-            
             // Function to update active section nav dot
             function updateSectionNav() {
-                const scrollPosition = window.scrollY + 150; // Increased offset for earlier transition
-                console.log('Scroll position:', scrollPosition);
+                const scrollPosition = window.scrollY + 200; // Reduced offset for better detection
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
                 
                 sections.forEach((section, index) => {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.offsetHeight;
                     const sectionId = section.getAttribute('id');
+                    const sectionBottom = sectionTop + sectionHeight;
                     
-                    console.log(`Section ${sectionId}: top=${sectionTop}, height=${sectionHeight}`);
+                    // Debug logging for Contact section
+                    if (sectionId === 'contact') {
+                        console.log('Contact section - Top:', sectionTop, 'Bottom:', sectionBottom, 'Scroll:', scrollPosition);
+                    }
                     
-                    // Check if scroll position is in the upper portion of the section
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + (sectionHeight * 0.3)) {
+                    // Special handling for Contact section (last section)
+                    if (sectionId === 'contact') {
+                        // If we're near the bottom of the page or within the contact section
+                        if (scrollPosition + windowHeight >= documentHeight - 100 || 
+                            (scrollPosition >= sectionTop - 200 && scrollPosition <= sectionBottom)) {
+                            console.log('Contact section detected!');
+                            sectionNavDots.forEach(dot => dot.classList.remove('active'));
+                            const navDot = document.querySelector(`[data-target="contact"]`);
+                            if (navDot) {
+                                navDot.classList.add('active');
+                                console.log('Activated Contact nav dot');
+                            }
+                            return;
+                        }
+                    }
+                    
+                    // Check if scroll position is within the section bounds
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                         console.log('Active section:', sectionId);
                         // Remove active class from all nav dots
                         sectionNavDots.forEach(dot => dot.classList.remove('active'));
@@ -993,47 +1057,6 @@
             
             // Initialize slider
             updateSlider();
-
-            // Contact form submission
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const formStatus = document.getElementById('formStatus');
-
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-                formStatus.classList.add('hidden');
-                formStatus.textContent = '';
-
-                const formData = new FormData(contactForm);
-                try {
-                    const response = await fetch('src/php/send_email.php', {
-                        method: 'POST',
-                        body: formData
-                    });
-                    const result = await response.json();
-
-                    if (result.success) {
-                        formStatus.textContent = 'Message sent successfully!';
-                        formStatus.classList.remove('hidden');
-                        formStatus.classList.add('text-green-500');
-                        contactForm.reset();
-                    } else {
-                        formStatus.textContent = result.message || 'Failed to send message.';
-                        formStatus.classList.remove('hidden');
-                        formStatus.classList.add('text-red-500');
-                    }
-                } catch (error) {
-                    formStatus.textContent = 'An error occurred. Please try again later.';
-                    formStatus.classList.remove('hidden');
-                    formStatus.classList.add('text-red-500');
-                    console.error('Error sending email:', error);
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                }
-            });
         });
     </script>
 </body>

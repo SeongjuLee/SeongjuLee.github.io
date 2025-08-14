@@ -174,6 +174,106 @@ const publicationsData = [
         authors: "Sungho Shin, Seongju Lee, Changhyun Jeon, and Kyoobin Lee",
         type: "conference",
         selected: false
+    },
+    {
+        id: 17,
+        title: "다중 객체의 경로 정보를 이용한 GNN 기반의 객체 분류 알고리즘 개발",
+        status: "Domestic Conference",
+        venue: "제19회 한국로봇종합학술대회, KRoC 2024",
+        tldr: "다중 객체 경로 정보, GNN, 객체 분류 알고리즘",
+        authors: "이상범, 이성주, 이준석, 김태리, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 18,
+        title: "단일 물체 영역 탐지를 위한 지식 증류 기반의 약지도 학습 프레임워크 개발",
+        status: "Domestic Conference",
+        venue: "2023 ICROS-KROS 호남제주 그랜드 종합 학술대회",
+        tldr: "단일 물체 영역 탐지, 지식 증류, 약지도 학습",
+        authors: "김종원, 노상준, 이성주, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 19,
+        title: "확장된 길이의 다중 채널 신호를 이용한 수면 단계 분류 모델 지식 증류 기법",
+        status: "Domestic Conference",
+        venue: "2023 ICROS-KROS 호남제주 그랜드 종합 학술대회",
+        tldr: "다중 채널 신호, 수면 단계 분류, 지식 증류",
+        authors: "최소원, 이성주, 유연국, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 20,
+        title: "Self-attention을 이용한 피과 파노라마 이미지에서의 치아 인스턴스 분할 성능 향상",
+        status: "Domestic Conference",
+        venue: "제17회 한국로봇종합학술대회, KRoC 2022",
+        tldr: "Self-attention, 치아 인스턴스 분할, 파노라마 이미지",
+        authors: "박주미, 이준석, 이성주, 유연국, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 21,
+        title: "커리큘럼 학습을 통한 원시 단일 채널 EEG의 자동 수면 단계 분류 성능 향상",
+        status: "Domestic Conference",
+        venue: "제36회 제어로봇시스템학회, ICROS 2021",
+        tldr: "커리큘럼 학습, 단일 채널 EEG, 수면 단계 분류",
+        authors: "박덕환, 이성주, 백승혁, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 22,
+        title: "표면 법선 벡터 추정 정보를 이용한 2D 와이어프레임 도면 내 개체분할 성능 향상",
+        status: "Domestic Conference",
+        venue: "제16회 한국로봇종합학술대회, KRoC 2021",
+        tldr: "표면 법선 벡터, 2D 와이어프레임, 개체분할",
+        authors: "이성주, 전창현, 강래영, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 23,
+        title: "조립설명서에서 구체적인 조립 설명 생성을 위한 문서 분할 데이터셋 구축",
+        status: "Domestic Conference",
+        venue: "제15회 한국로봇종합학술대회, KRoC 2020",
+        tldr: "조립설명서, 조립 설명 생성, 문서 분할 데이터셋",
+        authors: "이주순, 육태경, 신성호, 백승혁, 이성주, 강래영, 최승준, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 24,
+        title: "UWB Radar를 이용한 지능형 호흡 추정 및 무호흡 판별",
+        status: "Domestic Conference",
+        venue: "제15회 한국로봇종합학술대회, KRoC 2020",
+        tldr: "UWB Radar, 호흡 추정, 무호흡 판별",
+        authors: "박덕환, 서호건, 이성주, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 25,
+        title: "CRNN 구조를 활용한 뇌전도 신호 기반 수면 단계 분류",
+        status: "Domestic Conference",
+        venue: "제14회 한국로봇종합학술대회, KRoC 2019",
+        tldr: "CRNN, 뇌전도 신호, 수면 단계 분류",
+        authors: "이성주, 백승혁, 서호건, 이규빈",
+        type: "domestic",
+        selected: false
+    },
+    {
+        id: 26,
+        title: "물품조립 AI - 조립설명서 기반 로봇의 작업계획 생성 시스템",
+        status: "Domestic Journal",
+        venue: "로봇과 인간 제18권 (2021)",
+        tldr: "물품조립 AI, 조립설명서, 로봇 작업계획 생성",
+        authors: "백승혁, 신성호, 강래영, 이성주, 이주순, 육태경, 전창현, 김종원, 유연국, 박성호, 윤준호, 이준석, 이규빈",
+        type: "domestic",
+        selected: false
     }
 ];
 
