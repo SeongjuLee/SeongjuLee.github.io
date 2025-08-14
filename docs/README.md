@@ -39,40 +39,40 @@ php -S localhost:8000
 ```
 SeongjuLee.github.io/
 ├── index.html                    # Main homepage
-├── test.sh                      # Test script
-├── .gitignore                   # Git ignore rules
+├── test.sh                       # Test script
+├── .gitignore                    # Git ignore rules
 ├── docs/
-│   └── README.md               # Project documentation
-├── assets/                      # Static assets
-│   ├── images/                 # Image files
-│   │   ├── profile/           # Profile pictures
-│   │   ├── icons/             # Icon images
-│   │   ├── papers/            # Publication images
-│   │   └── projects/          # Project images
-│   ├── css/                   # Custom CSS files
-│   ├── fonts/                 # Font files
-│   └── media/                 # Media files
-└── src/                        # Source code
-    ├── components/             # Reusable HTML components
-    │   ├── navigation.html    # Sub-page navigation
-    │   ├── navigation-main.html # Main page navigation
-    │   └── footer.html        # Common footer
-    ├── pages/                 # Individual page files
-    │   ├── projects.html      # Projects page
-    │   ├── publications.html  # Publications page
-    │   ├── patents.html       # Patents page
-    │   ├── awards.html        # Awards page
-    │   └── experiences.html   # Experiences page
-    ├── js/                    # JavaScript files
-    │   ├── navigation.js      # Navigation and footer loader
-    │   ├── projects-data.js   # Projects data
-    │   ├── publications-data.js # Publications data
-    │   ├── patents-data.js    # Patents data
-    │   ├── awards-data.js     # Awards data
-    │   ├── experiences-data.js # Experiences data
-    │   └── education-data.js  # Education data
-    ├── data/                  # Additional data files
-    └── hidden/                # Hidden files
+│   └── README.md                 # Project documentation
+├── assets/                       # Static assets
+│   ├── images/                   # Image files
+│   │   ├── profile/              # Profile pictures
+│   │   ├── icons/                # Icon images
+│   │   ├── papers/               # Publication images
+│   │   └── projects/             # Project images
+│   ├── css/                      # Custom CSS files
+│   ├── fonts/                    # Font files
+│   └── media/                    # Media files
+└── src/                          # Source code
+    ├── components/               # Reusable HTML components
+    │   ├── navigation.html       # Sub-page navigation
+    │   ├── navigation-main.html  # Main page navigation
+    │   └── footer.html           # Common footer
+    ├── pages/                    # Individual page files
+    │   ├── projects.html         # Projects page
+    │   ├── publications.html     # Publications page
+    │   ├── patents.html          # Patents page
+    │   ├── awards.html           # Awards page
+    │   └── experiences.html      # Experiences page
+    ├── js/                       # JavaScript files
+    │   ├── navigation.js         # Navigation and footer loader
+    │   ├── projects-data.js      # Projects data
+    │   ├── publications-data.js  # Publications data
+    │   ├── patents-data.js       # Patents data
+    │   ├── awards-data.js        # Awards data
+    │   ├── experiences-data.js   # Experiences data
+    │   └── education-data.js     # Education data
+    ├── data/                     # Additional data files
+    └── hidden/                   # Legacy files
 ```
 
 ## 🎨 Key Features
@@ -81,24 +81,27 @@ SeongjuLee.github.io/
 - **Modern UI/UX**: Glass morphism effects, smooth animations, and hover effects
 - **Modular Architecture**: Reusable components for navigation and footer
 - **Dynamic Content Loading**: JavaScript-based content management
-- **Section Navigation**: Smooth scrolling between sections
+- **Section Navigation**: Smooth scrolling between sections with visual indicators
 - **Social Media Integration**: Links to academic and professional profiles
-- **Contact Form**: Interactive contact form with validation
+- **Contact Section**: Contact information with embedded Google Maps
 - **Custom Cursor**: Enhanced user experience with custom cursor effects
+- **Skills Slider**: Interactive slider showcasing research interests and skills
+- **Alternating Background**: Visual section separation with alternating backgrounds
 
 ## 📝 Page Structure
 
 ### Main Page (`index.html`)
-1. **Hero Section**: Introduction and call-to-action
-2. **About Me**: Personal introduction and research interests
+1. **Hero Section**: Introduction with profile picture and call-to-action
+2. **About Me**: Personal introduction and research interests with update notice
 3. **Education**: Academic background and timeline
-4. **Research Projects**: Featured research projects with cards
-5. **Selected Publications**: Highlighted academic publications
-6. **Contact**: Contact information and message form
+4. **Research Projects**: Featured research projects with cards (3 items)
+5. **Selected Publications**: Highlighted academic publications (3 items)
+6. **Selected Awards**: Highlighted awards and honors (3 items)
+7. **Contact**: Contact information with Google Maps integration
 
 ### Sub Pages
-- **Projects** (`src/pages/projects.html`): Complete list of research projects
-- **Publications** (`src/pages/publications.html`): All academic publications with filtering
+- **Projects** (`src/pages/projects.html`): Complete list of research projects with period badges
+- **Publications** (`src/pages/publications.html`): All academic publications with filtering (International/Domestic)
 - **Patents** (`src/pages/patents.html`): Patent applications and registrations
 - **Awards** (`src/pages/awards.html`): Awards and honors received
 - **Experiences** (`src/pages/experiences.html`): Professional experiences and positions
@@ -132,13 +135,15 @@ SeongjuLee.github.io/
 - **Custom Animations**: Keyframe animations for interactive elements
 - **Glass Morphism**: Modern glass card effects
 - **Gradient Text**: Custom gradient text effects
+- **Alternating Backgrounds**: Visual section separation
 
 ### JavaScript Features
 - **Dynamic Content Loading**: Fetch and render content from data files
 - **Navigation Management**: Automatic page detection and active state
 - **Component Loading**: Modular component system
-- **Form Handling**: Contact form with validation
+- **Section Navigation**: Visual indicators for current section
 - **Smooth Scrolling**: Enhanced navigation experience
+- **Skills Slider**: Interactive content slider with progress bar
 
 ### Performance Optimizations
 - **CDN Resources**: External libraries loaded from CDN
