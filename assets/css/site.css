@@ -315,6 +315,12 @@ h3 {
   font-size: 0.78rem;
 }
 
+.media-credit {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 .subsection-heading {
   margin-top: 2rem;
   margin-bottom: 0.9rem;

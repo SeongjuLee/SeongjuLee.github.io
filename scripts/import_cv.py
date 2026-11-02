@@ -163,9 +163,26 @@ def selected_calls(text: str, prefix: str) -> list[str]:
     return re.findall(r"\\(" + prefix + r"[A-Za-z]+)\b", mode(text, True))
 
 
+def publication_selection_groups(rendering: str) -> dict[str, str]:
+    """Read selected groups from their CV subsection, without naming papers."""
+    groups = {}
+    current = "main"
+    pattern = r"\\cvsubsect\b(?:\s*\[[^\]]*\])?|\\(cvpub[A-Za-z]+)\b"
+    selected = mode(rendering, True)
+    for match in re.finditer(pattern, selected):
+        if match.group(1):
+            groups[match.group(1)] = current
+        else:
+            values, _ = arguments(selected, match.end(), 2)
+            heading = plain(values[1]).casefold()
+            current = "additional" if heading.startswith("additional ") and "author" in heading else "main"
+    return groups
+
+
 def publication_records(source: str) -> list[dict]:
     macros, rendering = definitions(source)
     selected = selected_calls(rendering, "cvpub")
+    selection_groups = publication_selection_groups(rendering)
     full = selected_calls(mode(rendering, False), "cvpub")
     records = []
     for identifier in full:
@@ -209,6 +226,8 @@ def publication_records(source: str) -> list[dict]:
             "selectedOrder": selected.index(identifier) + 1 if identifier in selected else None,
             "authorRole": author_role, "summary": summary(body),
             "links": link_records(body), "metrics": metrics, "notes": notes,
+            **({"selectionGroup": "additional"}
+               if selection_groups.get(identifier) == "additional" else {}),
         })
     return records
 
@@ -254,10 +273,15 @@ def education_records(source: str) -> list[dict]:
 
 
 def award_records(source: str) -> list[dict]:
-    selected = {(plain(row[0]), plain(row[1])) for row in entries(source, True)}
+    # Selected mode may shorten titles and venues; date and result identify the award.
+    full = entries(source)
+    full_keys = [(plain(row[0]), plain(row[3])) for row in full]
+    assert len(full_keys) == len(set(full_keys)), "Award selection keys (date, result) must be unique"
+    selected = {(plain(row[0]), plain(row[3])) for row in entries(source, True)}
+    assert selected <= set(full_keys), "Selected awards must match a full-CV date and result"
     return [{"date": plain(date), "title": plain(title), "organization": plain(organization),
-             "result": plain(result), "selected": (plain(date), plain(title)) in selected}
-            for date, title, organization, result in entries(source)]
+             "result": plain(result), "selected": (plain(date), plain(result)) in selected}
+            for date, title, organization, result in full]
 
 
 def patent_records(source: str) -> list[dict]:
@@ -284,11 +308,16 @@ def validate(data: dict) -> None:
             assert all(isinstance(record["id"], str) and record["id"] for record in records), collection
             assert len({record["id"] for record in records}) == len(records)
     assert not any(item["metrics"] for item in data["publications"] if item["category"] == "domestic")
+    for item in data["publications"]:
+        assert item.get("selectionGroup", "main") in {"main", "additional"}, item["id"]
+        if item.get("selectionGroup") == "additional":
+            assert item["selected"] and item["category"] not in {"submission", "wip"}, item["id"]
+            assert item["authorRole"] in {"First author", "Co-first author"}, item["id"]
 
     def visit(value):
         if isinstance(value, dict):
             for key, content in value.items():
-                if key == "url":
+                if key in {"url", "sourceUrl"}:
                     parsed = urlsplit(content)
                     assert parsed.scheme in {"https", "http"} and parsed.netloc, content
                 visit(content)

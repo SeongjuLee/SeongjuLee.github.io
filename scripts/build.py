@@ -115,7 +115,7 @@ def publication(item: dict, profile: dict, prefix: str, metrics: bool = False) -
         metric_html = '<p class="item-metrics">' + " · ".join(
             text(value) for value in item["metrics"]
         ) + "</p>"
-    with_media = bool(item.get("selected") or item.get("media"))
+    with_media = bool(item.get("media") or (item.get("selected") and item.get("selectionGroup") != "additional"))
     media_html = research_media(item, prefix) if with_media else ""
     article_class = ' class="research-row"' if with_media else ""
     return f'''<li class="publication" id="{text(item['id'])}">
@@ -145,12 +145,21 @@ def project_list(items: list[dict], prefix: str, heading_level: int = 3) -> str:
     rows = []
     for item in items:
         date_html = f'<p class="item-date">{text(item["period"])}</p>'
+        media = item.get("media") or {}
+        credit_parts = []
+        if media.get("credit"):
+            credit_parts.append(text(media["credit"]))
+        if media.get("sourceUrl"):
+            credit_parts.append(anchor("Video source", media["sourceUrl"], prefix))
+        credit_html = ('<p class="media-credit">' + " · ".join(credit_parts) + '</p>') if credit_parts else ""
+        project_links = [link for link in item.get("links", []) if link["url"] != media.get("sourceUrl")]
         content = f'''
     <h{heading_level}>{text(item['title'])}</h{heading_level}>
     <p class="organization">{text(item['organization'])}</p>
     <p class="item-role">{text(item['role'])}</p>
     <p class="item-summary">{text(item['summary'])}</p>
-    {links(item.get('links', []), prefix)}'''
+    {links(project_links, prefix)}
+    {credit_html}'''
         if item.get("selected") or item.get("media"):
             rows.append(f'''<li class="dated-item project-with-media" id="{text(item['id'])}">
   <article class="research-row">
@@ -320,8 +329,13 @@ def home(data: dict) -> str:
     selected = sorted((item for item in data["publications"] if item.get("selected")),
                       key=lambda item: item.get("selectedOrder", 999))
     published = [item for item in selected if item["category"] not in {"submission", "wip"}]
+    primary = [item for item in published if item.get("selectionGroup") != "additional"]
+    additional = [item for item in published if item.get("selectionGroup") == "additional"]
     submitted = [item for item in selected if item["category"] == "submission"]
-    publications_html = publication_list(published, profile, "")
+    publications_html = publication_list(primary, profile, "")
+    if additional:
+        publications_html += '<h3 class="subsection-heading" id="additional-publications-heading">Additional First-/Co-first-Author Publications</h3>\n'
+        publications_html += publication_list(additional, profile, "")
     publications_html += '<p class="section-note">* Equal contribution.</p>'
     if submitted:
         publications_html += '<h3 class="subsection-heading">In submission</h3>\n'

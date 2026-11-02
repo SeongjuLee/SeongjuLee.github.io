@@ -25,30 +25,6 @@
   },
   "publications": [
     {
-      "id": "cvpubRobustSegmentationSubmission",
-      "title": "Rethinking Deformable Convolution as an Adapter with Cross-layer Weight Sharing for Robust Semantic Segmentation in the Wild",
-      "authors": "Seongju Lee, Raeyoung Kang, Sangbeom Lee, Sangjun Noh, Yeonguk Yu, Junseok Lee, and Kyoobin Lee",
-      "venue": "In Submission. Target Journal: IEEE Robotics and Automation Letters",
-      "year": null,
-      "category": "submission",
-      "type": "submission",
-      "selected": true,
-      "selectedOrder": 8,
-      "authorRole": "First author",
-      "summary": "Vision Foundation Models (VFMs), Domain Generalized Semantic Segmentation (DGSS), Deformable Convolution Networks (DCNs), Parameter-Efficient Fine-Tuning (PEFT)",
-      "links": [],
-      "metrics": [],
-      "notes": [
-        "First Prize in the USV-based Obstacle Segmentation Challenge at the 3rd Maritime Computer Vision Workshop"
-      ],
-      "media": {
-        "kind": "gif",
-        "src": "assets/media/research/dgss-night.gif",
-        "poster": "assets/media/research/dgss-night-poster.jpg",
-        "alt": "Nighttime maritime input alongside semantic segmentation output."
-      }
-    },
-    {
       "id": "cvpubManipForce",
       "title": "ManipForce: Force-Guided Policy Learning with Frequency-Aware Representation for Contact-Rich Manipulation",
       "authors": "Geonhyup Lee, Yeongjin Lee, Kangmin Kim, Seongju Lee, Sangjun Noh, Seunghyeok Back, Kyoobin Lee",
@@ -332,8 +308,8 @@
       "year": 2024,
       "category": "international",
       "type": "journal",
-      "selected": false,
-      "selectedOrder": null,
+      "selected": true,
+      "selectedOrder": 8,
       "authorRole": "First author",
       "summary": "",
       "links": [
@@ -350,7 +326,8 @@
         "JIF 9.4 (2025, Q1)",
         "Cited by 107"
       ],
-      "notes": []
+      "notes": [],
+      "selectionGroup": "additional"
     },
     {
       "id": "cvpubBattleSound",
@@ -460,8 +437,8 @@
       "year": 2020,
       "category": "international",
       "type": "journal",
-      "selected": false,
-      "selectedOrder": null,
+      "selected": true,
+      "selectedOrder": 9,
       "authorRole": "Co-first author",
       "summary": "",
       "links": [
@@ -478,7 +455,8 @@
         "JIF 5.7 (2025, Q2)",
         "Cited by 313"
       ],
-      "notes": []
+      "notes": [],
+      "selectionGroup": "additional"
     },
     {
       "id": "cvpubBuoyLight",
@@ -730,6 +708,30 @@
       "notes": []
     },
     {
+      "id": "cvpubRobustSegmentationSubmission",
+      "title": "Rethinking Deformable Convolution as an Adapter with Cross-layer Weight Sharing for Robust Semantic Segmentation in the Wild",
+      "authors": "Seongju Lee, Raeyoung Kang, Sangbeom Lee, Sangjun Noh, Yeonguk Yu, Junseok Lee, and Kyoobin Lee",
+      "venue": "In Submission. Target Journal: IEEE Robotics and Automation Letters",
+      "year": null,
+      "category": "submission",
+      "type": "submission",
+      "selected": true,
+      "selectedOrder": 10,
+      "authorRole": "First author",
+      "summary": "Vision Foundation Models (VFMs), Domain Generalized Semantic Segmentation (DGSS), Deformable Convolution Networks (DCNs), Parameter-Efficient Fine-Tuning (PEFT)",
+      "links": [],
+      "metrics": [],
+      "notes": [
+        "First Prize in the USV-based Obstacle Segmentation Challenge at the 3rd Maritime Computer Vision Workshop"
+      ],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/dgss-night.gif",
+        "poster": "assets/media/research/dgss-night-poster.jpg",
+        "alt": "Nighttime maritime input alongside semantic segmentation output."
+      }
+    },
+    {
       "id": "cvpubHumanGuidedDemonstrations",
       "title": "Sensing and Acting Like Human: Learning Contact-Rich Precision Skills from Human-Guided Demonstrations",
       "authors": "",
@@ -756,7 +758,20 @@
       "summary": "Robot learning with VLA/WAM models; VR/glove teleoperation and hand retargeting; simulation and multimodal demonstration data pipelines.",
       "selected": true,
       "selectedOrder": 1,
-      "links": []
+      "links": [
+        {
+          "label": "News",
+          "url": "https://nwww.newsis.com/view/NISX20261021_0003835579"
+        }
+      ],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/hd-dual-arm-fix2026.gif",
+        "poster": "assets/media/research/hd-dual-arm-fix2026-poster.jpg",
+        "alt": "HD Hyundai Robotics dual-arm robot company demonstration at FIX 2026.",
+        "credit": "Company demonstration at FIX 2026. Video: HD Hyundai Robotics, via NEWSIS.",
+        "sourceUrl": "https://nwww.newsis.com/view/NISX20261021_0003835579"
+      }
     },
     {
       "id": "cvprojectTactile",
@@ -986,7 +1001,7 @@
       "title": "The first NIA-GIST AI-HUB AI Competition",
       "organization": "NIA, GIST",
       "result": "First Prize",
-      "selected": false
+      "selected": true
     },
     {
       "date": "Mar. 2020",

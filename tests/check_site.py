@@ -118,6 +118,43 @@ def check():
                 require(asset.is_file() and asset.read_bytes()[:6] in {b"GIF87a", b"GIF89a"},
                         f"{item['id']}: invalid GIF asset")
                 require((ROOT / media.get("poster", "")).is_file(), f"{item['id']}: missing poster")
+            if collection == "projects" and (media.get("credit") or media.get("sourceUrl")):
+                visible_pages = [archive, home] if item["selected"] else [archive]
+                for page in visible_pages:
+                    if media.get("credit"):
+                        require(media["credit"] in " ".join(page.content),
+                                f"{item['id']}: media credit is not displayed")
+                    if media.get("sourceUrl"):
+                        source = urlsplit(media["sourceUrl"])
+                        require(source.scheme in {"https", "http"} and bool(source.netloc),
+                                f"{item['id']}: invalid media source URL")
+                        require(media["sourceUrl"] in page.links, f"{item['id']}: media source link is not displayed")
+    chosen_papers = sorted((item for item in data["publications"] if item["selected"]),
+                           key=lambda item: item["selectedOrder"])
+    group_order = []
+    additional = []
+    for item in chosen_papers:
+        group = item.get("selectionGroup", "main")
+        require(group in {"main", "additional"}, f"{item['id']}: unknown publication selection group")
+        if item["category"] == "submission":
+            group_order.append(2)
+        elif group == "additional":
+            group_order.append(1)
+            additional.append(item)
+            require(item["authorRole"] in {"First author", "Co-first author"},
+                    f"{item['id']}: additional publication must identify first/co-first authorship")
+        else:
+            group_order.append(0)
+    require(group_order == sorted(group_order), "Publications must appear as main, additional, then submission")
+    if additional:
+        require("Additional First-/Co-first-Author Publications" in " ".join(home.content),
+                "Additional publications need a separate heading")
+        home_html = (ROOT / "index.html").read_text(encoding="utf-8")
+        for item in additional:
+            if not item.get("media"):
+                item_html = home_html.split(f'id="{item["id"]}"', 1)[-1].split("</li>", 1)[0]
+                require('class="research-row"' not in item_html and 'media-placeholder' not in item_html,
+                        f"{item['id']}: text-only additional publication reserves an empty media frame")
     body = " ".join(home.content)
     require("Senior Researcher" in body and "HD Hyundai Robotics" in body, "Outdated current affiliation")
     require("Ph.D. Candidate" not in body, "Outdated doctoral candidate status")
