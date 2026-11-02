@@ -1,4 +1,4 @@
-#!/bin/bash
-
-# Run the Python server
-python3 -m http.server 8000
+#!/bin/sh
+set -eu
+python3 scripts/build.py --check
+python3 tests/check_site.py
