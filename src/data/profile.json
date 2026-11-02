@@ -365,8 +365,8 @@
       "year": 2021,
       "category": "international",
       "type": "journal",
-      "selected": false,
-      "selectedOrder": null,
+      "selected": true,
+      "selectedOrder": 9,
       "authorRole": "Co-first author",
       "summary": "",
       "links": [
@@ -379,7 +379,8 @@
         "JIF 4.2 (2025, Q2)",
         "Cited by 80"
       ],
-      "notes": []
+      "notes": [],
+      "selectionGroup": "additional"
     },
     {
       "id": "cvpubSoundTransfer",
@@ -438,7 +439,7 @@
       "category": "international",
       "type": "journal",
       "selected": true,
-      "selectedOrder": 9,
+      "selectedOrder": 10,
       "authorRole": "Co-first author",
       "summary": "",
       "links": [
@@ -716,7 +717,7 @@
       "category": "submission",
       "type": "submission",
       "selected": true,
-      "selectedOrder": 10,
+      "selectedOrder": 11,
       "authorRole": "First author",
       "summary": "Vision Foundation Models (VFMs), Domain Generalized Semantic Segmentation (DGSS), Deformable Convolution Networks (DCNs), Parameter-Efficient Fine-Tuning (PEFT)",
       "links": [],
