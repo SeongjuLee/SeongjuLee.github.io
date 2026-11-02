@@ -45,3 +45,7 @@ node_modules/
 
 # User added
 src/hidden/
+
+# Python build and validation caches
+__pycache__/
+*.py[cod]

@@ -1,0 +1,1008 @@
+{
+  "asOf": "2026-11-02",
+  "profile": {
+    "name": "Seongju Lee",
+    "title": "Senior Researcher",
+    "affiliation": "HD Hyundai Robotics",
+    "location": "South Korea",
+    "email": "sungjulee96@gmail.com",
+    "github": "https://github.com/SeongjuLee",
+    "scholar": "https://scholar.google.com/citations?user=Q0LR04AAAAAJ",
+    "photo": "assets/images/profile/seongju_lee.jpg",
+    "cv": "assets/docs/Seongju_Lee_CV_Full.pdf",
+    "selectedCv": "assets/docs/Seongju_Lee_CV_Robotics_Perception.pdf",
+    "bio": [
+      "I am a Senior Researcher at HD Hyundai Robotics, working on humanoid and dual-arm robot learning and multimodal data pipelines.",
+      "My research spans object detection, semantic segmentation, domain generalization, and multi-agent trajectory prediction. I have experience leading perception software development and building multi-view datasets for autonomous systems.",
+      "I received my Ph.D. in AI Convergence from Gwangju Institute of Science and Technology (GIST) in February 2026, advised by Prof. Kyoobin Lee."
+    ],
+    "researchInterests": [
+      "Robust visual perception",
+      "Domain generalization and knowledge distillation",
+      "Multi-agent trajectory prediction",
+      "Multimodal robot learning"
+    ]
+  },
+  "publications": [
+    {
+      "id": "cvpubRobustSegmentationSubmission",
+      "title": "Rethinking Deformable Convolution as an Adapter with Cross-layer Weight Sharing for Robust Semantic Segmentation in the Wild",
+      "authors": "Seongju Lee, Raeyoung Kang, Sangbeom Lee, Sangjun Noh, Yeonguk Yu, Junseok Lee, and Kyoobin Lee",
+      "venue": "In Submission. Target Journal: IEEE Robotics and Automation Letters",
+      "year": null,
+      "category": "submission",
+      "type": "submission",
+      "selected": true,
+      "selectedOrder": 8,
+      "authorRole": "First author",
+      "summary": "Vision Foundation Models (VFMs), Domain Generalized Semantic Segmentation (DGSS), Deformable Convolution Networks (DCNs), Parameter-Efficient Fine-Tuning (PEFT)",
+      "links": [],
+      "metrics": [],
+      "notes": [
+        "First Prize in the USV-based Obstacle Segmentation Challenge at the 3rd Maritime Computer Vision Workshop"
+      ]
+    },
+    {
+      "id": "cvpubManipForce",
+      "title": "ManipForce: Force-Guided Policy Learning with Frequency-Aware Representation for Contact-Rich Manipulation",
+      "authors": "Geonhyup Lee, Yeongjin Lee, Kangmin Kim, Seongju Lee, Sangjun Noh, Seunghyeok Back, Kyoobin Lee",
+      "venue": "2026 IEEE International Conference on Robotics and Automation (ICRA 2026)",
+      "year": 2026,
+      "category": "international",
+      "type": "conference",
+      "selected": true,
+      "selectedOrder": 6,
+      "authorRole": "",
+      "summary": "Imitation Learning, Multimodal Policy, Vision Foundation Models (VFMs), Force/Torque Sensor",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/pdf/2509.19047"
+        },
+        {
+          "label": "Website",
+          "url": "https://sites.google.com/view/manipforce/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/gist-ailab/ManipForce"
+        }
+      ],
+      "metrics": [
+        "38.04% Acceptance Rate",
+        "Cited by 29"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubCrossDomainDistillation",
+      "title": "CD-FKD: Cross-Domain Feature Knowledge Distillation for Robust Single-Domain Generalization in Object Detection",
+      "authors": "Junseok Lee*, Sungho Shin*, Seongju Lee, Kyoobin Lee",
+      "venue": "2026 IEEE International Conference on Robotics and Automation (ICRA 2026)",
+      "year": 2026,
+      "category": "international",
+      "type": "conference",
+      "selected": true,
+      "selectedOrder": 3,
+      "authorRole": "",
+      "summary": "Knowledge Distillation, Robust Object Detection, Single-Domain Generalization",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/pdf/2603.16439"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/gist-ailab/CD-FKD"
+        }
+      ],
+      "metrics": [
+        "38.04% Acceptance Rate",
+        "Cited by 1"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubMaritimeChallengeFour",
+      "title": "4th Workshop on Maritime Computer Vision (MaCVi): Challenge Overview",
+      "authors": "Benjamin Kiefer et al. (including Seongju Lee)",
+      "venue": "2026 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW 2026), pp. 8146–8156",
+      "year": 2026,
+      "category": "international",
+      "type": "workshop",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026W/MaCVi/html/Kiefer_4th_Workshop_on_Maritime_Computer_Vision_MaCVi_Challenge_Overview_CVPRW_2026_paper.html"
+        }
+      ],
+      "metrics": [
+        "Cited by 2"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubRobustMaritimeDetection",
+      "title": "Robust Maritime Object Detection under Adverse Conditions via Joint Semantic Learning without Extra Computational Overhead",
+      "authors": "Junseok Lee, Seongju Lee, Jongwon Kim, Jumi Park, and Kyoobin Lee",
+      "venue": "The 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)",
+      "year": 2025,
+      "category": "international",
+      "type": "conference",
+      "selected": true,
+      "selectedOrder": 4,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11246177"
+        }
+      ],
+      "metrics": [
+        "46% Acceptance Rate",
+        "Cited by 2"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubMultiViewMaritime",
+      "title": "MV2: A Large-Scale 360-degree Multi-View Maritime Vision Dataset for Object Detection and Segmentation",
+      "authors": "Junseok Lee*, Jongwon Kim*, Seongju Lee*, Taeri Kim, and Kyoobin Lee",
+      "venue": "The 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)",
+      "year": 2025,
+      "category": "international",
+      "type": "conference",
+      "selected": true,
+      "selectedOrder": 1,
+      "authorRole": "Co-first author",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11247587"
+        },
+        {
+          "label": "Website",
+          "url": "https://sites.google.com/view/multi-view-maritime-vision"
+        }
+      ],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubMaritimeChallengeThree",
+      "title": "3rd Workshop on Maritime Computer Vision (MaCVi) 2025: Challenge Results",
+      "authors": "Benjamin Kiefer et al. (including Seongju Lee)",
+      "venue": "2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW 2025), pp. 1542–1569",
+      "year": 2025,
+      "category": "international",
+      "type": "workshop",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://openaccess.thecvf.com/content/WACV2025W/MaCVi/html/Kiefer_3rd_Workshop_on_Maritime_Computer_Vision_MaCVi_2025_Challenge_Results_WACVW_2025_paper.html"
+        }
+      ],
+      "metrics": [
+        "Cited by 11"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubMart",
+      "title": "MART: MultiscAle Relational Transformer Networks for Multi-agent Trajectory Prediction",
+      "authors": "Seongju Lee, Junseok Lee, Yeonguk Yu, Taeri Kim, and Kyoobin Lee",
+      "venue": "The 18th European Conference on Computer Vision (ECCV 2024), Poster",
+      "year": 2024,
+      "category": "international",
+      "type": "conference",
+      "selected": true,
+      "selectedOrder": 2,
+      "authorRole": "First author",
+      "summary": "Graph Neural Networks (GNNs), Hypergraph Transformer",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://link.springer.com/chapter/10.1007/978-3-031-72848-8_6"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/gist-ailab/MART"
+        }
+      ],
+      "metrics": [
+        "27.9% Acceptance Rate",
+        "Cited by 80"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubBlockSelection",
+      "title": "Block Selection Method for Using Feature Norm in Out-of-Distribution Detection",
+      "authors": "Yeonguk Yu, Sungho Shin, Seongju Lee, Changhyun Jun, and Kyoobin Lee",
+      "venue": "2023 IEEE/CVF Computer Vision and Pattern Recognition Conference (CVPR 2023), Poster",
+      "year": 2023,
+      "category": "international",
+      "type": "conference",
+      "selected": true,
+      "selectedOrder": 5,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Yu_Block_Selection_Method_for_Using_Feature_Norm_in_Out-of-Distribution_Detection_CVPR_2023_paper.html"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/gist-ailab/block-selection-for-OOD-detection"
+        }
+      ],
+      "metrics": [
+        "25.8% Acceptance Rate",
+        "Cited by 82"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubActiveAnnotation",
+      "title": "Human-efficient annotation system via active semi-supervised learning and selective review",
+      "authors": "Jongwon Kim, Youmin Park, Seunghyeok Hyun, Yunjae Heo, Seongju Lee, Yeonguk Yu, and Kyoobin Lee",
+      "venue": "Intelligent Systems with Applications, Vol. 31, Article 200701, 2026",
+      "year": 2026,
+      "category": "international",
+      "type": "journal",
+      "selected": true,
+      "selectedOrder": 7,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1016/j.iswa.2026.200701"
+        }
+      ],
+      "metrics": [
+        "JCR 2025 Q1"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubDentalDiagnosis",
+      "title": "Automated diagnosis for extraction difficulty of maxillary and mandibular third molars and post-extraction complications using deep learning",
+      "authors": "Junseok Lee, Jumi Park, Seongju Lee, Seong-Yong Moon, and Kyoobin Lee",
+      "venue": "Scientific Reports, 2025",
+      "year": 2025,
+      "category": "international",
+      "type": "journal",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://www.nature.com/articles/s41598-025-00236-7"
+        }
+      ],
+      "metrics": [
+        "JIF 4.9 (2025, Q1)",
+        "Cited by 6"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubSleepyCo",
+      "title": "SleePyCo: Automatic Sleep Scoring with Feature Pyramid and Contrastive Learning",
+      "authors": "Seongju Lee, Yeonguk Yu, Seunghyeok Back, Hogeon Seo, and Kyoobin Lee",
+      "venue": "Expert Systems with Applications, 2024",
+      "year": 2024,
+      "category": "international",
+      "type": "journal",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "First author",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0957417423030531"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/gist-ailab/SleePyCo"
+        }
+      ],
+      "metrics": [
+        "JIF 9.4 (2025, Q1)",
+        "Cited by 107"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubBattleSound",
+      "title": "BattleSound: A Game Sound Benchmark for the Sound-Specific Feedback Generation in a Battle Game",
+      "authors": "Sungho Shin, Seongju Lee, Changhyun Jun, and Kyoobin Lee",
+      "venue": "Sensors, 2023",
+      "year": 2023,
+      "category": "international",
+      "type": "journal",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://www.mdpi.com/1424-8220/23/2/770"
+        },
+        {
+          "label": "Website",
+          "url": "https://sites.google.com/view/battlesound"
+        }
+      ],
+      "metrics": [
+        "JIF 4.0 (2025, Q2)",
+        "Cited by 1"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubSkinDistillation",
+      "title": "Robust Skin Disease Classification by Distilling Deep Neural Network Ensemble for the Mobile Diagnosis of Herpes Zoster",
+      "authors": "Seunghyeok Back*, Seongju Lee*, Sungho Shin, Yeonguk Yu, Taekyeong Yuk, Saepomi Jong, Seungjun Ryu, Kyoobin Lee",
+      "venue": "IEEE Access, 2021",
+      "year": 2021,
+      "category": "international",
+      "type": "journal",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "Co-first author",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/abstract/document/9335582"
+        }
+      ],
+      "metrics": [
+        "JIF 4.2 (2025, Q2)",
+        "Cited by 80"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubSoundTransfer",
+      "title": "Self-Supervised Transfer Learning from Natural Images for Sound Classification",
+      "authors": "Sungho Shin, Jongwon Kim, Yeonguk Yu, Seongju Lee, Kyoobin Lee",
+      "venue": "Applied Sciences, 2021",
+      "year": 2021,
+      "category": "international",
+      "type": "journal",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://www.mdpi.com/2076-3417/11/7/3043"
+        }
+      ],
+      "metrics": [
+        "JIF 2.9 (2025, Q2)",
+        "Cited by 28"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubEegSeizure",
+      "title": "Pilot study of a single-channel EEG seizure detection algorithm using machine learning",
+      "authors": "Seungjun Ryu, Seunghyeok Back, Seongju Lee, Hyeon Seo, Chanki Park, Kyoobin Lee, Dong-Seok Kim",
+      "venue": "Child's Nervous System, 2021",
+      "year": 2021,
+      "category": "international",
+      "type": "journal",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://link.springer.com/article/10.1007/s00381-020-05011-9"
+        }
+      ],
+      "metrics": [
+        "JIF 1.3 (2025, Q3)",
+        "Cited by 24"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubIitnet",
+      "title": "Intra- and inter-epoch temporal context network (IITNet) using sub-epoch features for automatic sleep scoring on raw single-channel EEG",
+      "authors": "Hogeon Seo*, Seunghyeok Back*, Seongju Lee*, Deokhwan Park, Tae Kim, Kyoobin Lee",
+      "venue": "Biomedical Signal Processing and Control, 2020",
+      "year": 2020,
+      "category": "international",
+      "type": "journal",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "Co-first author",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1746809420301932"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/gist-ailab/IITNet-official"
+        }
+      ],
+      "metrics": [
+        "JIF 5.7 (2025, Q2)",
+        "Cited by 313"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubBuoyLight",
+      "title": "Buoy Light Detection and Pattern Classification for Unmanned Surface Vehicle Navigation",
+      "authors": "Junseok Lee, Taeri Kim, Seongju Lee, Jumi Park, and Kyoobin Lee",
+      "venue": "The 21st International Conference on Ubiquitous Robots (UR 2024)",
+      "year": 2024,
+      "category": "international",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [
+        "Cited by 2"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubGymNet",
+      "title": "GYM-Net: Graphical Y-branched Multi-tasking Network for Trajectory Prediction",
+      "authors": "Taeri Kim, Junseok Lee, Seongju Lee, and Kyoobin Lee",
+      "venue": "The 22nd International Conference on Control, Automation and Systems (ICCAS 2022)",
+      "year": 2022,
+      "category": "international",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubVesselForecasting",
+      "title": "Vessel Trajectory Forecasting on Naval Warfare Simulation via CVAE-based Model",
+      "authors": "Seongju Lee*, Yeonguk Yu*, Junseok Lee, Jumi Park, Changhyun Jun, and Kyoobin Lee",
+      "venue": "The 9th International Conference on Robot Intelligence Technology and Applications (RiTA 2021)",
+      "year": 2021,
+      "category": "international",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "Co-first author",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubGunSound",
+      "title": "Real-time Vibro-Acoustical Feedback for the Reality in Game by Detecting the Gun-Sound using Simple Convolutional Neural Network",
+      "authors": "Sungho Shin, Seongju Lee, Changhyun Jun, and Kyoobin Lee",
+      "venue": "The 8th International Conference on Smart Media & Application (SMA 2019)",
+      "year": 2019,
+      "category": "international",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubAssemblyDetection",
+      "title": "Object Detection for Understanding Assembly Instruction Using Context-aware Data Augmentation and Cascade Mask R-CNN",
+      "authors": "Joosoon Lee, Seongju Lee, Seunghyeok Back, Sungho Shin, and Kyoobin Lee",
+      "venue": "arXiv:2101.02509, 2021",
+      "year": 2021,
+      "category": "international",
+      "type": "technical-report",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/pdf/2101.02509"
+        }
+      ],
+      "metrics": [
+        "Cited by 10"
+      ],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticTrajectoryClassification",
+      "title": "다중 객체의 경로 정보를 이용한 GNN 기반의 객체 분류 알고리즘 개발",
+      "authors": "이상범, 이성주, 이준석, 김태리, 이규빈",
+      "venue": "제19회 한국로봇종합학술대회, KRoC 2024",
+      "year": 2024,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticObjectDistillation",
+      "title": "단일 물체 영역 탐지를 위한 지식 증류 기반의 약지도 학습 프레임워크 개발",
+      "authors": "김종원, 노상준, 이성주, 이규빈",
+      "venue": "2023 ICROS-KROS 호남제주 그랜드 종합 학술대회",
+      "year": 2023,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticSleepDistillation",
+      "title": "확장된 길이의 다중 채널 신호를 이용한 수면 단계 분류 모델 지식 증류 기법",
+      "authors": "최소원, 이성주, 유연국, 이규빈",
+      "venue": "2023 ICROS-KROS 호남제주 그랜드 종합 학술대회",
+      "year": 2023,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticDentalSegmentation",
+      "title": "Self-attention을 이용한 치과 파노라마 이미지에서의 치아 인스턴스 분할 성능 향상",
+      "authors": "박주미, 이준석, 이성주, 유연국, 이규빈",
+      "venue": "제17회 한국로봇종합학술대회, KRoC 2022",
+      "year": 2022,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticSleepCurriculum",
+      "title": "커리큘럼 학습을 통한 원시 단일 채널 EEG의 자동 수면 단계 분류 성능 향상",
+      "authors": "박덕환, 이성주, 백승혁, 이규빈",
+      "venue": "제36회 제어로봇시스템학회, ICROS 2021",
+      "year": 2021,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticWireframeSegmentation",
+      "title": "표면 법선 벡터 추정 정보를 이용한 2D 와이어프레임 도면 내 개체분할 성능 향상",
+      "authors": "이성주, 전창현, 강래영, 이규빈",
+      "venue": "제16회 한국로봇종합학술대회, KRoC 2021",
+      "year": 2021,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "First author",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticAssemblyDocument",
+      "title": "조립설명서에서 구체적인 조립 설명 생성을 위한 문서 분할 데이터셋 구축",
+      "authors": "이주순, 육태경, 신성호, 백승혁, 이성주, 강래영, 최승준, 이규빈",
+      "venue": "제15회 한국로봇종합학술대회, KRoC 2020",
+      "year": 2020,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticRespiration",
+      "title": "UWB Radar를 이용한 지능형 호흡 추정 및 무호흡 판별",
+      "authors": "박덕환, 서호건, 이성주, 이규빈",
+      "venue": "제15회 한국로봇종합학술대회, KRoC 2020",
+      "year": 2020,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticSleepCrnn",
+      "title": "CRNN구조를 활용한 뇌전도 신호 기반 수면 단계 분류",
+      "authors": "이성주, 백승혁, 서호건, 이규빈",
+      "venue": "제14회 한국로봇종합학술대회, KRoC 2019",
+      "year": 2019,
+      "category": "domestic",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "First author",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticAssemblyPlanning",
+      "title": "물품조립 AI - 조립설명서 기반 로봇의 작업계획 생성 시스템",
+      "authors": "백승혁, 신성호, 강래영, 이성주, 이주순, 육태경, 전창현, 김종원, 유연국, 박성호, 윤준호, 이준석, 이규빈",
+      "venue": "로봇과 인간 제18권 (2021)",
+      "year": 2021,
+      "category": "domestic",
+      "type": "journal",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubHumanGuidedDemonstrations",
+      "title": "Sensing and Acting Like Human: Learning Contact-Rich Precision Skills from Human-Guided Demonstrations",
+      "authors": "",
+      "venue": "",
+      "year": null,
+      "category": "wip",
+      "type": "wip",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "Multimodal Bimanual Action Policy Model, Cross-Modal Alignment of Vision and Force–Torque",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "cvprojectDualArm",
+      "title": "Development of an Intelligent Dual-Arm Robot",
+      "period": "Jul. 2026 – Present",
+      "role": "AI & Software Developer",
+      "organization": "HD Hyundai Robotics",
+      "summary": "Robot learning with VLA/WAM models; VR/glove teleoperation and hand retargeting; simulation and multimodal demonstration data pipelines.",
+      "selected": true,
+      "selectedOrder": 3,
+      "links": []
+    },
+    {
+      "id": "cvprojectTactile",
+      "title": "Development of Tactile Intelligence in Robotic Hands Based on Tactile Data Learning for Manipulating Irregular Multiple Types of Objects",
+      "period": "May 2025 – Feb. 2026",
+      "role": "AI Developer",
+      "organization": "Ministry of Trade, Industry and Energy (MOTIE), South Korea",
+      "summary": "Multimodal Action Policy for Contact-Rich Tasks using Vision and F/T Sensing",
+      "selected": false,
+      "selectedOrder": null,
+      "links": []
+    },
+    {
+      "id": "cvprojectDrone",
+      "title": "Development of a Micro Intelligent Drone for Autonomous Missions in Communication/GPS-denied Environments",
+      "period": "Sep. 2023 – Feb. 2026",
+      "role": "Project Member · Software Developer",
+      "organization": "Institute of Civil-Military Technology Cooperation (ICMTC), South Korea",
+      "summary": "RGB-IR object detection and a multimodal RGB, IR, and LiDAR database captured from drone views.",
+      "selected": true,
+      "selectedOrder": 4,
+      "links": []
+    },
+    {
+      "id": "cvprojectMaritime",
+      "title": "Development of a Situational Awareness System for Preventing Collisions and Accidents of Autonomous Ships",
+      "period": "Apr. 2023 – Dec. 2024",
+      "role": "Project Member · Software Dev. Leader",
+      "organization": "Ministry of Trade, Industry and Energy (MOTIE), South Korea",
+      "summary": "Multi-camera maritime object detection and tracking, training dataset creation, and integration into autonomous ship systems.",
+      "selected": true,
+      "selectedOrder": 1,
+      "links": []
+    },
+    {
+      "id": "cvprojectCeiling",
+      "title": "Ceiling Layout Estimation for Indoor Environments",
+      "period": "Mar. 2022 – Dec. 2022",
+      "role": "Project Member · AI & Software Dev. Leader",
+      "organization": "LG, South Korea",
+      "summary": "Ceiling segmentation and dataset construction for robust floor plan generation under occlusion.",
+      "selected": true,
+      "selectedOrder": 5,
+      "links": []
+    },
+    {
+      "id": "cvprojectSwarm",
+      "title": "Development of Swarm USV Autonomous Navigation Algorithm",
+      "period": "Apr. 2020 – Nov. 2024",
+      "role": "Project Leader · AI & Software Dev. Leader",
+      "organization": "Agency for Defense Development (ADD), South Korea",
+      "summary": "Maritime object detection and intention prediction for swarm situational awareness, integrated into multiple USVs.",
+      "selected": true,
+      "selectedOrder": 2,
+      "links": [
+        {
+          "label": "News",
+          "url": "https://www.youtube.com/watch?v=AyBg_Y-ayZ4"
+        }
+      ]
+    },
+    {
+      "id": "cvprojectAssembly",
+      "title": "Robotic IKEA Furniture Assembly from Assembly Manuals",
+      "period": "Apr. 2019 – Mar. 2020",
+      "role": "Project Member · AI & Software Developer",
+      "organization": "Ministry of Science and ICT (MSIT), South Korea",
+      "summary": "Assembly-part instance segmentation and workflow visualization for robot assembly from IKEA manuals.",
+      "selected": true,
+      "selectedOrder": 6,
+      "links": [
+        {
+          "label": "Video",
+          "url": "https://www.youtube.com/watch?v=faphlYbk_Jg"
+        }
+      ]
+    },
+    {
+      "id": "cvprojectSound",
+      "title": "Deep Learning-Based Sound Event Detection in Game Environments for Haptic Feedback Generation",
+      "period": "Mar. 2019 – Aug. 2019",
+      "role": "Project Member · AI & Software Developer",
+      "organization": "Dongwoon Anatech, South Korea",
+      "summary": "Construction of a Sound Event Detection Dataset and Development of a Sound Event Detection Model in Game Environments",
+      "selected": false,
+      "selectedOrder": null,
+      "links": []
+    },
+    {
+      "id": "cvprojectSleep",
+      "title": "Artificial Intelligence-Based Algorithm Development for Sleep Analysis and Diagnosis of Sleep Apnea Syndromes",
+      "period": "Mar. 2018 – Dec. 2019",
+      "role": "Project Member · AI Developer",
+      "organization": "Gwangju Institute of Science and Technology (GIST), South Korea",
+      "summary": "Construction of a Polysomnography Database, Development of a Sleep Stage Classification Model, and Development of a Sleep Apnea Detection Model",
+      "selected": false,
+      "selectedOrder": null,
+      "links": []
+    }
+  ],
+  "experience": [
+    {
+      "period": "Jul. 2026 – Present",
+      "title": "Senior Researcher",
+      "organization": "HD Hyundai Robotics",
+      "description": "Developing intelligent dual-arm robotic systems, multimodal data pipelines, and ROS 2 interfaces."
+    },
+    {
+      "period": "Mar. 2026 – Jun. 2026",
+      "title": "Postdoctoral Researcher",
+      "organization": "GIST Institute of Artificial Intelligence",
+      "description": ""
+    }
+  ],
+  "academicExperience": [
+    {
+      "period": "Mar. 2024 – Dec. 2025",
+      "title": "Lab Server Administrator",
+      "organization": "GIST",
+      "description": "Leader. Managed GPU servers and developed a real-time GPU/storage monitoring dashboard."
+    },
+    {
+      "period": "Mar. 2022 – Feb. 2025",
+      "title": "Technical Research Personnel",
+      "organization": "GIST",
+      "description": ""
+    },
+    {
+      "period": "Mar. 2019 – Dec. 2021",
+      "title": "Teaching Assistant",
+      "organization": "GIST",
+      "description": "Advanced Deep Learning (Fall 2021) and Deep Learning (Spring 2019, 2020, 2021)"
+    },
+    {
+      "period": "Dec. 2015 – Feb. 2018",
+      "title": "Early Research Internships",
+      "organization": "GIST",
+      "description": "Artificial Intelligence Laboratory, Healthcare Robotics Laboratory, and Intelligence Design & Graphics Laboratory"
+    }
+  ],
+  "education": [
+    {
+      "period": "Mar. 2020 – Feb. 2026",
+      "institution": "Gwangju Institute of Science and Technology (GIST)",
+      "degree": "Ph.D. in AI Convergence",
+      "details": "Dissertation Title: Robust Perception and Trajectory Forecasting for Autonomous Navigation in the Wild Advisor: Prof. Kyoobin Lee",
+      "selected": true
+    },
+    {
+      "period": "Mar. 2018 – Feb. 2020",
+      "institution": "Gwangju Institute of Science and Technology (GIST)",
+      "degree": "M.S., School of Integrated Technology (Intelligent Robotics Program)",
+      "details": "Advisor: Prof. Kyoobin Lee",
+      "selected": true
+    },
+    {
+      "period": "Mar. 2014 – Feb. 2018",
+      "institution": "Gwangju Institute of Science and Technology (GIST)",
+      "degree": "B.S. in Mechanical Engineering",
+      "details": "UC Berkeley Summer Session (Jul. 2015 – Aug. 2015): Linear Algebra and Differential Equations, Social Inequalities Advisor: Prof. Kwanheng Lee",
+      "selected": true
+    },
+    {
+      "period": "Mar. 2012 – Feb. 2014",
+      "institution": "Gangwon Science High School",
+      "degree": "Early Graduation",
+      "details": "",
+      "selected": false
+    }
+  ],
+  "awards": [
+    {
+      "date": "Jun. 2026",
+      "title": "Multimodal Semantic Segmentation Challenge, 4th Workshop on Maritime Computer Vision (MaCVi)",
+      "organization": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2026)",
+      "result": "First Place",
+      "selected": true
+    },
+    {
+      "date": "Jan. 2026",
+      "title": "RoCo Challenge @ AAAI 2026: Robotic Collaborative Assembling for Human-Centered Manufacturing",
+      "organization": "AAAI, A*STAR, NTU",
+      "result": "Finalist Excellence Award",
+      "selected": true
+    },
+    {
+      "date": "Nov. 2025",
+      "title": "Autonomous Driving AI Challenge (Semantic Segmentation)",
+      "organization": "MSIT, IITP, KADIF",
+      "result": "Second Prize (IITP President's Award)",
+      "selected": true
+    },
+    {
+      "date": "Dec. 2024",
+      "title": "USV-based Obstacle Segmentation Challenge, 3rd Maritime Computer Vision Workshop",
+      "organization": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025)",
+      "result": "First Prize",
+      "selected": true
+    },
+    {
+      "date": "Dec. 2024",
+      "title": "USV-based Panoptic Segmentation Challenge, 3rd Maritime Computer Vision Workshop",
+      "organization": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025)",
+      "result": "Second Prize",
+      "selected": true
+    },
+    {
+      "date": "Sep. 2022",
+      "title": "The first NIA-GIST AI-HUB AI Competition",
+      "organization": "NIA, GIST",
+      "result": "First Prize",
+      "selected": false
+    },
+    {
+      "date": "Mar. 2020",
+      "title": "Presidential Scholarship (GFP)",
+      "organization": "GIST",
+      "result": "",
+      "selected": false
+    },
+    {
+      "date": "Nov. 2017",
+      "title": "Track 1, The first GIST Innovative Convergence Technology Contest",
+      "organization": "GIST",
+      "result": "President's Award",
+      "selected": false
+    },
+    {
+      "date": "Nov. 2017",
+      "title": "Track 2, The first GIST Innovative Convergence Technology Contest",
+      "organization": "GIST",
+      "result": "Dean of Mechanical Engineering's Award",
+      "selected": false
+    }
+  ],
+  "patents": [
+    {
+      "year": "2024",
+      "title": "그래프 트랜스 포머 기반 다중 관계 분석 네트워크를 통한 다중 객체의 경로 예측 방법 및 장치",
+      "status": "Applied (KR)",
+      "number": "2024-0159740",
+      "inventors": "이성주, 이준석, 유연국, 김태리, 이규빈"
+    },
+    {
+      "year": "2024",
+      "title": "부품조립계획장치",
+      "status": "Registered (KR), Applied (PCT)",
+      "number": "10-2647402, PCT/KR2022/000032",
+      "inventors": "이성주, 백승혁, 강래영, 박성호, 신성호, 육태경, 이주순, 이규빈"
+    },
+    {
+      "year": "2024",
+      "title": "실환경 물체 인식 방법 및 장치",
+      "status": "Registered (KR), Applied (PCT)",
+      "number": "10-2662978, PCT/KR2022/008146",
+      "inventors": "이성주, 신성호, 강래영, 박성호, 이규빈"
+    },
+    {
+      "year": "2021",
+      "title": "비 접촉 센서를 이용한 신체 상태 정보 획득 방법",
+      "status": "Registered (KR)",
+      "number": "10-2249237",
+      "inventors": "이성주, 서호건, 박덕환, 김문상, 이규빈"
+    },
+    {
+      "year": "2019",
+      "title": "부품조립도 이해와 조립계획 생성 시스템",
+      "status": "Applied (KR)",
+      "number": "2019-0153768",
+      "inventors": "이성주, 백승혁, 강래영, 박성호, 신성호, 육태경, 이주순, 이규빈"
+    }
+  ]
+}
