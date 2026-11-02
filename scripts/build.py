@@ -45,6 +45,9 @@ def url(value: str, prefix: str = "") -> str:
         return text(value)
     if value.startswith("#"):
         return text(value)
+    if parsed.path.endswith(".pdf") and not parsed.query and not parsed.fragment:
+        revision = hashlib.sha256((ROOT / parsed.path.lstrip("/")).read_bytes()).hexdigest()[:12]
+        value += f"?v={revision}"
     return text(prefix + value.lstrip("/"))
 
 
