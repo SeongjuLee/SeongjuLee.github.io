@@ -755,7 +755,7 @@
       "organization": "HD Hyundai Robotics",
       "summary": "Robot learning with VLA/WAM models; VR/glove teleoperation and hand retargeting; simulation and multimodal demonstration data pipelines.",
       "selected": true,
-      "selectedOrder": 3,
+      "selectedOrder": 1,
       "links": []
     },
     {
@@ -777,7 +777,7 @@
       "organization": "Institute of Civil-Military Technology Cooperation (ICMTC), South Korea",
       "summary": "RGB-IR object detection and a multimodal RGB, IR, and LiDAR database captured from drone views.",
       "selected": true,
-      "selectedOrder": 4,
+      "selectedOrder": 2,
       "links": []
     },
     {
@@ -788,7 +788,7 @@
       "organization": "Ministry of Trade, Industry and Energy (MOTIE), South Korea",
       "summary": "Multi-camera maritime object detection and tracking, training dataset creation, and integration into autonomous ship systems.",
       "selected": true,
-      "selectedOrder": 1,
+      "selectedOrder": 3,
       "links": [],
       "media": {
         "kind": "gif",
@@ -798,17 +798,6 @@
       }
     },
     {
-      "id": "cvprojectCeiling",
-      "title": "Ceiling Layout Estimation for Indoor Environments",
-      "period": "Mar. 2022 – Dec. 2022",
-      "role": "Project Member · AI & Software Dev. Leader",
-      "organization": "LG, South Korea",
-      "summary": "Ceiling segmentation and dataset construction for robust floor plan generation under occlusion.",
-      "selected": true,
-      "selectedOrder": 5,
-      "links": []
-    },
-    {
       "id": "cvprojectSwarm",
       "title": "Development of Swarm USV Autonomous Navigation Algorithm",
       "period": "Apr. 2020 – Nov. 2024",
@@ -816,7 +805,7 @@
       "organization": "Agency for Defense Development (ADD), South Korea",
       "summary": "Maritime object detection and intention prediction for swarm situational awareness, integrated into multiple USVs.",
       "selected": true,
-      "selectedOrder": 2,
+      "selectedOrder": 4,
       "links": [
         {
           "label": "News",
@@ -829,6 +818,17 @@
         "poster": "assets/media/research/swarm-usv-poster.jpg",
         "alt": "Maritime object detection results from the swarm USV project."
       }
+    },
+    {
+      "id": "cvprojectCeiling",
+      "title": "Ceiling Layout Estimation for Indoor Environments",
+      "period": "Mar. 2022 – Dec. 2022",
+      "role": "Project Member · AI & Software Dev. Leader",
+      "organization": "LG, South Korea",
+      "summary": "Ceiling segmentation and dataset construction for robust floor plan generation under occlusion.",
+      "selected": true,
+      "selectedOrder": 5,
+      "links": []
     },
     {
       "id": "cvprojectAssembly",
@@ -853,23 +853,23 @@
       }
     },
     {
-      "id": "cvprojectSound",
-      "title": "Deep Learning-Based Sound Event Detection in Game Environments for Haptic Feedback Generation",
-      "period": "Mar. 2019 – Aug. 2019",
-      "role": "Project Member · AI & Software Developer",
-      "organization": "Dongwoon Anatech, South Korea",
-      "summary": "Construction of a Sound Event Detection Dataset and Development of a Sound Event Detection Model in Game Environments",
-      "selected": false,
-      "selectedOrder": null,
-      "links": []
-    },
-    {
       "id": "cvprojectSleep",
       "title": "Artificial Intelligence-Based Algorithm Development for Sleep Analysis and Diagnosis of Sleep Apnea Syndromes",
       "period": "Mar. 2018 – Dec. 2019",
       "role": "Project Member · AI Developer",
       "organization": "Gwangju Institute of Science and Technology (GIST), South Korea",
       "summary": "Construction of a Polysomnography Database, Development of a Sleep Stage Classification Model, and Development of a Sleep Apnea Detection Model",
+      "selected": false,
+      "selectedOrder": null,
+      "links": []
+    },
+    {
+      "id": "cvprojectSound",
+      "title": "Deep Learning-Based Sound Event Detection in Game Environments for Haptic Feedback Generation",
+      "period": "Mar. 2019 – Aug. 2019",
+      "role": "Project Member · AI & Software Developer",
+      "organization": "Dongwoon Anatech, South Korea",
+      "summary": "Construction of a Sound Event Detection Dataset and Development of a Sound Event Detection Model in Game Environments",
       "selected": false,
       "selectedOrder": null,
       "links": []
