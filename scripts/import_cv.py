@@ -337,6 +337,15 @@ def main() -> None:
         "awards": award_records(read("06_awards.tex")),
         "patents": patent_records(read("07_patents.tex")),
     }
+    # Media is curated separately from the CV; retain its mapping when importing updates.
+    if args.output.exists():
+        previous = json.loads(args.output.read_text(encoding="utf-8-sig"))
+        for collection in ("publications", "projects"):
+            media_by_id = {item["id"]: item["media"] for item in previous.get(collection, [])
+                           if item.get("media")}
+            for item in data[collection]:
+                if item["id"] in media_by_id:
+                    item["media"] = media_by_id[item["id"]]
     validate(data)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

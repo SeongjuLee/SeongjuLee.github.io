@@ -8,6 +8,7 @@ generated pages match their source. Only the Python standard library is used.
 from __future__ import annotations
 
 import argparse
+import hashlib
 from html import escape
 import json
 from pathlib import Path
@@ -18,6 +19,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "src/data/profile.json"
+CSS_VERSION = hashlib.sha256((ROOT / "assets/css/site.css").read_bytes()).hexdigest()[:12]
 BASE_URL = "https://seongjulee.github.io/"
 PAGES = {
     "home": ("index.html", "Home"),
@@ -69,6 +71,36 @@ def authors(value: str | list[str], name: str) -> str:
     )
 
 
+def research_media(item: dict, prefix: str) -> str:
+    """Render a real research asset, or reserve its place without inventing one."""
+    media = item.get("media") or {}
+    src = media.get("src")
+    if not src:
+        return '<div class="research-media media-placeholder" aria-hidden="true"></div>'
+    kind = media.get("kind", "gif")
+    if kind not in {"gif", "image", "video"}:
+        raise ValueError(f"Unsupported media kind for {item['id']}: {kind}")
+    alt = media.get("alt") or item["title"]
+    poster = media.get("poster")
+    if kind == "video":
+        poster_attr = f' poster="{url(poster, prefix)}"' if poster else ""
+        return f'''<div class="research-media">
+      <video controls preload="none" width="320" height="200" aria-label="{text(alt)}"{poster_attr}>
+        <source src="{url(src, prefix)}">
+        {anchor('Open research video', src, prefix)}
+      </video>
+    </div>'''
+    motion_class = " media-animated-no-poster" if kind == "gif" and not poster else ""
+    reduced_source = (f'<source media="(prefers-reduced-motion: reduce)" srcset="{url(poster, prefix)}">'
+                      if kind == "gif" and poster else "")
+    return f'''<a class="research-media{motion_class}" href="{url(src, prefix)}" aria-label="{text('Open original preview: ' + alt)}">
+      <picture>
+        {reduced_source}
+        <img src="{url(src, prefix)}" alt="{text(alt)}" loading="lazy" decoding="async" width="320" height="200">
+      </picture>
+    </a>'''
+
+
 def publication(item: dict, profile: dict, prefix: str, metrics: bool = False) -> str:
     role = item.get("authorRole")
     role_html = f'<span class="author-role">{text(role)}</span>' if role else ""
@@ -80,8 +112,13 @@ def publication(item: dict, profile: dict, prefix: str, metrics: bool = False) -
         metric_html = '<p class="item-metrics">' + " · ".join(
             text(value) for value in item["metrics"]
         ) + "</p>"
+    with_media = bool(item.get("selected") or item.get("media"))
+    media_html = research_media(item, prefix) if with_media else ""
+    article_class = ' class="research-row"' if with_media else ""
     return f'''<li class="publication" id="{text(item['id'])}">
-  <article>
+  <article{article_class}>
+    {media_html}
+    <div class="research-copy">
     <h3>{text(item['title'])}</h3>
     <p class="authors">{authors(item.get('authors', ''), profile['name'])}{role_html}</p>
     <p class="venue">{text(item.get('venue', ''))}</p>
@@ -89,6 +126,7 @@ def publication(item: dict, profile: dict, prefix: str, metrics: bool = False) -
     {summary_html}
     {links(item.get('links', []), prefix)}
     {metric_html}
+    </div>
   </article>
 </li>'''
 
@@ -103,14 +141,27 @@ def publication_list(items: list[dict], profile: dict, prefix: str,
 def project_list(items: list[dict], prefix: str, heading_level: int = 3) -> str:
     rows = []
     for item in items:
-        rows.append(f'''<li class="dated-item" id="{text(item['id'])}">
-  <p class="item-date">{text(item['period'])}</p>
-  <article>
+        date_html = f'<p class="item-date">{text(item["period"])}</p>'
+        content = f'''
     <h{heading_level}>{text(item['title'])}</h{heading_level}>
     <p class="organization">{text(item['organization'])}</p>
     <p class="item-role">{text(item['role'])}</p>
     <p class="item-summary">{text(item['summary'])}</p>
-    {links(item.get('links', []), prefix)}
+    {links(item.get('links', []), prefix)}'''
+        if item.get("selected") or item.get("media"):
+            rows.append(f'''<li class="dated-item project-with-media" id="{text(item['id'])}">
+  <article class="research-row">
+    {research_media(item, prefix)}
+    <div class="research-copy">
+      {date_html}
+      {content}
+    </div>
+  </article>
+</li>''')
+        else:
+            rows.append(f'''<li class="dated-item" id="{text(item['id'])}">
+  {date_html}
+  <article>{content}
   </article>
 </li>''')
     return '<ul class="dated-list projects-list">\n' + "\n".join(rows) + "\n</ul>"
@@ -201,7 +252,8 @@ def shell(page: str, data: dict, content: str, description: str) -> str:
     nav = []
     for key, (target, nav_label) in PAGES.items():
         active = ' aria-current="page"' if key == page else ""
-        nav.append(f'<a href="{url(target, prefix)}"{active}>{text(nav_label)}</a>')
+        target_url = text(prefix or "./") if key == "home" else url(target, prefix)
+        nav.append(f'<a href="{target_url}"{active}>{text(nav_label)}</a>')
     photo = str(profile["photo"]).lstrip("/")
     return f'''<!DOCTYPE html>
 <!-- Generated by scripts/build.py from src/data/profile.json. -->
@@ -220,12 +272,12 @@ def shell(page: str, data: dict, content: str, description: str) -> str:
   <meta property="og:image:alt" content="Portrait of {text(profile['name'])}">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="{prefix}assets/favicon.svg">
-  <link rel="stylesheet" href="{prefix}assets/css/site.css">
+  <link rel="stylesheet" href="{prefix}assets/css/site.css?v={CSS_VERSION}">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrapper">
-    <a class="site-name" href="{prefix}index.html">{text(profile['name'])}</a>
+    <a class="site-name" href="{text(prefix or './')}">{text(profile['name'])}</a>
     <nav class="site-nav" aria-label="Main navigation">
       {' '.join(nav)}
     </nav>

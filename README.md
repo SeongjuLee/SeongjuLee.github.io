@@ -42,6 +42,23 @@ Open `http://127.0.0.1:8000/`.
   files are independent of the website build.
 - Update biography, contact details, and research interests in `profile`.
 
+Research previews are optional `media` objects on publication or project records:
+
+```json
+"media": {
+  "src": "assets/media/research/example.gif",
+  "poster": "assets/media/research/example-poster.jpg",
+  "kind": "gif",
+  "alt": "A factual description of the research visualization"
+}
+```
+
+The previews are extracted from the author's research presentations. The original
+presentations and source videos are not published. Keep a poster for every GIF
+so reduced-motion preferences use a still frame. Entries without media retain
+an empty preview area; nothing is fabricated to fill it. The optional CV importer
+preserves existing media mappings by record ID.
+
 The initial content was imported from the CV's full/selected LaTeX sources. The
 optional importer supports that specific template:
 
@@ -61,6 +78,7 @@ the diff and the verification date before committing an imported snapshot.
   existing page URLs are preserved.
 - `assets/css/site.css`: responsive layout and typography.
 - `assets/images/profile/`: the existing profile photograph.
+- `assets/media/research/`: optimized research GIFs and still posters.
 - `assets/docs/`: full and selected CV PDFs.
 - `scripts/build.py`: static page renderer and freshness check.
 - `tests/check_site.py`: generated content, links, assets, and HTML structure checks.
