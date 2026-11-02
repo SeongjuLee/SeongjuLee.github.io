@@ -33,6 +33,8 @@ Open `http://127.0.0.1:8000/`.
 
 - Publication and project `selected` flags control what appears on the homepage.
   `selectedOrder` sets their homepage order; the archive retains all records.
+  Selected papers with `selectionGroup: "additional"` appear in the separate
+  first-/co-first-author subsection.
 - Keep accepted papers, manuscripts in submission, and work in progress in their
   respective categories. `authorRole` describes the recorded author position.
 - Citation and journal metrics are a dated snapshot. Update `asOf` only when the
@@ -53,11 +55,18 @@ Research previews are optional `media` objects on publication or project records
 }
 ```
 
-The previews are extracted from the author's research presentations. The original
-presentations and source videos are not published. Keep a poster for every GIF
-so reduced-motion preferences use a still frame. Entries without media retain
-an empty preview area; nothing is fabricated to fill it. The optional CV importer
-preserves existing media mappings by record ID.
+Most previews are extracted from the author's research presentations; the original
+presentations and source videos are not published. The HD Hyundai dual-arm preview
+is a company demonstration at FIX 2026, provided by HD Hyundai Robotics through
+[NEWSIS](https://nwww.newsis.com/view/NISX20261021_0003835579)
+([source GIF](https://img1.newsis.com/2026/10/21/NISI20261021_0002269867_web.gif?rnd=20261021150735)).
+It retains the full nine-second scene and original 600?338 resolution.
+Optional `media.credit` and `media.sourceUrl` fields display project attribution.
+
+Keep a poster for every GIF so reduced-motion preferences use a still frame.
+Entries without media retain an empty preview area, except additional first-author
+papers, which use a text-only layout. Nothing is fabricated to fill a preview.
+The optional CV importer preserves existing media mappings by record ID.
 
 The initial content was imported from the CV's full/selected LaTeX sources. The
 optional importer supports that specific template:
