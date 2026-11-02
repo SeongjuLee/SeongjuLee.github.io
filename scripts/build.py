@@ -141,6 +141,27 @@ def publication_list(items: list[dict], profile: dict, prefix: str,
     ) + "\n</ol>"
 
 
+def project_media(item: dict, prefix: str) -> str:
+    """Optionally pair a platform view with the existing perception preview."""
+    media = item.get("media") or {}
+    platform = media.get("platform")
+    if not platform:
+        return research_media(item, prefix)
+    if platform.get("kind", "gif") not in {"image", "gif"}:
+        raise ValueError(f"Unsupported platform media kind for {item['id']}")
+    platform_item = {**item, "media": platform}
+    return f'''<div class="project-media-stack">
+    <figure>
+      {research_media(platform_item, prefix)}
+      <figcaption>Platform</figcaption>
+    </figure>
+    <figure>
+      {research_media(item, prefix)}
+      <figcaption>Perception</figcaption>
+    </figure>
+  </div>'''
+
+
 def project_list(items: list[dict], prefix: str, heading_level: int = 3) -> str:
     rows = []
     for item in items:
@@ -163,7 +184,7 @@ def project_list(items: list[dict], prefix: str, heading_level: int = 3) -> str:
         if item.get("selected") or item.get("media"):
             rows.append(f'''<li class="dated-item project-with-media" id="{text(item['id'])}">
   <article class="research-row">
-    {research_media(item, prefix)}
+    {project_media(item, prefix)}
     <div class="research-copy">
       {date_html}
       {content}

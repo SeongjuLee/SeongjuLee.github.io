@@ -810,7 +810,13 @@
         "kind": "gif",
         "src": "assets/media/research/maritime-detection.gif",
         "poster": "assets/media/research/maritime-detection-poster.jpg",
-        "alt": "Object detection on an autonomous-ship platform in rainy conditions."
+        "alt": "Object detection on an autonomous-ship platform in rainy conditions.",
+        "platform": {
+          "kind": "image",
+          "src": "assets/media/research/maritime-platform.jpg",
+          "alt": "Exterior view of the autonomous-ship research platform shown in the project presentation."
+        },
+        "credit": "Platform photo and perception demo: research presentation."
       }
     },
     {
@@ -832,7 +838,15 @@
         "kind": "gif",
         "src": "assets/media/research/swarm-usv.gif",
         "poster": "assets/media/research/swarm-usv-poster.jpg",
-        "alt": "Maritime object detection results from the swarm USV project."
+        "alt": "Maritime object detection results from the swarm USV project.",
+        "platform": {
+          "kind": "gif",
+          "src": "assets/media/research/swarm-usv-platform.gif",
+          "poster": "assets/media/research/swarm-usv-platform-poster.jpg",
+          "alt": "Close and group views of USVs sailing during an ADD demonstration, from SBS News."
+        },
+        "credit": "Platform clip: SBS News (Oct. 10, 2024). Perception demo: research presentation.",
+        "sourceUrl": "https://www.youtube.com/watch?v=AyBg_Y-ayZ4"
       }
     },
     {
