@@ -63,15 +63,21 @@ is a company demonstration at FIX 2026, provided by HD Hyundai Robotics through
 It retains the full nine-second scene and original 600?338 resolution.
 Optional `media.credit` and `media.sourceUrl` fields display project attribution.
 
-Projects may add a `media.platform` object with the same asset fields (`kind`,
-`src`, `alt`, and `poster` for GIFs). It displays a separate Platform preview above
-the existing Perception preview. The maritime platform photograph comes from the
-author's interview presentation (slide 4, "Appearance of Platform"). The swarm USV
-platform GIF is a five-second excerpt (01:05-01:10) from the October 10, 2024
-[SBS News report](https://news.sbs.co.kr/news/endPage.do?news_id=N1007828633),
-also linked by the project's existing [news video](https://www.youtube.com/watch?v=AyBg_Y-ayZ4).
-It retains the full frame and broadcaster marks. These platform additions leave
-the original project perception GIFs unchanged.
+The two maritime project previews each use one edited GIF that connects the
+physical platform with real perception footage, using brief crossfades. The
+source shots are separate recordings rather than synchronized views.
+
+- `maritime-platform-perception.gif`: the platform photograph from the author's
+  interview presentation (slide 4, "Appearance of Platform"), followed by daytime
+  and rainy-condition detection recordings (`media12.mp4` and `media13.mp4`).
+- `swarm-platform-perception.gif`: platform close-up (01:05-01:07.2), perception
+  recording from the same presentation (`media10.mp4`, 00:00.5-00:06.1), then a
+  platform group shot (01:07.8-01:10). The platform excerpts are from the
+  October 10, 2024 [SBS News report](https://news.sbs.co.kr/news/endPage.do?news_id=N1007828633),
+  also linked by the project's [news video](https://www.youtube.com/watch?v=AyBg_Y-ayZ4).
+  Full frames and broadcaster marks are retained.
+
+The original standalone perception and platform assets are retained as sources.
 
 Keep a poster for every GIF so reduced-motion preferences use a still frame.
 Entries without media retain an empty preview area, except additional first-author
