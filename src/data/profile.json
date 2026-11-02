@@ -40,7 +40,13 @@
       "metrics": [],
       "notes": [
         "First Prize in the USV-based Obstacle Segmentation Challenge at the 3rd Maritime Computer Vision Workshop"
-      ]
+      ],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/dgss-night.gif",
+        "poster": "assets/media/research/dgss-night-poster.jpg",
+        "alt": "Nighttime maritime input alongside semantic segmentation output."
+      }
     },
     {
       "id": "cvpubManipForce",
@@ -72,7 +78,13 @@
         "38.04% Acceptance Rate",
         "Cited by 29"
       ],
-      "notes": []
+      "notes": [],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/manipforce-battery.gif",
+        "poster": "assets/media/research/manipforce-battery-poster.jpg",
+        "alt": "Battery insertion demonstration with ManipForce."
+      }
     },
     {
       "id": "cvpubCrossDomainDistillation",
@@ -172,7 +184,13 @@
         }
       ],
       "metrics": [],
-      "notes": []
+      "notes": [],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/mv2-multiview.gif",
+        "poster": "assets/media/research/mv2-multiview-poster.jpg",
+        "alt": "Six camera-view examples from the MV2 maritime dataset."
+      }
     },
     {
       "id": "cvpubMaritimeChallengeThree",
@@ -223,7 +241,13 @@
         "27.9% Acceptance Rate",
         "Cited by 80"
       ],
-      "notes": []
+      "notes": [],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/mart-basketball.gif",
+        "poster": "assets/media/research/mart-basketball-poster.jpg",
+        "alt": "Basketball multi-agent trajectory prediction visualization from MART."
+      }
     },
     {
       "id": "cvpubBlockSelection",
@@ -765,7 +789,13 @@
       "summary": "Multi-camera maritime object detection and tracking, training dataset creation, and integration into autonomous ship systems.",
       "selected": true,
       "selectedOrder": 1,
-      "links": []
+      "links": [],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/maritime-detection.gif",
+        "poster": "assets/media/research/maritime-detection-poster.jpg",
+        "alt": "Object detection on an autonomous-ship platform in rainy conditions."
+      }
     },
     {
       "id": "cvprojectCeiling",
@@ -792,7 +822,13 @@
           "label": "News",
           "url": "https://www.youtube.com/watch?v=AyBg_Y-ayZ4"
         }
-      ]
+      ],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/swarm-usv.gif",
+        "poster": "assets/media/research/swarm-usv-poster.jpg",
+        "alt": "Maritime object detection results from the swarm USV project."
+      }
     },
     {
       "id": "cvprojectAssembly",
@@ -808,7 +844,13 @@
           "label": "Video",
           "url": "https://www.youtube.com/watch?v=faphlYbk_Jg"
         }
-      ]
+      ],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/ikea-planning.gif",
+        "poster": "assets/media/research/ikea-planning-poster.jpg",
+        "alt": "Assembly plan and workflow visualization for the IKEA assembly project."
+      }
     },
     {
       "id": "cvprojectSound",

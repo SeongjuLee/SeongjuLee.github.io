@@ -38,6 +38,8 @@ class Page(HTMLParser):
                 self.assets.append(attr["href"])
         if tag in {"img", "script"} and attr.get("src"):
             self.assets.append(attr["src"])
+        if tag == "source" and attr.get("srcset"):
+            self.assets.extend(item.strip().split()[0] for item in attr["srcset"].split(","))
         if tag == "img":
             self.image_alts.append(attr.get("alt"))
         if tag == "main" and attr.get("id") == "main":
@@ -104,6 +106,18 @@ def check():
         actual_home = [item_id for item_id in home.ids if item_id in all_ids]
         require(actual_home == [item["id"] for item in selected], f"{collection}: selected order/content mismatch")
         require(all_ids <= set(archive.ids), f"{collection}: archive omits records")
+        for item in records:
+            media = item.get("media")
+            if not media:
+                continue
+            require(bool(media.get("alt")), f"{item['id']}: missing research preview description")
+            asset = ROOT / media["src"]
+            require(asset.is_file(), f"{item['id']}: missing research preview file")
+            if media.get("kind", "gif") == "gif":
+                require(bool(media.get("poster")), f"{item['id']}: GIF needs a reduced-motion poster")
+                require(asset.is_file() and asset.read_bytes()[:6] in {b"GIF87a", b"GIF89a"},
+                        f"{item['id']}: invalid GIF asset")
+                require((ROOT / media.get("poster", "")).is_file(), f"{item['id']}: missing poster")
     body = " ".join(home.content)
     require("Senior Researcher" in body and "HD Hyundai Robotics" in body, "Outdated current affiliation")
     require("Ph.D. Candidate" not in body, "Outdated doctoral candidate status")
