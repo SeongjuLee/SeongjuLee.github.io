@@ -118,6 +118,31 @@ def check():
                 require(asset.is_file() and asset.read_bytes()[:6] in {b"GIF87a", b"GIF89a"},
                         f"{item['id']}: invalid GIF asset")
                 require((ROOT / media.get("poster", "")).is_file(), f"{item['id']}: missing poster")
+            platform = media.get("platform") if collection == "projects" else None
+            if platform:
+                label = f"{item['id']} platform"
+                require(platform.get("kind", "gif") in {"image", "gif"}, f"{label}: unsupported preview kind")
+                require(bool(platform.get("alt")), f"{label}: missing preview description")
+                platform_asset = ROOT / platform.get("src", "")
+                require(platform_asset.is_file(), f"{label}: missing preview file")
+                if platform.get("kind", "gif") == "gif":
+                    require(platform_asset.is_file() and platform_asset.read_bytes()[:6] in {b"GIF87a", b"GIF89a"},
+                            f"{label}: invalid GIF asset")
+                    require(bool(platform.get("poster")) and (ROOT / platform.get("poster", "")).is_file(),
+                            f"{label}: GIF needs a reduced-motion poster")
+                visible_pages = [archive, home] if item["selected"] else [archive]
+                for page in visible_pages:
+                    item_html = page.path.read_text(encoding="utf-8").split(f'id="{item["id"]}"', 1)[-1].split("</li>", 1)[0]
+                    for caption in ("Platform", "Perception"):
+                        require(bool(re.search(r"<figcaption\b[^>]*>\s*" + caption + r"\s*</figcaption>", item_html)),
+                                f"{label}: missing {caption} caption")
+                    rendered_sources = re.findall(r'(?:src|srcset)="([^"]+)"', item_html)
+                    for preview in (media, platform):
+                        require(any(urlsplit(value).path.endswith(preview.get("src", "")) for value in rendered_sources),
+                                f"{label}: platform/perception preview is not rendered")
+                        if preview.get("kind", "gif") == "gif" and preview.get("poster"):
+                            require(any(urlsplit(value).path.endswith(preview["poster"]) for value in rendered_sources),
+                                    f"{label}: reduced-motion poster is not rendered")
             if collection == "projects" and (media.get("credit") or media.get("sourceUrl")):
                 visible_pages = [archive, home] if item["selected"] else [archive]
                 for page in visible_pages:
