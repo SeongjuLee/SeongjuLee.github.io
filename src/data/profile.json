@@ -88,7 +88,15 @@
         "38.04% Acceptance Rate",
         "Cited by 1"
       ],
-      "notes": []
+      "notes": [],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/cd-fkd-demo.gif",
+        "poster": "assets/media/research/cd-fkd-demo-poster.jpg",
+        "alt": "Daytime and nighttime object detections from the official CD-FKD demonstration.",
+        "credit": "Detection demo: GIST AI Lab.",
+        "sourceUrl": "https://www.youtube.com/watch?v=3VRU82IuZ4g"
+      }
     },
     {
       "id": "cvpubMaritimeChallengeFour",
@@ -166,7 +174,15 @@
         "46% Acceptance Rate",
         "Cited by 2"
       ],
-      "notes": []
+      "notes": [],
+      "media": {
+        "kind": "image",
+        "src": "assets/media/research/robust-maritime-method.png",
+        "alt": "Joint semantic learning architecture with shared features for maritime object detection and auxiliary scene segmentation.",
+        "credit": "Method diagram: GIST AI Lab presentation.",
+        "sourceUrl": "https://www.youtube.com/watch?v=nJdHN2xWhJM",
+        "demo": "assets/media/research/robust-maritime-demo.gif"
+      }
     },
     {
       "id": "cvpubMaritimeChallengeThree",
@@ -269,7 +285,14 @@
         "25.8% Acceptance Rate",
         "Cited by 82"
       ],
-      "notes": []
+      "notes": [],
+      "media": {
+        "kind": "image",
+        "src": "assets/media/research/block-selection-figure2a.png",
+        "alt": "Block selection using NormRatio, comparing feature norms for training images and jigsaw images.",
+        "credit": "Figure 2(a), original paper.",
+        "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2023/html/Yu_Block_Selection_Method_for_Using_Feature_Norm_in_Out-of-Distribution_Detection_CVPR_2023_paper.html"
+      }
     },
     {
       "id": "cvpubGymNet",
@@ -340,7 +363,14 @@
       "metrics": [
         "JCR 2025 Q1"
       ],
-      "notes": []
+      "notes": [],
+      "media": {
+        "kind": "image",
+        "src": "assets/media/research/active-annotation-figure1.jpg",
+        "alt": "Five-stage workflow for active semi-supervised annotation, calibrated human review, and label-pool expansion.",
+        "credit": "Figure 1, original paper.",
+        "sourceUrl": "https://doi.org/10.1016/j.iswa.2026.200701"
+      }
     },
     {
       "id": "cvpubDentalDiagnosis",
@@ -783,7 +813,15 @@
       "summary": "Multimodal Action Policy for Contact-Rich Tasks using Vision and F/T Sensing",
       "selected": true,
       "selectedOrder": 2,
-      "links": []
+      "links": [],
+      "media": {
+        "kind": "gif",
+        "src": "assets/media/research/tactile-project-simulation.gif",
+        "poster": "assets/media/research/tactile-project-simulation-poster.jpg",
+        "alt": "Simulated robotic-hand grasping and tactile contact-force visualization from the official GIST AI Lab project demonstration.",
+        "credit": "Simulation excerpt: GIST AI Lab project demo.",
+        "sourceUrl": "https://www.youtube.com/watch?v=ACXip1F-Fh0"
+      }
     },
     {
       "id": "cvprojectDrone",
@@ -794,7 +832,14 @@
       "summary": "RGB-IR object detection and a multimodal RGB, IR, and LiDAR database captured from drone views.",
       "selected": true,
       "selectedOrder": 3,
-      "links": []
+      "links": [],
+      "media": {
+        "kind": "image",
+        "src": "assets/media/research/drone-multimodal-overview.png",
+        "alt": "Official project overview of drone-view RGB, infrared, and LiDAR data for multi-view object recognition.",
+        "credit": "Project overview: GIST AI Lab.",
+        "sourceUrl": "https://sites.google.com/view/gistailab/project/%EB%93%9C%EB%A1%A0"
+      }
     },
     {
       "id": "cvprojectMaritime",
@@ -847,7 +892,14 @@
       "summary": "Ceiling segmentation and dataset construction for robust floor plan generation under occlusion.",
       "selected": true,
       "selectedOrder": 6,
-      "links": []
+      "links": [],
+      "media": {
+        "kind": "image",
+        "src": "assets/media/research/ceiling-segmentation-example.jpg",
+        "alt": "Input image and ceiling segmentation mask from the official project example.",
+        "credit": "Ceiling segmentation example: GIST AI Lab.",
+        "sourceUrl": "https://sites.google.com/view/gistailab/project/lg"
+      }
     },
     {
       "id": "cvprojectAssembly",

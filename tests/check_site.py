@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class Page(HTMLParser):
-    def __init__(self, path):
+    def __init__(self, path, content=None):
         super().__init__(convert_charrefs=True)
         self.path = path
         self.ids = []
@@ -23,16 +23,27 @@ class Page(HTMLParser):
         self.main_focusable = False
         self.lang = None
         self.image_alts = []
-        self.feed(path.read_text(encoding="utf-8"))
+        self.records = {}
+        self.list_items = []
+        self.active_anchor = None
+        self.feed(path.read_text(encoding="utf-8") if content is None else content)
 
     def handle_starttag(self, tag, attrs):
         attr = dict(attrs)
         if attr.get("id"):
             self.ids.append(attr["id"])
+        if tag == "li":
+            self.list_items.append(attr.get("id"))
+            if attr.get("id"):
+                self.records[attr["id"]] = {"content": [], "anchors": []}
         if tag == "html":
             self.lang = attr.get("lang")
         if tag == "a" and attr.get("href"):
             self.links.append(attr["href"])
+            self.active_anchor = {"href": attr["href"], "content": []}
+            for item_id in self.list_items:
+                if item_id:
+                    self.records[item_id]["anchors"].append(self.active_anchor)
         if tag == "link" and "canonical" not in attr.get("rel", ""):
             if attr.get("href"):
                 self.assets.append(attr["href"])
@@ -50,13 +61,51 @@ class Page(HTMLParser):
             self.headings.append(int(tag[1]))
 
     def handle_endtag(self, tag):
+        if tag == "li" and self.list_items:
+            self.list_items.pop()
+        if tag == "a":
+            self.active_anchor = None
         if tag == "section" and self.sections:
             self.sections.pop()
 
     def handle_data(self, data):
         self.content.append(data)
+        for item_id in self.list_items:
+            if item_id:
+                self.records[item_id]["content"].append(data)
+        if self.active_anchor is not None:
+            self.active_anchor["content"].append(data)
         if "domestic" in self.sections:
             self.domestic_content.append(data)
+
+
+def check_media_attribution(item, page, require):
+    media = item.get("media") or {}
+    record = page.records.get(item["id"], {"content": [], "anchors": []})
+    label = f"{item['id']} on {page.path.relative_to(ROOT)}"
+    if media.get("credit"):
+        require(media["credit"] in " ".join(record["content"]),
+                f"{label}: media credit is not displayed within its record")
+    if media.get("sourceUrl"):
+        source = urlsplit(media["sourceUrl"])
+        require(source.scheme in {"https", "http"} and bool(source.netloc),
+                f"{label}: invalid media source URL")
+        source_links = [link for link in record["anchors"] if link["href"] == media["sourceUrl"]]
+        require(len(source_links) == 1, f"{label}: media source link is missing or duplicated")
+    if media.get("demo"):
+        demo = urlsplit(media["demo"])
+        require(not demo.scheme and not demo.netloc, f"{label}: demo clip must be a local asset")
+        asset = (ROOT / unquote(demo.path).lstrip("/")).resolve()
+        require(asset.is_relative_to(ROOT), f"{label}: demo clip escapes repository")
+        require(asset.is_file(), f"{label}: missing demo clip")
+        if asset.suffix.lower() == ".gif":
+            require(asset.is_file() and asset.read_bytes()[:6] in {b"GIF87a", b"GIF89a"},
+                    f"{label}: invalid demo GIF")
+        matching = [link for link in record["anchors"]
+                    if not urlsplit(link["href"]).scheme
+                    and (page.path.parent / unquote(urlsplit(link["href"]).path)).resolve() == asset]
+        require(any(" ".join(link["content"]).strip() == "Demo clip" for link in matching),
+                f"{label}: Demo clip link is missing or uses the wrong page-relative path")
 
 
 def check():
@@ -118,17 +167,9 @@ def check():
                 require(asset.is_file() and asset.read_bytes()[:6] in {b"GIF87a", b"GIF89a"},
                         f"{item['id']}: invalid GIF asset")
                 require((ROOT / media.get("poster", "")).is_file(), f"{item['id']}: missing poster")
-            if collection == "projects" and (media.get("credit") or media.get("sourceUrl")):
-                visible_pages = [archive, home] if item["selected"] else [archive]
-                for page in visible_pages:
-                    if media.get("credit"):
-                        require(media["credit"] in " ".join(page.content),
-                                f"{item['id']}: media credit is not displayed")
-                    if media.get("sourceUrl"):
-                        source = urlsplit(media["sourceUrl"])
-                        require(source.scheme in {"https", "http"} and bool(source.netloc),
-                                f"{item['id']}: invalid media source URL")
-                        require(media["sourceUrl"] in page.links, f"{item['id']}: media source link is not displayed")
+            visible_pages = [archive, home] if item["selected"] else [archive]
+            for page in visible_pages:
+                check_media_attribution(item, page, require)
     chosen_papers = sorted((item for item in data["publications"] if item["selected"]),
                            key=lambda item: item["selectedOrder"])
     group_order = []
