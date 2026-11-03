@@ -341,6 +341,12 @@ def main() -> None:
         return uncomment((args.cv_dir / name).read_text(encoding="utf-8-sig"))
 
     experience = experience_records(read("02_research_experience.tex"))
+    summary_match = re.search(
+        r"\\cvsect(?:\[[^\]]*\])?\{Summary\}(.*?)\\end\{minipage\}",
+        read("01_summary_skills.tex"), re.S,
+    )
+    if summary_match is None:
+        raise ValueError("Could not find the CV Summary")
     profile = {
         "name": "Seongju Lee", "title": experience[0]["title"],
         "affiliation": experience[0]["organization"], "location": "South Korea",
@@ -349,12 +355,8 @@ def main() -> None:
         "photo": "assets/images/profile/seongju_lee.jpg",
         "cv": "assets/docs/Seongju_Lee_CV_Full.pdf",
         "selectedCv": "assets/docs/Seongju_Lee_CV_Robotics_Perception.pdf",
-        "bio": [
-            "I am a Senior Researcher at HD Hyundai Robotics, working on humanoid and dual-arm robot learning and multimodal data pipelines.",
-            "My research spans object detection, semantic segmentation, domain generalization, and multi-agent trajectory prediction. I have experience leading perception software development and building multi-view datasets for autonomous systems.",
-            "I received my Ph.D. in AI Convergence from Gwangju Institute of Science and Technology (GIST) in February 2026, advised by Prof. Kyoobin Lee.",
-        ],
-        "researchInterests": ["Robust visual perception", "Domain generalization and knowledge distillation", "Multi-agent trajectory prediction", "Multimodal robot learning"],
+        "bio": [plain(summary_match.group(1))],
+        "researchInterests": ["Multimodal robot learning", "Robust visual perception", "Domain generalization and knowledge distillation", "Multi-agent trajectory prediction"],
     }
     data = {
         "asOf": args.as_of, "profile": profile,
@@ -366,9 +368,13 @@ def main() -> None:
         "awards": award_records(read("06_awards.tex")),
         "patents": patent_records(read("07_patents.tex")),
     }
-    # Media is curated separately from the CV; retain its mapping when importing updates.
+    # Website prose and media are curated separately from the CV.
     if args.output.exists():
         previous = json.loads(args.output.read_text(encoding="utf-8-sig"))
+        previous_profile = previous.get("profile", {})
+        for key in ("bio", "researchInterests"):
+            if key in previous_profile:
+                data["profile"][key] = previous_profile[key]
         for collection in ("publications", "projects"):
             media_by_id = {item["id"]: item["media"] for item in previous.get(collection, [])
                            if item.get("media")}
