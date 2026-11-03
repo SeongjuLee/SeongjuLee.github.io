@@ -363,7 +363,7 @@ def home(data: dict) -> str:
         [item for item in data["awards"] if item.get("selected")]),
         "All awards →", PAGES["awards"][0])
     return shell("home", data, body,
-                 f"{profile['name']}, {profile['title']} at {profile['affiliation']}. Research in robust perception, maritime vision, and robotics.")
+                 f"{profile['name']}, {profile['title']} at {profile['affiliation']}. Robot learning and simulation, deep learning model design, and robust perception for autonomous systems.")
 
 
 def page_heading(title: str, description: str, extras: str = "") -> str:

@@ -43,6 +43,9 @@ Open `http://127.0.0.1:8000/`.
 - Replace the two PDF snapshots under `assets/docs/` when the CV changes. These
   files are independent of the website build.
 - Update biography, contact details, and research interests in `profile`.
+- CV imports preserve the curated biography, research interests, and media.
+  New imports initialize the biography from the CV summary. Review the curated
+  biography alongside that summary when the research focus changes.
 - Use `First Place` / `Second Place` for competition rankings, retaining official
   honor names such as `IITP President's Award` and `Finalist Excellence Award`.
 
