@@ -86,6 +86,21 @@ source shots are separate recordings rather than synchronized views.
 
 The original standalone perception and platform assets are retained as sources.
 
+The formerly empty main research previews use these original research sources:
+
+| Preview | Source and edit |
+| --- | --- |
+| CD-FKD | [GIST AI Lab demo](https://www.youtube.com/watch?v=3VRU82IuZ4g), 02:58-03:01 and 03:12-03:15; the CD-FKD result panel in daytime and nighttime scenes. |
+| Robust Maritime / JSL | [Official presentation](https://www.youtube.com/watch?v=nJdHN2xWhJM), method diagram from slide 5; the separate Demo clip uses Cam1 then Cam2 at 01:18-01:24. |
+| Block Selection | [Original CVPR paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Yu_Block_Selection_Method_for_Using_Feature_Norm_in_Out-of-Distribution_Detection_CVPR_2023_paper.pdf), Figure 2(a), PDF page 2. |
+| Active Annotation | [Publisher Figure 1](https://ars.els-cdn.com/content/image/1-s2.0-S266730532600075X-gr1_lrg.jpg), the complete five-phase workflow. |
+| Tactile project | [Official project video](https://www.youtube.com/watch?v=ACXip1F-Fh0), 01:44-01:52; simulated grasping and tactile forces, credited as a project simulation. |
+| Drone project | [Official project overview](https://sites.google.com/view/gistailab/project/%EB%93%9C%EB%A1%A0), the RGB/IR/LiDAR multi-view diagram. |
+| Ceiling project | [Official project example](https://sites.google.com/view/gistailab/project/lg), the input/segmentation image pair; empty black bottom padding removed. |
+
+Optional `media.demo` links to a local demonstration clip alongside a still
+preview. Source figures preserve their meaningful panels and annotations.
+
 Keep a poster for every GIF so reduced-motion preferences use a still frame.
 Entries without media retain an empty preview area, except additional first-author
 papers, which use a text-only layout. Nothing is fabricated to fill a preview.

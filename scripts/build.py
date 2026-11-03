@@ -64,6 +64,19 @@ def links(items: list[dict], prefix: str = "") -> str:
     ) + "</p>"
 
 
+def media_attribution(media: dict, prefix: str, displayed_links: list[dict]) -> str:
+    """Credit research media without repeating an existing publication link."""
+    parts = []
+    if media.get("credit"):
+        parts.append(text(media["credit"]))
+    source = media.get("sourceUrl")
+    if source and all(link["url"] != source for link in displayed_links):
+        parts.append(anchor("Source", source, prefix))
+    if media.get("demo"):
+        parts.append(anchor("Demo clip", media["demo"], prefix))
+    return '<p class="media-credit">' + " · ".join(parts) + '</p>' if parts else ""
+
+
 def authors(value: str | list[str], name: str) -> str:
     if isinstance(value, list):
         value = ", ".join(value)
@@ -128,6 +141,7 @@ def publication(item: dict, profile: dict, prefix: str, metrics: bool = False) -
     {notes_html}
     {summary_html}
     {links(item.get('links', []), prefix)}
+    {media_attribution(item.get('media') or {}, prefix, item.get('links', []))}
     {metric_html}
     </div>
   </article>
@@ -146,13 +160,8 @@ def project_list(items: list[dict], prefix: str, heading_level: int = 3) -> str:
     for item in items:
         date_html = f'<p class="item-date">{text(item["period"])}</p>'
         media = item.get("media") or {}
-        credit_parts = []
-        if media.get("credit"):
-            credit_parts.append(text(media["credit"]))
-        if media.get("sourceUrl"):
-            credit_parts.append(anchor("Video source", media["sourceUrl"], prefix))
-        credit_html = ('<p class="media-credit">' + " · ".join(credit_parts) + '</p>') if credit_parts else ""
         project_links = [link for link in item.get("links", []) if link["url"] != media.get("sourceUrl")]
+        credit_html = media_attribution(media, prefix, project_links)
         content = f'''
     <h{heading_level}>{text(item['title'])}</h{heading_level}>
     <p class="organization">{text(item['organization'])}</p>
