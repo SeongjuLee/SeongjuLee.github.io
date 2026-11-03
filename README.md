@@ -43,6 +43,8 @@ Open `http://127.0.0.1:8000/`.
 - Replace the two PDF snapshots under `assets/docs/` when the CV changes. These
   files are independent of the website build.
 - Update biography, contact details, and research interests in `profile`.
+- Use `First Place` / `Second Place` for competition rankings, retaining official
+  honor names such as `IITP President's Award` and `Finalist Excellence Award`.
 
 Research previews are optional `media` objects on publication or project records:
 
