@@ -33,7 +33,7 @@
       "category": "international",
       "type": "conference",
       "selected": true,
-      "selectedOrder": 6,
+      "selectedOrder": 3,
       "authorRole": "",
       "summary": "Imitation Learning, Multimodal Policy, Vision Foundation Models (VFMs), Force/Torque Sensor",
       "links": [
@@ -71,7 +71,7 @@
       "category": "international",
       "type": "conference",
       "selected": true,
-      "selectedOrder": 3,
+      "selectedOrder": 4,
       "authorRole": "",
       "summary": "Knowledge Distillation, Robust Object Detection, Single-Domain Generalization",
       "links": [
@@ -114,30 +114,6 @@
       "notes": []
     },
     {
-      "id": "cvpubRobustMaritimeDetection",
-      "title": "Robust Maritime Object Detection under Adverse Conditions via Joint Semantic Learning without Extra Computational Overhead",
-      "authors": "Junseok Lee, Seongju Lee, Jongwon Kim, Jumi Park, and Kyoobin Lee",
-      "venue": "The 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)",
-      "year": 2025,
-      "category": "international",
-      "type": "conference",
-      "selected": true,
-      "selectedOrder": 4,
-      "authorRole": "",
-      "summary": "",
-      "links": [
-        {
-          "label": "Paper",
-          "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11246177"
-        }
-      ],
-      "metrics": [
-        "46% Acceptance Rate",
-        "Cited by 2"
-      ],
-      "notes": []
-    },
-    {
       "id": "cvpubMultiViewMaritime",
       "title": "MV2: A Large-Scale 360-degree Multi-View Maritime Vision Dataset for Object Detection and Segmentation",
       "authors": "Junseok Lee*, Jongwon Kim*, Seongju Lee*, Taeri Kim, and Kyoobin Lee",
@@ -146,7 +122,7 @@
       "category": "international",
       "type": "conference",
       "selected": true,
-      "selectedOrder": 1,
+      "selectedOrder": 2,
       "authorRole": "Co-first author",
       "summary": "",
       "links": [
@@ -167,6 +143,30 @@
         "poster": "assets/media/research/mv2-multiview-poster.jpg",
         "alt": "Six camera-view examples from the MV2 maritime dataset."
       }
+    },
+    {
+      "id": "cvpubRobustMaritimeDetection",
+      "title": "Robust Maritime Object Detection under Adverse Conditions via Joint Semantic Learning without Extra Computational Overhead",
+      "authors": "Junseok Lee, Seongju Lee, Jongwon Kim, Jumi Park, and Kyoobin Lee",
+      "venue": "The 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)",
+      "year": 2025,
+      "category": "international",
+      "type": "conference",
+      "selected": true,
+      "selectedOrder": 5,
+      "authorRole": "",
+      "summary": "",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11246177"
+        }
+      ],
+      "metrics": [
+        "46% Acceptance Rate",
+        "Cited by 2"
+      ],
+      "notes": []
     },
     {
       "id": "cvpubMaritimeChallengeThree",
@@ -200,7 +200,7 @@
       "category": "international",
       "type": "conference",
       "selected": true,
-      "selectedOrder": 2,
+      "selectedOrder": 1,
       "authorRole": "First author",
       "summary": "Graph Neural Networks (GNNs), Hypergraph Transformer",
       "links": [
@@ -226,6 +226,24 @@
       }
     },
     {
+      "id": "cvpubBuoyLight",
+      "title": "Buoy Light Detection and Pattern Classification for Unmanned Surface Vehicle Navigation",
+      "authors": "Junseok Lee, Taeri Kim, Seongju Lee, Jumi Park, and Kyoobin Lee",
+      "venue": "The 21st International Conference on Ubiquitous Robots (UR 2024)",
+      "year": 2024,
+      "category": "international",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [
+        "Cited by 2"
+      ],
+      "notes": []
+    },
+    {
       "id": "cvpubBlockSelection",
       "title": "Block Selection Method for Using Feature Norm in Out-of-Distribution Detection",
       "authors": "Yeonguk Yu, Sungho Shin, Seongju Lee, Changhyun Jun, and Kyoobin Lee",
@@ -234,7 +252,7 @@
       "category": "international",
       "type": "conference",
       "selected": true,
-      "selectedOrder": 5,
+      "selectedOrder": 6,
       "authorRole": "",
       "summary": "",
       "links": [
@@ -251,6 +269,54 @@
         "25.8% Acceptance Rate",
         "Cited by 82"
       ],
+      "notes": []
+    },
+    {
+      "id": "cvpubGymNet",
+      "title": "GYM-Net: Graphical Y-branched Multi-tasking Network for Trajectory Prediction",
+      "authors": "Taeri Kim, Junseok Lee, Seongju Lee, and Kyoobin Lee",
+      "venue": "The 22nd International Conference on Control, Automation and Systems (ICCAS 2022)",
+      "year": 2022,
+      "category": "international",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubVesselForecasting",
+      "title": "Vessel Trajectory Forecasting on Naval Warfare Simulation via CVAE-based Model",
+      "authors": "Seongju Lee*, Yeonguk Yu*, Junseok Lee, Jumi Park, Changhyun Jun, and Kyoobin Lee",
+      "venue": "The 9th International Conference on Robot Intelligence Technology and Applications (RiTA 2021)",
+      "year": 2021,
+      "category": "international",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "Co-first author",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubGunSound",
+      "title": "Real-time Vibro-Acoustical Feedback for the Reality in Game by Detecting the Gun-Sound using Simple Convolutional Neural Network",
+      "authors": "Sungho Shin, Seongju Lee, Changhyun Jun, and Kyoobin Lee",
+      "venue": "The 8th International Conference on Smart Media & Application (SMA 2019)",
+      "year": 2019,
+      "category": "international",
+      "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
       "notes": []
     },
     {
@@ -460,95 +526,6 @@
       "selectionGroup": "additional"
     },
     {
-      "id": "cvpubBuoyLight",
-      "title": "Buoy Light Detection and Pattern Classification for Unmanned Surface Vehicle Navigation",
-      "authors": "Junseok Lee, Taeri Kim, Seongju Lee, Jumi Park, and Kyoobin Lee",
-      "venue": "The 21st International Conference on Ubiquitous Robots (UR 2024)",
-      "year": 2024,
-      "category": "international",
-      "type": "conference",
-      "selected": false,
-      "selectedOrder": null,
-      "authorRole": "",
-      "summary": "",
-      "links": [],
-      "metrics": [
-        "Cited by 2"
-      ],
-      "notes": []
-    },
-    {
-      "id": "cvpubGymNet",
-      "title": "GYM-Net: Graphical Y-branched Multi-tasking Network for Trajectory Prediction",
-      "authors": "Taeri Kim, Junseok Lee, Seongju Lee, and Kyoobin Lee",
-      "venue": "The 22nd International Conference on Control, Automation and Systems (ICCAS 2022)",
-      "year": 2022,
-      "category": "international",
-      "type": "conference",
-      "selected": false,
-      "selectedOrder": null,
-      "authorRole": "",
-      "summary": "",
-      "links": [],
-      "metrics": [],
-      "notes": []
-    },
-    {
-      "id": "cvpubVesselForecasting",
-      "title": "Vessel Trajectory Forecasting on Naval Warfare Simulation via CVAE-based Model",
-      "authors": "Seongju Lee*, Yeonguk Yu*, Junseok Lee, Jumi Park, Changhyun Jun, and Kyoobin Lee",
-      "venue": "The 9th International Conference on Robot Intelligence Technology and Applications (RiTA 2021)",
-      "year": 2021,
-      "category": "international",
-      "type": "conference",
-      "selected": false,
-      "selectedOrder": null,
-      "authorRole": "Co-first author",
-      "summary": "",
-      "links": [],
-      "metrics": [],
-      "notes": []
-    },
-    {
-      "id": "cvpubGunSound",
-      "title": "Real-time Vibro-Acoustical Feedback for the Reality in Game by Detecting the Gun-Sound using Simple Convolutional Neural Network",
-      "authors": "Sungho Shin, Seongju Lee, Changhyun Jun, and Kyoobin Lee",
-      "venue": "The 8th International Conference on Smart Media & Application (SMA 2019)",
-      "year": 2019,
-      "category": "international",
-      "type": "conference",
-      "selected": false,
-      "selectedOrder": null,
-      "authorRole": "",
-      "summary": "",
-      "links": [],
-      "metrics": [],
-      "notes": []
-    },
-    {
-      "id": "cvpubAssemblyDetection",
-      "title": "Object Detection for Understanding Assembly Instruction Using Context-aware Data Augmentation and Cascade Mask R-CNN",
-      "authors": "Joosoon Lee, Seongju Lee, Seunghyeok Back, Sungho Shin, and Kyoobin Lee",
-      "venue": "arXiv:2101.02509, 2021",
-      "year": 2021,
-      "category": "international",
-      "type": "technical-report",
-      "selected": false,
-      "selectedOrder": null,
-      "authorRole": "",
-      "summary": "",
-      "links": [
-        {
-          "label": "Paper",
-          "url": "https://arxiv.org/pdf/2101.02509"
-        }
-      ],
-      "metrics": [
-        "Cited by 10"
-      ],
-      "notes": []
-    },
-    {
       "id": "cvpubDomesticTrajectoryClassification",
       "title": "다중 객체의 경로 정보를 이용한 GNN 기반의 객체 분류 알고리즘 개발",
       "authors": "이상범, 이성주, 이준석, 김태리, 이규빈",
@@ -604,6 +581,22 @@
       "year": 2022,
       "category": "domestic",
       "type": "conference",
+      "selected": false,
+      "selectedOrder": null,
+      "authorRole": "",
+      "summary": "",
+      "links": [],
+      "metrics": [],
+      "notes": []
+    },
+    {
+      "id": "cvpubDomesticAssemblyPlanning",
+      "title": "물품조립 AI - 조립설명서 기반 로봇의 작업계획 생성 시스템",
+      "authors": "백승혁, 신성호, 강래영, 이성주, 이주순, 육태경, 전창현, 김종원, 유연국, 박성호, 윤준호, 이준석, 이규빈",
+      "venue": "로봇과 인간 제18권 (2021)",
+      "year": 2021,
+      "category": "domestic",
+      "type": "journal",
       "selected": false,
       "selectedOrder": null,
       "authorRole": "",
@@ -693,19 +686,26 @@
       "notes": []
     },
     {
-      "id": "cvpubDomesticAssemblyPlanning",
-      "title": "물품조립 AI - 조립설명서 기반 로봇의 작업계획 생성 시스템",
-      "authors": "백승혁, 신성호, 강래영, 이성주, 이주순, 육태경, 전창현, 김종원, 유연국, 박성호, 윤준호, 이준석, 이규빈",
-      "venue": "로봇과 인간 제18권 (2021)",
+      "id": "cvpubAssemblyDetection",
+      "title": "Object Detection for Understanding Assembly Instruction Using Context-aware Data Augmentation and Cascade Mask R-CNN",
+      "authors": "Joosoon Lee, Seongju Lee, Seunghyeok Back, Sungho Shin, and Kyoobin Lee",
+      "venue": "arXiv:2101.02509, 2021",
       "year": 2021,
-      "category": "domestic",
-      "type": "journal",
+      "category": "international",
+      "type": "technical-report",
       "selected": false,
       "selectedOrder": null,
       "authorRole": "",
       "summary": "",
-      "links": [],
-      "metrics": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/pdf/2101.02509"
+        }
+      ],
+      "metrics": [
+        "Cited by 10"
+      ],
       "notes": []
     },
     {
@@ -781,8 +781,8 @@
       "role": "AI Developer",
       "organization": "Ministry of Trade, Industry and Energy (MOTIE), South Korea",
       "summary": "Multimodal Action Policy for Contact-Rich Tasks using Vision and F/T Sensing",
-      "selected": false,
-      "selectedOrder": null,
+      "selected": true,
+      "selectedOrder": 2,
       "links": []
     },
     {
@@ -793,7 +793,7 @@
       "organization": "Institute of Civil-Military Technology Cooperation (ICMTC), South Korea",
       "summary": "RGB-IR object detection and a multimodal RGB, IR, and LiDAR database captured from drone views.",
       "selected": true,
-      "selectedOrder": 2,
+      "selectedOrder": 3,
       "links": []
     },
     {
@@ -804,7 +804,7 @@
       "organization": "Ministry of Trade, Industry and Energy (MOTIE), South Korea",
       "summary": "Multi-camera maritime object detection and tracking, training dataset creation, and integration into autonomous ship systems.",
       "selected": true,
-      "selectedOrder": 3,
+      "selectedOrder": 4,
       "links": [],
       "media": {
         "kind": "gif",
@@ -822,7 +822,7 @@
       "organization": "Agency for Defense Development (ADD), South Korea",
       "summary": "Maritime object detection and intention prediction for swarm situational awareness, integrated into multiple USVs.",
       "selected": true,
-      "selectedOrder": 4,
+      "selectedOrder": 5,
       "links": [
         {
           "label": "News",
@@ -846,7 +846,7 @@
       "organization": "LG, South Korea",
       "summary": "Ceiling segmentation and dataset construction for robust floor plan generation under occlusion.",
       "selected": true,
-      "selectedOrder": 5,
+      "selectedOrder": 6,
       "links": []
     },
     {
@@ -856,8 +856,8 @@
       "role": "Project Member · AI & Software Developer",
       "organization": "Ministry of Science and ICT (MSIT), South Korea",
       "summary": "Assembly-part instance segmentation and workflow visualization for robot assembly from IKEA manuals.",
-      "selected": true,
-      "selectedOrder": 6,
+      "selected": false,
+      "selectedOrder": null,
       "links": [
         {
           "label": "Video",
