@@ -12,15 +12,15 @@
     "cv": "assets/docs/Seongju_Lee_CV_Full.pdf",
     "selectedCv": "assets/docs/Seongju_Lee_CV_Robotics_Perception.pdf",
     "bio": [
-      "I am a Senior Researcher at HD Hyundai Robotics, working on humanoid and dual-arm robot learning and multimodal data pipelines.",
-      "My research spans object detection, semantic segmentation, domain generalization, and multi-agent trajectory prediction. I have experience leading perception software development and building multi-view datasets for autonomous systems.",
+      "I am a Senior Researcher at HD Hyundai Robotics, working on robot learning and simulation for humanoid and dual-arm robots. I build teleoperation systems, multimodal demonstration pipelines, and environments for testing learned policies.",
+      "My background spans deep learning model design and robust visual perception, with experience integrating learned models into autonomous systems.",
       "I received my Ph.D. in AI Convergence from Gwangju Institute of Science and Technology (GIST) in February 2026, advised by Prof. Kyoobin Lee."
     ],
     "researchInterests": [
+      "Multimodal robot learning",
       "Robust visual perception",
       "Domain generalization and knowledge distillation",
-      "Multi-agent trajectory prediction",
-      "Multimodal robot learning"
+      "Multi-agent trajectory prediction"
     ]
   },
   "publications": [
@@ -753,7 +753,7 @@
       "links": [],
       "metrics": [],
       "notes": [
-        "First Prize in the USV-based Obstacle Segmentation Challenge at the 3rd Maritime Computer Vision Workshop"
+        "First Place in the USV-based Obstacle Segmentation Challenge at the 3rd Maritime Computer Vision Workshop"
       ],
       "media": {
         "kind": "gif",
@@ -1035,28 +1035,28 @@
       "date": "Nov. 2025",
       "title": "Autonomous Driving AI Challenge (Semantic Segmentation)",
       "organization": "MSIT, IITP, KADIF",
-      "result": "Second Prize (IITP President's Award)",
+      "result": "Second Place (IITP President's Award)",
       "selected": true
     },
     {
       "date": "Dec. 2024",
       "title": "USV-based Obstacle Segmentation Challenge, 3rd Maritime Computer Vision Workshop",
       "organization": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025)",
-      "result": "First Prize",
+      "result": "First Place",
       "selected": true
     },
     {
       "date": "Dec. 2024",
       "title": "USV-based Panoptic Segmentation Challenge, 3rd Maritime Computer Vision Workshop",
       "organization": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025)",
-      "result": "Second Prize",
+      "result": "Second Place",
       "selected": true
     },
     {
       "date": "Sep. 2022",
       "title": "The first NIA-GIST AI-HUB AI Competition",
       "organization": "NIA, GIST",
-      "result": "First Prize",
+      "result": "First Place",
       "selected": true
     },
     {
