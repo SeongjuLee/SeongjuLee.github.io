@@ -991,28 +991,36 @@
       "period": "Mar. 2020 – Feb. 2026",
       "institution": "Gwangju Institute of Science and Technology (GIST)",
       "degree": "Ph.D. in AI Convergence",
-      "details": "Dissertation Title: Robust Perception and Trajectory Forecasting for Autonomous Navigation in the Wild Advisor: Prof. Kyoobin Lee",
+      "details": [
+        "Dissertation Title: Robust Perception and Trajectory Forecasting for Autonomous Navigation in the Wild",
+        "Advisor: Prof. Kyoobin Lee"
+      ],
       "selected": true
     },
     {
       "period": "Mar. 2018 – Feb. 2020",
       "institution": "Gwangju Institute of Science and Technology (GIST)",
       "degree": "M.S., School of Integrated Technology (Intelligent Robotics Program)",
-      "details": "Advisor: Prof. Kyoobin Lee",
+      "details": [
+        "Advisor: Prof. Kyoobin Lee"
+      ],
       "selected": true
     },
     {
       "period": "Mar. 2014 – Feb. 2018",
       "institution": "Gwangju Institute of Science and Technology (GIST)",
       "degree": "B.S. in Mechanical Engineering",
-      "details": "UC Berkeley Summer Session (Jul. 2015 – Aug. 2015): Linear Algebra and Differential Equations, Social Inequalities Advisor: Prof. Kwanheng Lee",
+      "details": [
+        "UC Berkeley Summer Session (Jul. 2015 – Aug. 2015): Linear Algebra and Differential Equations, Social Inequalities",
+        "Advisor: Prof. Kwanheng Lee"
+      ],
       "selected": true
     },
     {
       "period": "Mar. 2012 – Feb. 2014",
       "institution": "Gangwon Science High School",
       "degree": "Early Graduation",
-      "details": "",
+      "details": [],
       "selected": false
     }
   ],

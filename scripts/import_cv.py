@@ -267,7 +267,7 @@ def education_records(source: str) -> list[dict]:
         degree, _, detail = body.partition(r"\\")
         key = (plain(period), plain(institution))
         records.append({"period": key[0], "institution": key[1], "degree": plain(degree),
-                        "details": " ".join(part for part in [plain(detail), plain(advisor)] if part),
+                        "details": [part for part in [plain(detail), plain(advisor)] if part],
                         "selected": key in selected})
     return records
 
