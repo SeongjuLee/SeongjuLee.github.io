@@ -68,12 +68,12 @@ is a company demonstration at FIX 2026, provided by HD Hyundai Robotics through
 It retains the full nine-second scene and original 600?338 resolution.
 Optional `media.credit` and `media.sourceUrl` fields display project attribution.
 
-The MART preview (`mart-eccv2024-teaser.gif`) uses the author-provided
-`MART_ECCV2024_teaser.mp4`, updated on 2026-11-17. The complete 23.2-second
-teaser is converted to a looping 640x360 GIF at 12 fps. A still from the
-basketball comparison at 00:15 is used for reduced-motion preferences, and
-the Demo clip link opens the original 960x540 MP4. Earlier MART preview
-assets remain available in the repository.
+The MART preview (`mart-eccv2024-thumbnail.gif`) uses the author-provided
+thumbnail animation, updated on 2026-11-18. The 640x400, 16.2-second GIF is
+preserved as supplied; its purple title frame is the reduced-motion poster.
+The Demo clip link opens the separate original 23.2-second, 960x540 MP4
+(`mart-eccv2024-teaser.mp4`). Earlier MART preview assets remain available
+in the repository.
 
 The two maritime project previews each use one edited GIF that connects the
 physical platform with real perception footage, using brief crossfades. The

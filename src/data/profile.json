@@ -236,9 +236,9 @@
       "notes": [],
       "media": {
         "kind": "gif",
-        "src": "assets/media/research/mart-eccv2024-teaser.gif",
-        "poster": "assets/media/research/mart-eccv2024-teaser-poster.jpg",
-        "alt": "MART ECCV 2024 teaser showing pair-wise and group-wise relations, basketball trajectory predictions, and benchmark results.",
+        "src": "assets/media/research/mart-eccv2024-thumbnail.gif",
+        "poster": "assets/media/research/mart-eccv2024-thumbnail-poster.png",
+        "alt": "Animated MART ECCV 2024 thumbnail introducing multi-agent trajectory prediction.",
         "demo": "assets/media/research/mart-eccv2024-teaser.mp4"
       }
     },
