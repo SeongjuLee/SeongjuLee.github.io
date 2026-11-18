@@ -68,9 +68,10 @@ is a company demonstration at FIX 2026, provided by HD Hyundai Robotics through
 It retains the full nine-second scene and original 600?338 resolution.
 Optional `media.credit` and `media.sourceUrl` fields display project attribution.
 
-The MART preview (`mart-eccv2024-thumbnail.gif`) uses the author-provided
-thumbnail animation, updated on 2026-11-18. The 640x400, 16.2-second GIF is
-preserved as supplied; its purple title frame is the reduced-motion poster.
+The MART preview (`mart-eccv2024-thumbnail-content.gif`) uses the author-provided
+thumbnail animation, updated on 2026-11-18. The opening title and closing
+return to the title are removed: the 640x400 preview uses 00:02.80–00:15.87
+of the 16.2-second source. The reduced-motion poster shows adaptive groups.
 The Demo clip link opens the separate original 23.2-second, 960x540 MP4
 (`mart-eccv2024-teaser.mp4`). Earlier MART preview assets remain available
 in the repository.
